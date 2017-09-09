@@ -1,12 +1,14 @@
 package com.tapette.stock.bovespaHistoryFormater.file.table;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class TableDAO extends TableSimple{
 	
 	private static final long serialVersionUID = 1574990503341685712L;
-	private HashMap<String, TableSimple> hashStockName = new HashMap<>();
-	private HashMap<String, TableSimple> hashStockDate = new HashMap<>();
+	private HashMap<String, TableSimple> hashStockName = new HashMap<String, TableSimple>();
+	private HashMap<String, TableSimple> hashStockDate = new HashMap<String, TableSimple>();
 	
 	
 	@Override
@@ -17,15 +19,11 @@ public class TableDAO extends TableSimple{
 	}
 	
 	private void addStrockName(Line e) {
-		if(!hashStockName.containsKey(e.getStockName()))
-			hashStockName.put(e.getStockName(), new TableSimple());
-		hashStockName.get(e.getStockName()).add(e);
+		getHashMap(hashStockName, Type.NAME,  e.getStockName()).add(e);
 	}
 	
 	private void addStrockDate(Line e) {
-		if(!hashStockDate.containsKey(e.getDate()))
-			hashStockDate.put(e.getDate(), new TableSimple());
-		hashStockDate.get(e.getDate()).add(e);
+		getHashMap(hashStockDate, Type.DATE, e.getDate()).add(e);
 	}
 	
 	
@@ -37,5 +35,24 @@ public class TableDAO extends TableSimple{
 	public TableSimple getStrockDateTable(String str) {
 		return hashStockDate.get(str);
 	}
+	
+	public TableSimple getHashMap(HashMap<String, TableSimple> hashMap, Type type, String str) {
+		if(hashMap.get(str) == null) hashMap.put(str , new TableSimple(type));
+		return hashMap.get(str);
+	}
+	
+	public String getProximunTimePrice(String stockName, String stockDate) throws Exception {
+		return hashStockName.get(stockName).getProximunTimesPrice(stockDate);
+	}
+	
+	/*public List<Line> getFirstStrockByNameWeekly(List<String> strList, String startDate, String endDate, int interval) throws Exception {
+		List<Line> table = new ArrayList<Line>();
+		for (int i = 0; i < size(); i++) {
+			table.add(hashStockName.get(strList.get(i)));
+		}
+		if(table.size()<1)
+			table.add(new Line(""));
+		return table;
+	}*/
 
 }

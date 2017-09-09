@@ -54,7 +54,6 @@ public class Line {
 	
 	public Calendar getCalendar() {
 		Integer intDate = Integer.parseInt(array.get(1).toString());
-		System.out.println(array.get(1).toString());
 		return new GregorianCalendar(intDate/10000, (intDate/100)%100, intDate%100);
 	}
 	
