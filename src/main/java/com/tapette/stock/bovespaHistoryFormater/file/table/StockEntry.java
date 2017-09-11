@@ -5,15 +5,15 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class Line {
+public class StockEntry {
 
 	List<StringBuilder> array = new ArrayList<StringBuilder>();
 	
-	public Line() {
+	public StockEntry() {
 		super();
 	}
 	
-	public Line(String text) {
+	public StockEntry(String text) {
 		parseColumns(new StringBuilder(text));
 	}
 	
@@ -47,14 +47,14 @@ public class Line {
 		array.add(new StringBuilder(txt.substring(242, 245)));
 	}
 	
-	public String getStockName() {
+	public String getStockEntryName() {
 		if(array.size() < 4) return "";
 		return array.get(3).toString();
 	}
 	
 	public Calendar getCalendar() {
 		Integer intDate = Integer.parseInt(array.get(1).toString());
-		return new GregorianCalendar(intDate/10000, (intDate/100)%100, intDate%100);
+		return new GregorianCalendar(intDate/10000, (intDate/100)%100 -1, intDate%100);
 	}
 	
 	public String getDate() {
