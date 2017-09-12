@@ -13,7 +13,7 @@ public class StockGroup {
 	TableDAO stocks = null;
 	List<String> dates = null;
 	String[][] resultStringArray;
-	Double[][] resultIntArray;
+	double[][] resultIntArray;
 	boolean executed = false;
 	List<String> names = null;
 	static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
@@ -23,7 +23,7 @@ public class StockGroup {
 		this.stocks = stocks;
 		this.dates = dates;
 		this.resultStringArray = new String[dates.size()+1][names.size()+1];
-		this.resultIntArray = new Double[dates.size()][names.size()];
+		this.resultIntArray = new double[dates.size()][names.size()];
 		this.executed = false;
 		this.names = names;
 	}
@@ -54,7 +54,7 @@ public class StockGroup {
 		return executed;
 	}
 	
-	private Double stringToDouble(String str) {
+	private double stringToDouble(String str) {
 		if(str == null || str.isEmpty()) return -1d;
 		return Double.parseDouble(str);
 	}
@@ -79,7 +79,7 @@ public class StockGroup {
 		return resultStringArray;
 	}
 
-	public Double[][] getResultIntArray() {
+	public double[][] getResultIntArray() {
 		return resultIntArray;
 	}
 	

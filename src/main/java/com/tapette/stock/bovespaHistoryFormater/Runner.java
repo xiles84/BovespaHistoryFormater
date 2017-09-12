@@ -12,7 +12,7 @@ import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StockGroup;
 public class Runner {
 
 	public static void main(String[] args) {
-		test1(args);
+		test2(args);
 //		StockGrouper aa = new StockGrouper();
 //		TableSimple cc = aa.get("aa");
 //		System.out.println(((Object)cc).hashCode());
@@ -65,6 +65,70 @@ public class Runner {
 					System.out.print(nn.getResultIntArray()[i][k] + " ");
 				}
 				System.out.println("");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test2(String[] args) {
+		Formater form = new Formater();
+		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\COTAHIST_A2017.TXT");
+		try {
+			HashMap<String, StockEntry> teste = new HashMap<>();
+			teste.put("teste1" , null);
+			
+			form.execute();
+			TableDAO aa = form.getList();
+			System.out.println(aa.getStrockNameTable("IVVB11").
+					getProximunTimesPrice("20190603"));
+			System.out.println("");
+			
+			List<String> namesL = new ArrayList<String>();
+			namesL.add("MFII11");
+			namesL.add("PLRI11");
+			namesL.add("KNCR11");
+			namesL.add("BCRI11");
+			namesL.add("CPTS11B");
+			namesL.add("XPCM11");
+			
+			StockGroup nn = new StockGroup(namesL, aa, StockGroup.rotateDate("20170102", "20171003", 7, 100));
+			
+			nn.execute();
+			
+			Math math = new Math(nn.getResultIntArray());
+			math.getMeans();
+			math.getCovariance();
+			
+			for (int i = 0; i < math.getMeans().length; i++)
+				System.out.print(math.getMeans()[i]+ "\t\t\t");
+			
+			System.out.println("\n\n\n\n");
+			
+			for (int i = 0; i < nn.getResultIntArray().length; i++) {
+				for (int j = 0; j < nn.getResultIntArray()[i].length; j++) {
+					System.out.print(nn.getResultIntArray()[i][j] + "\t\t\t");
+				}
+				System.out.print("\n");
+			}
+			
+			System.out.println("\n\n\n\n");
+			
+			for (int i = 0; i < math.getIncrements().length; i++) {
+				for (int j = 0; j < math.getIncrements()[i].length; j++) {
+					System.out.print(math.getIncrements()[i][j] + "\t\t\t");
+				}
+				System.out.print("\n");
+			}
+			
+			System.out.println("\n\n\n\n");
+			
+			for (int i = 0; i < math.getCovariance().length; i++) {
+				for (int j = 0; j < math.getCovariance()[i].length; j++) {
+					System.out.print(math.getCovariance()[i][j] + "\t\t\t");
+				}
+				System.out.print("\n");
 			}
 			
 		} catch (Exception e) {
