@@ -1,18 +1,27 @@
 package com.tapette.stock.bovespaHistoryFormater;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.tapette.stock.bovespaHistoryFormater.file.Formater;
+import com.tapette.stock.bovespaHistoryFormater.file.FormaterImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StockGroup;
+import com.tapette.stock.bovespaHistoryFormater.math.Math;
+import com.tapette.stock.bovespaHistoryFormater.math.MathIncremental;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		test2(args);
+		test3(args);
 //		StockGrouper aa = new StockGrouper();
 //		TableSimple cc = aa.get("aa");
 //		System.out.println(((Object)cc).hashCode());
@@ -21,14 +30,14 @@ public class Runner {
 	
 	
 	public static void test1(String[] args) {
-		Formater form = new Formater();
+		Formater form = new FormaterImp();
 		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
 			
 			form.execute();
-			TableDAO aa = form.getList();
+			TableDAOImp aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
 			System.out.println("");
@@ -73,14 +82,14 @@ public class Runner {
 	}
 	
 	public static void test2(String[] args) {
-		Formater form = new Formater();
+		Formater form = new FormaterImp();
 		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
 			
 			form.execute();
-			TableDAO aa = form.getList();
+			TableDAOImp aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
 			System.out.println("");
@@ -97,9 +106,9 @@ public class Runner {
 			
 			nn.execute();
 			
-			Math math = new Math(nn.getResultIntArray());
+			Math math = new MathIncremental(nn.getResultIntArray());
 			math.getMeans();
-			math.getCovariance();
+			math.getSimpleCovariance();
 			
 			for (int i = 0; i < math.getMeans().length; i++)
 				System.out.print(math.getMeans()[i]+ "\t\t\t");
@@ -115,18 +124,18 @@ public class Runner {
 			
 			System.out.println("\n\n\n\n");
 			
-			for (int i = 0; i < math.getIncrements().length; i++) {
-				for (int j = 0; j < math.getIncrements()[i].length; j++) {
-					System.out.print(math.getIncrements()[i][j] + "\t\t\t");
+			for (int i = 0; i < math.getMatrix().length; i++) {
+				for (int j = 0; j < math.getMatrix()[i].length; j++) {
+					System.out.print(math.getMatrix()[i][j] + "\t\t\t");
 				}
 				System.out.print("\n");
 			}
 			
 			System.out.println("\n\n\n\n");
 			
-			for (int i = 0; i < math.getCovariance().length; i++) {
-				for (int j = 0; j < math.getCovariance()[i].length; j++) {
-					System.out.print(math.getCovariance()[i][j] + "\t\t\t");
+			for (int i = 0; i < math.getSimpleCovariance().length; i++) {
+				for (int j = 0; j < math.getSimpleCovariance()[i].length; j++) {
+					System.out.print(math.getSimpleCovariance()[i][j] + "\t\t\t");
 				}
 				System.out.print("\n");
 			}
@@ -134,6 +143,30 @@ public class Runner {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void test3(String[] args) {
+		
+		
+		File[] files = new File("./").listFiles();
+		
+		for (File file : files) {
+		    if (file.isFile()) {
+		        System.out.println((file.getName()));
+		    }
+		}
+		System.out.println(System.getProperties());
+		
+	}
+	
+	public static void realCode(String[] args) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("BovespaHistoryFormater.xml");
+		
+		Logger log = Logger.getLogger(Runner.class);
+
+		PropertyConfigurator.configureAndWatch("log4j.properties",15000);
+		Formater disp = (Formater)context.getBean("Formater");
 	}
 
 }

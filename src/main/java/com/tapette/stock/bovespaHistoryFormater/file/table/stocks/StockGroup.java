@@ -6,11 +6,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAOImp;
 
 public class StockGroup {
 	
-	TableDAO stocks = null;
+	TableDAOImp stocks = null;
 	List<String> dates = null;
 	String[][] resultStringArray;
 	double[][] resultIntArray;
@@ -19,7 +19,7 @@ public class StockGroup {
 	static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
 	List<StockName> stockNames = new ArrayList<>();
 	
-	public StockGroup(List<String> names, TableDAO stocks, List<String> dates) {
+	public StockGroup(List<String> names, TableDAOImp stocks, List<String> dates) {
 		this.stocks = stocks;
 		this.dates = dates;
 		this.resultStringArray = new String[dates.size()+1][names.size()+1];
