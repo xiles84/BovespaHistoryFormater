@@ -1,17 +1,20 @@
-package com.tapette.stock.bovespaHistoryFormater.math;
+package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
 import java.util.Arrays;
 
-public class Math {
-	
+import com.tapette.stock.bovespaHistoryFormater.math.Math;
+
+public class MathImp implements Math{
+
 	private double[][] matrix = null;
 	private double[] means = null;
 	private double[][] cov = null;
-	
-	public Math(double[][] matrix) {
+
+	public MathImp(double[][] matrix) {
 		this.matrix = matrix;
 	}
-	
+
+	@Override
 	public double[] getMeans() {
 		if(this.means != null) return this.means;
 		int[] counter = new int[matrix[0].length];
@@ -32,7 +35,8 @@ public class Math {
 		}
 		return this.means;
 	}
-	
+
+	@Override
 	public double[][] getSimpleCovariance() throws Exception {
 		if(this.cov != null) return this.cov;
 		int[] ponder = new int[matrix.length];
@@ -40,7 +44,8 @@ public class Math {
 		getPonderedCovariance(ponder);
 		return this.cov;
 	}
-	
+
+	@Override
 	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
 		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
@@ -62,14 +67,15 @@ public class Math {
 		}
 		for (int i = 1; i < this.cov.length; i++)
 			for (int j = 0; j < i; j++)
-					this.cov[i][j] = this.cov[j][i];
+				this.cov[i][j] = this.cov[j][i];
 		return this.cov;
 	}
 
+	@Override
 	public double[][] getMatrix() {
 		return matrix;
 	}
-	
-	
+
+
 
 }

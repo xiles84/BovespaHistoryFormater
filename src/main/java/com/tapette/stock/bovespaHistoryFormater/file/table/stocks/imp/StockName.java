@@ -1,11 +1,12 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks;
+package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StocksAdvanced;
 
-public class StockName extends Stocks{
+public class StockName extends StocksAbstractImp implements StocksAdvanced {
 	
 	private static final long serialVersionUID = -2734473156485806924L;
 
@@ -13,16 +14,19 @@ public class StockName extends Stocks{
 		this.type = Type.NAME;
 	}
 	
+	@Override
 	public StockEntry getFirstStrockEntryByName(String str) throws Exception {
 		throw new Exception("Dont filter a per name twice");
 	}
 	
+	@Override
 	public String getProximunTimesPrice(String date) throws Exception {
 		if(!getCloseTime(getFirstStrockEntryByDate(date)).isEmpty())
 			return getCloseTime(getFirstStrockEntryByDate(date));
 		return getCloseTime(getFirstStrockEntryByDate(rotateDate(date)));
 	}
 	
+	@Override
 	public StockEntry getFirstStrockEntryByDate(String str) throws Exception {
 		for (int i = 0; i < size(); i++) {
 			if(get(i).getDate().equalsIgnoreCase(str))
@@ -31,10 +35,12 @@ public class StockName extends Stocks{
 		return null;
 	}
 	
+	@Override
 	public List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception {
 		throw new Exception("Dont filter a per name twice");
 	}
 	
+	@Override
 	public List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception {
 		List<StockEntry> table = new ArrayList<StockEntry>();
 		for (int i = 0; i < size(); i++)

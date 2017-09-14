@@ -11,17 +11,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.tapette.stock.bovespaHistoryFormater.file.Formater;
-import com.tapette.stock.bovespaHistoryFormater.file.FormaterImp;
+import com.tapette.stock.bovespaHistoryFormater.file.imp.FormaterImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAOImp;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StockGroup;
-import com.tapette.stock.bovespaHistoryFormater.math.Math;
-import com.tapette.stock.bovespaHistoryFormater.math.MathIncremental;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup;
+import com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp;
+import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 
 public class Runner {
 
 	public static void main(String[] args) {
-		test3(args);
+		test2(args);
 //		StockGrouper aa = new StockGrouper();
 //		TableSimple cc = aa.get("aa");
 //		System.out.println(((Object)cc).hashCode());
@@ -31,7 +31,7 @@ public class Runner {
 	
 	public static void test1(String[] args) {
 		Formater form = new FormaterImp();
-		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\COTAHIST_A2017.TXT");
+		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
@@ -83,7 +83,7 @@ public class Runner {
 	
 	public static void test2(String[] args) {
 		Formater form = new FormaterImp();
-		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\COTAHIST_A2017.TXT");
+		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
@@ -106,7 +106,7 @@ public class Runner {
 			
 			nn.execute();
 			
-			Math math = new MathIncremental(nn.getResultIntArray());
+			MathImp math = new MathIncrementalImp(nn.getResultIntArray());
 			math.getMeans();
 			math.getSimpleCovariance();
 			

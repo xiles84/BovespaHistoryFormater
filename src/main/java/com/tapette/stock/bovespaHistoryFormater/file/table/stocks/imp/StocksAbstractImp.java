@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks;
+package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -8,23 +8,20 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.Stocks;
 
-public abstract class Stocks extends ArrayList<StockEntry>{
-	
-	public enum Type{
-		NAME, DATE;
-	}
+public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements Stocks{
 	
 	private static final long serialVersionUID = 2888786708507621471L;
 	protected Type type;
 	SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
 	List<String> dateList = null;
 	
-	public Stocks() {
+	public StocksAbstractImp() {
 		this.type = Type.NAME;
 	}
 	
-	public Stocks(Type type) {
+	public StocksAbstractImp(Type type) {
 		this.type = type;
 	}
 
@@ -95,6 +92,4 @@ public abstract class Stocks extends ArrayList<StockEntry>{
 		return type;
 	}
 	
-	
-
 }

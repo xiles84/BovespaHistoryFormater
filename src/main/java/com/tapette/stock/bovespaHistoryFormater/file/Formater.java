@@ -1,6 +1,6 @@
 package com.tapette.stock.bovespaHistoryFormater.file;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 
 public interface Formater {
 	
