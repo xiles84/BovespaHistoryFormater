@@ -75,11 +75,15 @@ public class StockGroup {
 		return dates;
 	}
 
-	public String[][] getResultStringArray() {
+	public String[][] getResultStringArray() throws Exception {
+		if(!executed)
+			execute();
 		return resultStringArray;
 	}
 
-	public double[][] getResultIntArray() {
+	public double[][] getResultIntArray() throws Exception {
+		if(!executed)
+			execute();
 		return resultIntArray;
 	}
 	

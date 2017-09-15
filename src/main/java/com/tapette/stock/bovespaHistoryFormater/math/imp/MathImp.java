@@ -2,9 +2,9 @@ package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
 import java.util.Arrays;
 
-import com.tapette.stock.bovespaHistoryFormater.math.Math;
+import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
 
-public class MathImp implements Math{
+public class MathImp implements StrockMath{
 
 	private double[][] matrix = null;
 	private double[] means = null;

@@ -17,6 +17,7 @@ public class TableDAOImp extends StockAdvancedAbstractImp implements TableDAO {
 	private HashMap<String, StockDate> hashStockDate = new HashMap<String, StockDate>();
 	
 	
+	@Override
 	public boolean add(StockEntry e) {
 		addStrockName(e);
 		addStrockDate(e);
