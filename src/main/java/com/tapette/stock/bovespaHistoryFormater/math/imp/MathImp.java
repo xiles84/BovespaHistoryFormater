@@ -8,7 +8,12 @@ public class MathImp implements StrockMath{
 
 	private double[][] matrix = null;
 	private double[] means = null;
+	private double[] meansUp = null;
+	private double[] meansDown = null;
 	private double[][] cov = null;
+	private double[][] covUp = null;
+	private double[][] covDown = null;
+	
 
 	public MathImp(double[][] matrix) {
 		this.matrix = matrix;
@@ -17,21 +22,36 @@ public class MathImp implements StrockMath{
 	@Override
 	public double[] getMeans() {
 		if(this.means != null) return this.means;
+		int[] ponder = new int[matrix.length];
+		Arrays.fill(ponder, 1);
+		getPonderedMeans(ponder);
+		return this.means;
+	}
+	
+	@Override
+	public double[] getPonderedMeans(int[] ponder) {
+		if(this.means != null) return this.means;
 		int[] counter = new int[matrix[0].length];
 		this.means = new double[matrix[0].length];
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				if(matrix[i][j] >= 0) {
-					counter[j]++;
+					counter[j] = counter[j] + ponder[i];
 					this.means[j] = this.means[j] + matrix[i][j];
 				}
 			}
 		}
 		for (int i = 0; i < this.means.length; i++) {
-			if(counter[i] <= 0)
+			if(counter[i] <= 0) {
 				this.means[i] = -1;
-			else
+				this.means[i] = -1;
+				this.means[i] = -1;
+			}
+			else {
+				this.meansUp[i] = means[i];
+				this.meansDown[i] = counter[i];
 				this.means[i] = means[i]/counter[i];
+			}
 		}
 		return this.means;
 	}
@@ -59,10 +79,16 @@ public class MathImp implements StrockMath{
 					}
 		for (int i = 0; i < this.cov.length; i++) {
 			for (int j = 0; j < this.cov[i].length; j++) {
-				if(counter[i][j] <= 1)
+				if(counter[i][j] <= 1) {
+					this.covUp[i][j] = -1;
+					this.covUp[i][j] = -1;
 					this.cov[i][j] = -1;
-				else
+				}
+				else {
+					this.covUp[i][j] = this.cov[i][j];
+					this.covDown[i][j] = counter[i][j];
 					this.cov[i][j] = this.cov[i][j]/(counter[i][j]-1);
+				}
 			}
 		}
 		for (int i = 1; i < this.cov.length; i++)

@@ -11,8 +11,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.tapette.stock.bovespaHistoryFormater.file.Formater;
-import com.tapette.stock.bovespaHistoryFormater.file.imp.FormaterImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
@@ -30,15 +30,15 @@ public class Runner {
 
 
 
-	/*public static void test1(String[] args) {
-		Formater form = new FormaterImp();
+	public static void test1(String[] args) {
+		Formater form = new Formater();
 		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
 
 			form.execute();
-			TableDAOImp aa = form.getList();
+			TableDAO aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
 			System.out.println("");
@@ -83,12 +83,12 @@ public class Runner {
 	}
 
 	public static void test2(String[] args) {
-		Formater form = new FormaterImp();
+		Formater form = new Formater();
 		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 
 			form.execute();
-			TableDAOImp aa = form.getList();
+			TableDAO aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
 			System.out.println("");
@@ -156,7 +156,7 @@ public class Runner {
 		}
 		System.out.println(System.getProperties());
 
-	}*/
+	}
 
 	public static void realCode(String[] args) throws Exception {
 

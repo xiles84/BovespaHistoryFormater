@@ -1,5 +1,9 @@
 package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
 
-public class StockAdvancedAbstractImp {
+import java.util.ArrayList;
+
+import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+
+public class StockAdvancedAbstractImp extends ArrayList<StockEntry>{
 
 }

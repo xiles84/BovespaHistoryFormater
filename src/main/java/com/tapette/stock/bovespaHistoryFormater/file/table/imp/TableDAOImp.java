@@ -5,12 +5,10 @@ import java.util.HashMap;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockAdvancedAbstractImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockDate;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockName;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StocksAbstractImp;
 
-public class TableDAOImp extends StockAdvancedAbstractImp implements TableDAO {
+public class TableDAOImp extends ArrayList<StockEntry> implements TableDAO {
 	
 	private static final long serialVersionUID = 1574990503341685712L;
 	private HashMap<String, StockName> hashStockName = new HashMap<String, StockName>();

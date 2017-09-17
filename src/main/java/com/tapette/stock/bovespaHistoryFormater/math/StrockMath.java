@@ -10,4 +10,6 @@ public interface StrockMath {
 
 	double[][] getMatrix();
 
+	double[] getPonderedMeans(int[] ponder);
+
 }
