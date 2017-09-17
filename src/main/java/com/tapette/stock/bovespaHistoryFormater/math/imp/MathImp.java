@@ -13,6 +13,7 @@ public class MathImp implements StrockMath{
 	private double[][] cov = null;
 	private double[][] covUp = null;
 	private double[][] covDown = null;
+	private int[] ponder = null;
 	
 
 	public MathImp(double[][] matrix) {
@@ -30,14 +31,20 @@ public class MathImp implements StrockMath{
 	
 	@Override
 	public double[] getPonderedMeans(int[] ponder) {
-		if(this.means != null) return this.means;
+		if(this.means != null &&
+				this.ponder != null &&
+				Arrays.equals(ponder,this.ponder))
+			return this.means;
+		this.ponder = ponder;
 		int[] counter = new int[matrix[0].length];
 		this.means = new double[matrix[0].length];
+		this.meansUp = new double[matrix[0].length];
+		this.meansDown = new double[matrix[0].length];
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				if(matrix[i][j] >= 0) {
 					counter[j] = counter[j] + ponder[i];
-					this.means[j] = this.means[j] + matrix[i][j];
+					this.means[j] = this.means[j] + ponder[i] * matrix[i][j];
 				}
 			}
 		}
@@ -70,13 +77,16 @@ public class MathImp implements StrockMath{
 		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
 		this.cov = new double[getMeans().length][getMeans().length];
-		for (int i = 0; i < matrix.length; i++)
-			for (int j = 0; j < matrix[i].length; j++)
-				for (int k = j; j <= k && k < matrix[i].length; k++)
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				for (int k = j; j <= k && k < matrix[i].length; k++) {
 					if(matrix[i][j] >=0 && matrix[i][k] >= 0) {
-						this.cov[j][k] = ponder[i] * (matrix[i][j] - this.means[j]) * (matrix[i][k] - this.means[k]);
+						this.cov[j][k] = this.cov[j][k] + ponder[i] * (matrix[i][j] * this.meansDown[j] - this.meansUp[j]) * (matrix[i][k] * this.meansDown[k] - this.meansUp[k]) / (this.meansDown[j] * this.meansDown[k]);
 						counter[j][k] = counter[j][k] + ponder[i];
 					}
+				}
+			}
+		}
 		for (int i = 0; i < this.cov.length; i++) {
 			for (int j = 0; j < this.cov[i].length; j++) {
 				if(counter[i][j] <= 1) {
