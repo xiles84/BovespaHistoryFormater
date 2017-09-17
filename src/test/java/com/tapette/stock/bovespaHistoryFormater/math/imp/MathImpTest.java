@@ -46,11 +46,45 @@ public class MathImpTest {
 
 	@Test
 	public void testGetSimpleCovariance() {
-		fail("Not yet implemented");
+		double[][] covariance = new double[4][4];
+		covariance[0] = new double[]{5d/3d , 10d/3d , 0 , 6.5d/3d};
+		covariance[1] = new double[]{10d/3d , 20d/3d , 0 , 13d/3d};
+		covariance[2] = new double[]{0 , 0 , 0 , 0};
+		covariance[3] = new double[]{6.5d/3d , 13d/3d , 0 , 8.75d/3d};
+		try {
+			if(math != null && !Arrays.equals(math.getSimpleCovariance()[0],covariance[0]))
+				fail("Not working[0] Expected X Got: {" + Arrays.toString(covariance[0]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[0]) + "}");
+			if(math != null && !Arrays.equals(math.getSimpleCovariance()[1],covariance[1]))
+				fail("Not working[1] Expected X Got: {" + Arrays.toString(covariance[1]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[1]) + "}");
+			if(math != null && !Arrays.equals(math.getSimpleCovariance()[2],covariance[2]))
+				fail("Not working[2] Expected X Got: {" + Arrays.toString(covariance[2]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[2]) + "}");
+			if(math != null && !Arrays.equals(math.getSimpleCovariance()[3],covariance[3]))
+				fail("Not working[3] Expected X Got: {" + Arrays.toString(covariance[3]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[3]) + "}");
+		} catch (Exception e) {
+			fail("entered the exception: " + e);
+		}
 	}
 
 	@Test
 	public void testGetPonderedCovariance() {
+		int[] ponder = new int[] {1 , 2 , 3 , 4};
+		double[][] covariance = new double[4][4];
+		covariance[0] = new double[]{12.5d/9d , 25d/9d , 0 , 15.25d/9d};
+		covariance[1] = new double[]{25d/9d , 50d/9d , 0 , 30.5d/9d};
+		covariance[2] = new double[]{0 , 0 , 0 , 0};
+		covariance[3] = new double[]{15.25d/9d , 30.5d/9d , 0 , 19.125d/9d};
+		try {
+			if(math != null && !Arrays.equals(math.getPonderedCovariance(ponder)[0],covariance[0]))
+				fail("Not working[0] Expected X Got: {" + Arrays.toString(covariance[0]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[0]) + "}");
+			if(math != null && !Arrays.equals(math.getPonderedCovariance(ponder)[1],covariance[1]))
+				fail("Not working[1] Expected X Got: {" + Arrays.toString(covariance[1]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[1]) + "}");
+			if(math != null && !Arrays.equals(math.getPonderedCovariance(ponder)[2],covariance[2]))
+				fail("Not working[2] Expected X Got: {" + Arrays.toString(covariance[2]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[2]) + "}");
+			if(math != null && !Arrays.equals(math.getPonderedCovariance(ponder)[3],covariance[3]))
+				fail("Not working[3] Expected X Got: {" + Arrays.toString(covariance[3]) + "} X {" + Arrays.toString(math.getSimpleCovariance()[3]) + "}");
+		} catch (Exception e) {
+			fail("entered the exception: " + e);
+		}
 		fail("Not yet implemented");
 	}
 

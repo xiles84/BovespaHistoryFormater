@@ -74,15 +74,22 @@ public class MathImp implements StrockMath{
 
 	@Override
 	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
+		if(this.cov != null &&
+				this.ponder != null &&
+				Arrays.equals(ponder,this.ponder))
+			return this.cov;
 		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
 		this.cov = new double[getMeans().length][getMeans().length];
+		this.covUp = new double[getMeans().length][getMeans().length];
+		this.covDown = new double[getMeans().length][getMeans().length];
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				for (int k = j; j <= k && k < matrix[i].length; k++) {
 					if(matrix[i][j] >=0 && matrix[i][k] >= 0) {
 						this.cov[j][k] = this.cov[j][k] + ponder[i] * (matrix[i][j] * this.meansDown[j] - this.meansUp[j]) * (matrix[i][k] * this.meansDown[k] - this.meansUp[k]) / (this.meansDown[j] * this.meansDown[k]);
 						counter[j][k] = counter[j][k] + ponder[i];
+						System.out.println("this.cov[" + j + "][" + k + "] = " + this.cov[j][k] + " " + matrix[i][j] + " " + this.meansUp[j] + " " + matrix[i][k] + " " + this.meansUp[k] );
 					}
 				}
 			}
