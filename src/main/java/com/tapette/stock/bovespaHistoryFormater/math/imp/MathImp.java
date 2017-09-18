@@ -13,7 +13,6 @@ public class MathImp implements StrockMath{
 	private double[][] cov = null;
 	private double[][] covUp = null;
 	private double[][] covDown = null;
-	private int[] ponder = null;
 	
 
 	public MathImp(double[][] matrix) {
@@ -31,11 +30,10 @@ public class MathImp implements StrockMath{
 	
 	@Override
 	public double[] getPonderedMeans(int[] ponder) {
-		if(this.means != null &&
+		/*if(this.means != null &&
 				this.ponder != null &&
 				Arrays.equals(ponder,this.ponder))
-			return this.means;
-		this.ponder = ponder;
+			return this.means;*/
 		int[] counter = new int[matrix[0].length];
 		this.means = new double[matrix[0].length];
 		this.meansUp = new double[matrix[0].length];
@@ -45,6 +43,7 @@ public class MathImp implements StrockMath{
 				if(matrix[i][j] >= 0) {
 					counter[j] = counter[j] + ponder[i];
 					this.means[j] = this.means[j] + ponder[i] * matrix[i][j];
+//					System.out.println("counter[" + j + "] = " + counter[j] + "----" + matrix[i][j]);
 				}
 			}
 		}
@@ -65,7 +64,6 @@ public class MathImp implements StrockMath{
 
 	@Override
 	public double[][] getSimpleCovariance() throws Exception {
-		if(this.cov != null) return this.cov;
 		int[] ponder = new int[matrix.length];
 		Arrays.fill(ponder, 1);
 		getPonderedCovariance(ponder);
@@ -74,22 +72,33 @@ public class MathImp implements StrockMath{
 
 	@Override
 	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
-		if(this.cov != null &&
+		/*if(this.cov != null &&
 				this.ponder != null &&
 				Arrays.equals(ponder,this.ponder))
-			return this.cov;
+			return this.cov;*/
 		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
+		int[][] counterMean = new int[getMeans().length][getMeans().length];
+		double[][] localMeans = new double[getMeans().length][getMeans().length];
 		this.cov = new double[getMeans().length][getMeans().length];
 		this.covUp = new double[getMeans().length][getMeans().length];
 		this.covDown = new double[getMeans().length][getMeans().length];
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
+				for (int k = 0; k < matrix[i].length; k++) {
+					if(matrix[i][j] >=0 && matrix[i][k] >= 0) {
+						localMeans[j][k] = localMeans[j][k] + ponder[i] * matrix[i][j];
+						counterMean[j][k] = counterMean[j][k] + ponder[i];
+					}
+				}
+			}
+		}
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
 				for (int k = j; j <= k && k < matrix[i].length; k++) {
 					if(matrix[i][j] >=0 && matrix[i][k] >= 0) {
-						this.cov[j][k] = this.cov[j][k] + ponder[i] * (matrix[i][j] * this.meansDown[j] - this.meansUp[j]) * (matrix[i][k] * this.meansDown[k] - this.meansUp[k]) / (this.meansDown[j] * this.meansDown[k]);
+						this.cov[j][k] = this.cov[j][k] + ponder[i] * (matrix[i][j] * counterMean[j][k] - localMeans[j][k]) * (matrix[i][k] * counterMean[k][j] - localMeans[k][j]) / (counterMean[j][k] * counterMean[k][j]);
 						counter[j][k] = counter[j][k] + ponder[i];
-						System.out.println("this.cov[" + j + "][" + k + "] = " + this.cov[j][k] + " " + matrix[i][j] + " " + this.meansUp[j] + " " + matrix[i][k] + " " + this.meansUp[k] );
 					}
 				}
 			}

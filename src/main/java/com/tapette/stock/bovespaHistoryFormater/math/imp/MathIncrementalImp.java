@@ -1,8 +1,11 @@
 package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
-import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
+public class MathIncrementalImp extends MathImp {
 
-public class MathIncrementalImp implements StrockMath {
+	public MathIncrementalImp(double[][] matrix) {
+		super(matrix);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public double[] getMeans() {
