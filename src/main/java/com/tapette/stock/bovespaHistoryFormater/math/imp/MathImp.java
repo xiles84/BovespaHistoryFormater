@@ -10,6 +10,8 @@ public class MathImp implements StrockMath{
 	private double[] means = null;
 	private double[] meansUp = null;
 	private double[] meansDown = null;
+	private int[] ponderMean = null;
+	private int[] ponderCov = null;
 	private double[][] cov = null;
 	private double[][] covUp = null;
 	private double[][] covDown = null;
@@ -30,10 +32,11 @@ public class MathImp implements StrockMath{
 	
 	@Override
 	public double[] getPonderedMeans(int[] ponder) {
-		/*if(this.means != null &&
-				this.ponder != null &&
-				Arrays.equals(ponder,this.ponder))
-			return this.means;*/
+		if(this.means != null &&
+				this.ponderMean != null &&
+				Arrays.equals(ponder,this.ponderMean))
+			return this.means;
+		this.ponderMean = ponder;
 		int[] counter = new int[matrix[0].length];
 		this.means = new double[matrix[0].length];
 		this.meansUp = new double[matrix[0].length];
@@ -72,10 +75,11 @@ public class MathImp implements StrockMath{
 
 	@Override
 	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
-		/*if(this.cov != null &&
-				this.ponder != null &&
-				Arrays.equals(ponder,this.ponder))
-			return this.cov;*/
+		if(this.cov != null &&
+				this.ponderCov != null &&
+				Arrays.equals(ponder,this.ponderCov))
+			return this.cov;
+		this.ponderCov = ponder;
 		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
 		int[][] counterMean = new int[getMeans().length][getMeans().length];

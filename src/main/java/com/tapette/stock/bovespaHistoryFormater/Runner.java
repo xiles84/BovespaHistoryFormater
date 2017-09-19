@@ -2,6 +2,7 @@ package com.tapette.stock.bovespaHistoryFormater;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,7 +23,8 @@ import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 public class Runner {
 
 	public static void main(String[] args) throws Exception {
-		realCode(args);
+		//		realCode(args);
+		test2(args);
 		//		StockGrouper aa = new StockGrouper();
 		//		TableSimple cc = aa.get("aa");
 		//		System.out.println(((Object)cc).hashCode());
@@ -31,8 +33,9 @@ public class Runner {
 
 
 	public static void test1(String[] args) {
-		Formater form = new Formater();
-		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
+		String path = "C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT";
+		Formater form = new Formater(path);
+//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
@@ -83,10 +86,11 @@ public class Runner {
 	}
 
 	public static void test2(String[] args) {
-		Formater form = new Formater();
-		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
+		String path = "C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT";
+		Formater form = new Formater(path);
+		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
+		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
-
 			form.execute();
 			TableDAO aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
@@ -105,38 +109,29 @@ public class Runner {
 
 			nn.execute();
 
-			MathImp math = new MathIncrementalImp(nn.getResultIntArray());
+			StrockMath math = new MathIncrementalImp(nn.getResultIntArray());
 			math.getMeans();
 			math.getSimpleCovariance();
 
-			for (int i = 0; i < math.getMeans().length; i++)
-				System.out.print(math.getMeans()[i]+ "\t\t\t");
+			System.out.println(Arrays.toString(math.getMeans()));
 
-			System.out.println("\n\n\n\n");
+			System.out.println("");
 
 			for (int i = 0; i < nn.getResultIntArray().length; i++) {
-				for (int j = 0; j < nn.getResultIntArray()[i].length; j++) {
-					System.out.print(nn.getResultIntArray()[i][j] + "\t\t\t");
-				}
-				System.out.print("\n");
+				System.out.println(Arrays.toString(nn.getResultIntArray()[i]));
 			}
 
-			System.out.println("\n\n\n\n");
+			System.out.println("");
 
 			for (int i = 0; i < math.getMatrix().length; i++) {
-				for (int j = 0; j < math.getMatrix()[i].length; j++) {
-					System.out.print(math.getMatrix()[i][j] + "\t\t\t");
-				}
-				System.out.print("\n");
+				System.out.println(Arrays.toString(math.getMatrix()[i]));
 			}
 
-			System.out.println("\n\n\n\n");
+			System.out.println("");
 
 			for (int i = 0; i < math.getSimpleCovariance().length; i++) {
-				for (int j = 0; j < math.getSimpleCovariance()[i].length; j++) {
-					System.out.print(math.getSimpleCovariance()[i][j] + "\t\t\t");
-				}
-				System.out.print("\n");
+				System.out.println(Arrays.toString(math.getSimpleCovariance()[i]));
+				System.out.print("");
 			}
 
 		} catch (Exception e) {
@@ -150,9 +145,9 @@ public class Runner {
 		File[] files = new File("./").listFiles();
 
 		for (File file : files) {
-		    if (file.isFile()) {
-		        System.out.println((file.getName()));
-		    }
+			if (file.isFile()) {
+				System.out.println((file.getName()));
+			}
 		}
 		System.out.println(System.getProperties());
 
