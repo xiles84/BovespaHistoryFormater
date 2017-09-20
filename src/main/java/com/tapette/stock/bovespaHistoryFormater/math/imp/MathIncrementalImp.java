@@ -1,6 +1,5 @@
 package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;

@@ -72,6 +72,10 @@ public class StockEntry {
 		return array.get(18).toString();
 	}
 	
+	public List<StringBuilder> getFields() {
+		return array;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();
