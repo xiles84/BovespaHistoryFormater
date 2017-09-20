@@ -29,7 +29,7 @@ public class Formater {
 		File[] listOfFiles = null;
 
 		for (int i = 0; i < this.fileDir.size() ; i++) {
-			folder = new File(this.fileDir.get(i));
+			folder = getResource(this.fileDir.get(i));
 			listOfFiles = folder.listFiles();
 			for (int j = 0; j < listOfFiles.length; j++) {
 				if (listOfFiles[j].isFile())
@@ -88,6 +88,16 @@ public class Formater {
 	
 	protected BufferedReader bufferedReader(FileReader fileReader) {
 		return new BufferedReader(fileReader);
+	}
+	
+	protected File getResource(String filePath) throws IOException {
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = null;
+		if(classLoader.getResource(filePath) != null)
+			file = new File(classLoader.getResource(filePath).getFile());
+		if(file == null || !file.exists())
+			file = new File(filePath);
+		return file;
 	}
 
 }

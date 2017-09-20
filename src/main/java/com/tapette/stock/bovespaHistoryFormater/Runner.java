@@ -1,6 +1,7 @@
 package com.tapette.stock.bovespaHistoryFormater;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,17 +15,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.tapette.stock.bovespaHistoryFormater.file.Formater;
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
-import com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp;
 import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 
 public class Runner {
 
 	public static void main(String[] args) throws Exception {
 		//		realCode(args);
-		test2(args);
+		realCode(args);
 		//		StockGrouper aa = new StockGrouper();
 		//		TableSimple cc = aa.get("aa");
 		//		System.out.println(((Object)cc).hashCode());
@@ -33,10 +32,9 @@ public class Runner {
 
 
 	public static void test1(String[] args) {
-		String path = "C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT";
-		Formater form = new Formater(path);
 //		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
+			Formater form = new Formater("stocks/");
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
 
@@ -161,9 +159,12 @@ public class Runner {
 
 		PropertyConfigurator.configureAndWatch("log4j.properties",15000);
 
-		StrockMath aa = (StrockMath)context.getBean("Math");
+		Formater aa = (Formater)context.getBean("Formater");
+//		StrockMath aa = (StrockMath)context.getBean("Math");
+		aa.execute();
+		System.out.println(aa.getList().size());
 
-		for (int i = 0; i < aa.getSimpleCovariance().length; i++) {
+		/*for (int i = 0; i < aa.getSimpleCovariance().length; i++) {
 			for (int j = 0; j < aa.getSimpleCovariance()[0].length; j++) {
 				System.out.print(aa.getSimpleCovariance()[i][j] + " ");
 			}
@@ -180,7 +181,17 @@ public class Runner {
 			System.out.println();
 		}
 
-
+*/
+	}
+	
+	public class teste{
+		
+		public String exec() throws IOException {
+			ClassLoader classLoader = getClass().getClassLoader();
+			File file = new File(classLoader.getResource("stocks/").getFile());
+			return file.getCanonicalPath().toString();
+		}
+		
 	}
 
 }
