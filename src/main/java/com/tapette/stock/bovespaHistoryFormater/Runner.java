@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,6 +17,7 @@ import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
+import com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp;
 import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 
 public class Runner {
@@ -32,13 +33,11 @@ public class Runner {
 
 
 	public static void test1(String[] args) {
-//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
+		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			Formater form = new Formater("stocks/");
 			HashMap<String, StockEntry> teste = new HashMap<>();
 			teste.put("teste1" , null);
-
-			form.execute();
 			TableDAO aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
@@ -85,11 +84,10 @@ public class Runner {
 
 	public static void test2(String[] args) {
 		String path = "C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT";
-		Formater form = new Formater(path);
 		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
-			form.execute();
+			Formater form = new Formater(path);
 			TableDAO aa = form.getList();
 			System.out.println(aa.getStrockNameTable("IVVB11").
 					getProximunTimesPrice("20190603"));
@@ -151,18 +149,53 @@ public class Runner {
 
 	}
 
-	public static void realCode(String[] args) throws Exception {
+	public static void realCode(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("BovespaHistoryFormater.xml");
 
-		Logger log = Logger.getLogger(Runner.class);
+//		Logger log = Logger.getLogger(Runner.class);
 
 		PropertyConfigurator.configureAndWatch("log4j.properties",15000);
 
-		Formater aa = (Formater)context.getBean("Formater");
-//		StrockMath aa = (StrockMath)context.getBean("Math");
-		aa.execute();
-		System.out.println(aa.getList().size());
+		MathImp cc = (MathImp)context.getBean("Math");
+		MathIncrementalImp dd = (MathIncrementalImp)context.getBean("MathIncremental");
+		int[] ff = (int[])context.getBean("TupleImp");
+
+		System.out.println("===========NUMDAYS===========");
+		
+//		System.out.println(((List<String>)context.getBean("StockGroupDates")).size());
+		
+		System.out.println("===========MATRIX============");
+		try {
+			for (int i = 0; i < dd.getPonderedCovariance(ff).length; i++) {
+				for (int j = 0; j < dd.getPonderedCovariance(ff)[i].length-1; j++) {
+					System.out.print(dd.getPonderedCovariance(ff)[i][j]+";");
+				}
+				System.out.println(dd.getPonderedCovariance(ff)[i][dd.getPonderedCovariance(ff)[i].length-1]);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		System.out.println("==========PRICE==============");
+
+
+		for (int i = 0; i < cc.getMatrix()[cc.getMatrix().length-1].length-1; i++)
+			System.out.print(cc.getMatrix()[cc.getMatrix().length-1][i]+";");
+		System.out.println(cc.getMatrix()[cc.getMatrix().length-1][cc.getMatrix()[cc.getMatrix().length-1].length-1]);
+
+		System.out.println("==========MEANS==============");
+
+
+		for (int i = 0; i < dd.getPonderedMeans(ff).length-1; i++)
+			System.out.print((dd.getPonderedMeans(ff)[i]+1)+";");
+		System.out.println((dd.getPonderedMeans(ff)[dd.getPonderedMeans(ff).length-1]+1));
+		
+		
+//		System.out.println(Arrays.toString(ff));
+
+		//		StrockMath aa = (StrockMath)context.getBean("Math");
 
 		/*for (int i = 0; i < aa.getSimpleCovariance().length; i++) {
 			for (int j = 0; j < aa.getSimpleCovariance()[0].length; j++) {
@@ -181,17 +214,17 @@ public class Runner {
 			System.out.println();
 		}
 
-*/
+		 */
 	}
-	
+
 	public class teste{
-		
+
 		public String exec() throws IOException {
 			ClassLoader classLoader = getClass().getClassLoader();
 			File file = new File(classLoader.getResource("stocks/").getFile());
 			return file.getCanonicalPath().toString();
 		}
-		
+
 	}
 
 }

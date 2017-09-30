@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
- <beans xmlns="http://www.springframework.org/schema/beans"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xmlns:context="http://www.springframework.org/schema/context"
-		xmlns:p="http://www.springframework.org/schema/p"
-		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 			http://www.springframework.org/schema/context
 			http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-  <!-- the application context definition for the springapp DispatcherServlet -->
-  
-  <bean name="Formater" class="com.tapette.stock.bovespaHistoryFormater.file.Formater">
-  	<constructor-arg index = "0">
-		<list>
-            <value>${stocks.file.dir.1}</value>
-        </list>
-  	</constructor-arg>
-  </bean>
-  
-  <!--bean name="TableDAO" class="com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp">
-  	<constructor-arg index = "0">
-		<list>
-            <value>${stocks.file.dir.1}</value>
-        </list>
-  	</constructor-arg>
-  </bean-->
-  
-  <!--bean id="MyClient" class="foo.MyClient">
-        <property name="endPoint" value="registryService.getEndPoint('bar')"/>
-  </bean-->
+	<!-- the application context definition for the springapp DispatcherServlet -->
 
-  <!--bean id="MyClient" class="foo.MyClient">
-        <property name="endPoint">
-            <bean factory-bean="registryService" factory-method="getEndPoint">
-                <constructor-arg value="bar"/>
-            </bean>
-        </property>
-  </bean-->
+	<bean name="Formater"
+		class="com.tapette.stock.bovespaHistoryFormater.file.Formater">
+		<constructor-arg index="0">
+			<list>
+				<value>${stocks.file.dir.1}</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg index="1" ref="StockList"/>
+	</bean>
 
+	<bean name="StockToSplit" class="java.lang.String">
+		<constructor-arg index="0" value="${stocks.list}" />
+	</bean>
+
+	<bean name="StockList" class="java.util.ArrayList">
+		<constructor-arg index="0" value="#{StockToSplit.split(';')}" />
+	</bean>
+
+	<bean id="StockGroupDates"
+		class="com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup"
+		factory-method="rotateDate">
+		<constructor-arg index="0" value="${stocks.date.start}" />
+		<constructor-arg index="1" value="${stocks.date.end}" />
+		<constructor-arg index="2" value="${stocks.date.interval}" />
+		<constructor-arg index="3" value="${stocks.date.max}" />
+	</bean>
+	
+	<bean id="StockGroup"
+		class="com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup">
+		<constructor-arg index="0" ref="StockList" />
+		<constructor-arg index="1" value="#{Formater.getList()}" />
+		<constructor-arg index="2" ref="StockGroupDates" />
+	</bean>
+	
+	<bean id="Math"
+		class="com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp">
+		<constructor-arg index="0" value="#{StockGroup.getResultIntArray()}" />
+	</bean>
+	
+	<bean id="MathIncremental"
+		class="com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp">
+		<constructor-arg index="0" value="#{StockGroup.getResultIntArray()}" />
+	</bean>
+	
+	<bean id="TupleImp"
+		class="com.tapette.stock.bovespaHistoryFormater.math.imp.TupleImp"
+		factory-method="getTuplet">
+		<constructor-arg index="0" ref="StockGroupDates" />
+	</bean>
+	
 </beans>

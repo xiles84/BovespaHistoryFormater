@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,14 +16,13 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import javassist.CtClass;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FormaterTest {
-	static Formater form = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		form = new Formater("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\test\\resources\\stocks");
 	}
 
 	@Test
@@ -33,7 +34,7 @@ public class FormaterTest {
 		form.execute();
 		for (int i = 0; i < form.getList().get(4).getFields().size(); i++)
 			assertEquals(stock.getFields().get(i).toString() , form.getList().get(4).getFields().get(i).toString());
-		assertEquals( 7, form.getList().size());
+		assertEquals( 14, form.getList().size());
 	}
 
 	@Test
@@ -64,5 +65,6 @@ public class FormaterTest {
 			for (int j = 0; j < form.getList().get(i).getFields().size(); j++)
 				assertEquals(stock.getFields().get(j).toString() , form.getList().get(i).getFields().get(j).toString());
 	}
+
 
 }
