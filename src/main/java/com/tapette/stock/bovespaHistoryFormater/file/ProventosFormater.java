@@ -113,7 +113,7 @@ public class ProventosFormater  implements Formaters{
 		for (int i = 0; i < stocks.size(); i++) {
 			url = new StringBuilder();
 			url.append("http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDetalhe.aspx?Sigla=").append(stocks.get(i).getCodigo()).append("&tipoFundo=Imobiliario&aba=abaPrincipal&idioma=pt-br");
-			Thread th = new SubThread(stocks.get(i).getCodigo() , new URL(url.toString()), table);
+			Thread th = new SubThread(stocks.get(i).getStock() , new URL(url.toString()), table);
 			th.start();
 		}
 		return true;
