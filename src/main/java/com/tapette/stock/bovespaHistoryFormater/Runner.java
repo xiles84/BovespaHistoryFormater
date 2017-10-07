@@ -32,7 +32,7 @@ public class Runner {
 
 
 
-	public static void test1(String[] args) {
+	/*public static void test1(String[] args) {
 		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		try {
 			Formater form = new Formater("stocks/");
@@ -80,9 +80,9 @@ public class Runner {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
-	public static void test2(String[] args) {
+	/*public static void test2(String[] args) {
 		String path = "C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT";
 		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
 		//		form.setFileStr("C:\\Users\\Xiles84\\Downloads\\Java\\GIT\\BovespaHistoryFormater\\src\\main\\resources\\stocks\\COTAHIST_A2017.TXT");
@@ -133,7 +133,7 @@ public class Runner {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	public static void test3(String[] args) {
 

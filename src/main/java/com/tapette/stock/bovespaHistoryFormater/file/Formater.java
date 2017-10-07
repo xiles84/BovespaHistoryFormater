@@ -10,50 +10,38 @@ import java.util.ArrayList;
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class Formater {
+public class Formater implements Formaters{
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
-	private ArrayList<String> stocks = new ArrayList<String>();
+	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 	private TableDAO list = null;
 
-	public Formater(String fileDir) throws Exception {
-		this.fileDir.add(fileDir);
-		execute();
-	}
 
-	public Formater(String fileDir , ArrayList<String> stocks) throws Exception {
+	public Formater(String fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir.add(fileDir);
 		this.stocks = stocks;
-		execute();
 	}
 
-	public Formater(ArrayList<String> fileDir) throws Exception {
-		this.fileDir = fileDir;
-		execute();
-	}
-
-	public Formater(ArrayList<String> fileDir , ArrayList<String> stocks) throws Exception {
+	
+	public Formater(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir = fileDir;
 		this.stocks = stocks;
-		execute();
 	}
 
+	@Override
 	public boolean execute() throws Exception {
-		System.out.println("1");
 		File folder = null;
 		File[] listOfFiles = null;
 
 		for (int i = 0; i < getFileDir().size() ; i++) {
-			System.out.println("2");
 			folder = getResource(getFileDir().get(i));
-			System.out.println("3");
 			listOfFiles = folder.listFiles();
 			for (int j = 0; j < listOfFiles.length; j++)
 				if (listOfFiles[j].isFile())
 					run(listOfFiles[j]);
 		}
-		System.out.println("4");
 		return true;
 	}
 
@@ -78,7 +66,7 @@ public class Formater {
 						list.add(new StockEntry(text));
 					else
 						for (int j = 0; j < stocks.size(); j++)
-							if(text.contains(this.stocks.get(j)))
+							if(text.contains(this.stocks.get(j).getStock()))
 								list.add(new StockEntry(text));
 				}
 			}
@@ -97,9 +85,10 @@ public class Formater {
 		return true;
 	}
 
+	@Override
 	public TableDAO getList() throws Exception {
 		if(list == null)
-			throw new Exception(this.getClass().getName() + "was not executed");
+			execute();
 		return list;
 	}
 
@@ -116,7 +105,6 @@ public class Formater {
 	}
 
 	protected File getResource(String filePath) throws IOException {
-		System.out.println("getResource");
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = null;
 		if(classLoader.getResource(filePath) != null)
@@ -125,7 +113,8 @@ public class Formater {
 			file = new File(filePath);
 		return file;
 	}
-	
+
+	@Override
 	public ArrayList<String> getFileDir(){
 		return this.fileDir;
 	}
