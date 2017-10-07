@@ -7,8 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
@@ -63,11 +63,11 @@ public class Formater implements Formaters{
 			while ((text = readLine(reader)) != null && text.length() == 245) {
 				if(!text.startsWith("00COTAHIST") && !text.startsWith("99COTAHIST")) {
 					if(this.stocks.isEmpty())
-						list.add(new StockEntry(text));
+						list.add(new StockEntryXLSImp(text));
 					else
 						for (int j = 0; j < stocks.size(); j++)
 							if(text.contains(this.stocks.get(j).getStock()))
-								list.add(new StockEntry(text));
+								list.add(new StockEntryXLSImp(text));
 				}
 			}
 		} catch (FileNotFoundException e) {

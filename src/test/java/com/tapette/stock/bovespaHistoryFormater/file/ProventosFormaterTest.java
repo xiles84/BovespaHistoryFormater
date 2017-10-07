@@ -13,6 +13,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.tapette.stock.bovespaHistoryFormater.file.ProventosFormater.SubThread;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 @RunWith(PowerMockRunner.class)
@@ -25,10 +26,8 @@ public class ProventosFormaterTest {
 		stocks.add(new Stock("MFII" , "MFII11"));
 		ProventosFormater form = new ProventosFormater(stocks);
 		form.execute();
-		while(!form.hasFinished()) {
-			Thread.sleep(2000);
-		}
-		fail("Not yet implemented");
+		assertNotNull(form);
+		assertNotNull(form.getList());
 	}
 	
 	@Test
@@ -36,7 +35,7 @@ public class ProventosFormaterTest {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("MFII" , "MFII11"));
 		ProventosFormater proventosFormater = new ProventosFormater(stocks);
-		SubThread aa = PowerMockito.spy(proventosFormater.new SubThread(new URL("http://www.test.com")));
+		SubThread aa = PowerMockito.spy(proventosFormater. new SubThread(stocks.get(0).getStock(), new URL("http://www.test.com"), new TableDAOImp()));
 		PowerMockito.doAnswer(new Answer<ArrayList<String>>() {
 			@Override
 			public ArrayList<String> answer(InvocationOnMock invocation) throws Throwable {

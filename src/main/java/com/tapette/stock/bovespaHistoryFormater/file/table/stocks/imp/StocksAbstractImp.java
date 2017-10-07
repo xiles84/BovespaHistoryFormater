@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.Stocks;
 
 public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements Stocks{
@@ -51,7 +52,7 @@ public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements
 			table.add(getFirstStrockEntryByDate(strList.get(i)));
 		}
 		if(table.size()<1)
-			table.add(new StockEntry(""));
+			table.add(new StockEntryXLSImp(""));
 		return table;
 	}
 	

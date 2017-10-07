@@ -9,6 +9,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryProvImp;
 import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
@@ -16,19 +17,30 @@ public class ProventosFormater  implements Formaters{
 
 	class SubThread extends Thread{
 
+		String stock = null;
 		URL url = null;
 		int[] tags = new int[7]; 
+		TableDAO table = null;
 
-		public SubThread(URL url) {
+		public SubThread(String stock ,URL url, TableDAO table) {
+			this.stock = stock;
 			this.url = url;
+			this.table = table;
 		}
 
 		@Override
 		public void run() {
 			super.run();
 			ArrayList<String> list = getProventos();
-			for (int i = 0; i < list.size(); i++)
-				parseTags(list.get(i));
+			String[] stringArray = new String[15];
+			for (int i = 0; i < list.size(); i++) {
+				try {
+					stringArray = parseTags(list.get(i)).split(";");
+					System.out.println((new StockEntryProvImp(stock, stringArray[1], stringArray[3], stringArray[4], stringArray[3]).toString()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}
 
 		private ArrayList<String> getProventos(){
@@ -59,29 +71,36 @@ public class ProventosFormater  implements Formaters{
 			return list;
 		}
 
-		private void parseTags(String str) {
+		private String parseTags(String str) throws Exception {
 			if(str.contains("/>")) {
-				System.out.println("Major error");
-				return;
+				throw new Exception("Invalid sequence of character \"/>\" found [" + str + "]");
 			}
-			parseTags2(str, str.indexOf(">"));
-			System.out.println();
+			StringBuilder strBdr = new StringBuilder();
+			parseTags2(str, str.indexOf(">"), strBdr);
+			return strBdr.toString();
 		}
 
-		private void parseTags2(String str, int InitialTag) {
-			if(str.indexOf("<",InitialTag)<0)
+		private void parseTags2(String str, int initialTag, StringBuilder strBdr) {
+			if(str.indexOf("<",initialTag)<0)
 				return;
-			if(!(str.substring(InitialTag+1, str.indexOf("<",InitialTag))).isEmpty()) {
-				System.out.print(str.substring(InitialTag+1, str.indexOf("<",InitialTag)));
-				System.out.print(";");
-			}
-			parseTags2(str, str.indexOf(">",str.indexOf("<",InitialTag)));
+			int localClose = str.indexOf("<",initialTag);
+			if(!(str.substring(initialTag+1, localClose)).isEmpty())
+				if(localClose == str.lastIndexOf("<",initialTag))
+					strBdr.append(str.substring(initialTag+1, localClose));
+				else{
+					strBdr.append(str.substring(initialTag+1, localClose)).append(";");
+					parseTags2(str, str.indexOf(">",localClose), strBdr);
+				}
+			else
+				parseTags2(str, str.indexOf(">",localClose), strBdr);
 		}
 
 	}
 
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 	volatile int count = 0;
+	private TableDAO table = null;
+	private int loopTimeout = 10;
 
 	public ProventosFormater(ArrayList<Stock> stocks) {
 		this.stocks = stocks;
@@ -90,21 +109,26 @@ public class ProventosFormater  implements Formaters{
 	@Override
 	public boolean execute() throws Exception {
 		StringBuilder url = null;
+		table = new TableDAOImp();
 		for (int i = 0; i < stocks.size(); i++) {
 			url = new StringBuilder();
 			url.append("http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDetalhe.aspx?Sigla=").append(stocks.get(i).getCodigo()).append("&tipoFundo=Imobiliario&aba=abaPrincipal&idioma=pt-br");
-			Thread th = new SubThread(new URL(url.toString()));
+			Thread th = new SubThread(stocks.get(i).getCodigo() , new URL(url.toString()), table);
 			th.start();
 		}
-		return false;
+		return true;
 	}
 
 	@Override
 	public TableDAO getList() throws Exception {
-		// TODO Auto-generated method stub
-		TableDAO aa = new TableDAOImp();
-		aa.
-		return null;
+		if(table == null)
+			execute();
+		int loopCount = 0;
+		while(!hasFinished() && loopCount < loopTimeout*2) {
+			Thread.sleep(500);
+			loopCount++;
+		}
+		return table;
 	}
 
 	@Override

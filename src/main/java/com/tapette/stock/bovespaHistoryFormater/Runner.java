@@ -2,21 +2,11 @@ package com.tapette.stock.bovespaHistoryFormater;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 //import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.tapette.stock.bovespaHistoryFormater.file.Formater;
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockGroup;
-import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
 import com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp;
 import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 
