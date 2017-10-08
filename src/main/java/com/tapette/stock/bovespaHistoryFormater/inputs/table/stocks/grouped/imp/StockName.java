@@ -1,12 +1,12 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StocksAdvanced;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
 
-public class StockName extends StocksAbstractImp implements StocksAdvanced {
+public class StockName extends StocksAbstractImp implements StocksEntryGrouped {
 	
 	private static final long serialVersionUID = -2734473156485806924L;
 

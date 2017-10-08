@@ -6,8 +6,10 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterBovespaXLS;
+
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(Formater.class)
+@PrepareForTest(FormaterBovespaXLS.class)
 public class FormaterTest2 {
 	
 	@Test

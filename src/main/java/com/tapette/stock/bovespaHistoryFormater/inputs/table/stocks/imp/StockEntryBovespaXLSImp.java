@@ -1,22 +1,22 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
-public class StockEntryXLSImp implements StockEntry {
+public class StockEntryBovespaXLSImp implements StockEntry {
 
 	List<StringBuilder> array = new ArrayList<StringBuilder>();
 	
-	public StockEntryXLSImp() {
+	public StockEntryBovespaXLSImp() {
 		super();
 	}
 
 	
-	public StockEntryXLSImp(String text) {
+	public StockEntryBovespaXLSImp(String text) {
 		parseColumns(new StringBuilder(text));
 	}
 	

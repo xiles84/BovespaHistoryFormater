@@ -1,12 +1,12 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.imp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockDate;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp.StockName;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockDate;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
 
 public class TableDAOImp extends ArrayList<StockEntry> implements TableDAO {
 	

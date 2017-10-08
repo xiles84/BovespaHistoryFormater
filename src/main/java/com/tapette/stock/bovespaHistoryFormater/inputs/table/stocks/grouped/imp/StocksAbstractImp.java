@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,11 +7,11 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.Stocks;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 
-public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements Stocks{
+public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements StocksEntryGrouped{
 	
 	private static final long serialVersionUID = 2888786708507621471L;
 	protected Type type;
@@ -26,14 +26,22 @@ public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements
 		this.type = type;
 	}
 
+	@Override
+	public abstract String getProximunTimesPrice(String date) throws Exception;
+	
+	@Override
 	public abstract StockEntry getFirstStrockEntryByName(String str) throws Exception;
 
+	@Override
 	public abstract StockEntry getFirstStrockEntryByDate(String str) throws Exception;
 	
+	@Override
 	public abstract List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception;
 	
+	@Override
 	public abstract List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception;
 	
+	@Override
 	public List<String> getDateList() {
 		if(dateList != null)
 			return dateList;
@@ -46,13 +54,14 @@ public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements
 		return dateList;
 	}
 	
+	@Override
 	public List<StockEntry> getFirstStockEntryByNameJumpDays(List<String> strList, String startDate, String endDate, int interval) throws Exception {
 		List<StockEntry> table = new ArrayList<StockEntry>();
 		for (int i = 0; i < size(); i++) {
 			table.add(getFirstStrockEntryByDate(strList.get(i)));
 		}
 		if(table.size()<1)
-			table.add(new StockEntryXLSImp(""));
+			table.add(new StockEntryBovespaXLSImp(""));
 		return table;
 	}
 	
@@ -89,6 +98,7 @@ public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements
 		return line.getClosePrice();
 	}
 
+	@Override
 	public Type getType() {
 		return type;
 	}

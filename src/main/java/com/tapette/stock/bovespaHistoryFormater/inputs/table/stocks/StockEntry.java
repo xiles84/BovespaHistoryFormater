@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks;
 
 import java.util.Calendar;
 import java.util.List;

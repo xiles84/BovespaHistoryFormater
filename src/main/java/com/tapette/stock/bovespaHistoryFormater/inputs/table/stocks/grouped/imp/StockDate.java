@@ -1,13 +1,13 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
-import com.tapette.stock.bovespaHistoryFormater.file.table.stocks.StocksAdvanced;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 
-public class StockDate extends StocksAbstractImp implements StocksAdvanced {
+public class StockDate extends StocksAbstractImp implements StocksEntryGrouped {
 
 	private static final long serialVersionUID = 1147681261258269178L;
 
@@ -41,7 +41,7 @@ public class StockDate extends StocksAbstractImp implements StocksAdvanced {
 			if(getFirstStrockEntryByName(strList.get(i)) != null){
 				table.add(getFirstStrockEntryByName(strList.get(i)));
 			}else {
-				table.add(new StockEntryXLSImp());
+				table.add(new StockEntryBovespaXLSImp());
 			}
 		}
 		return table;

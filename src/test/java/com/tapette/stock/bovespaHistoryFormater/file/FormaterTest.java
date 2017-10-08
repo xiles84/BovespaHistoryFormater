@@ -13,8 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterBovespaXLS;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -31,8 +32,8 @@ public class FormaterTest {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("ABCP" , "ABCP11"));
 		stocks.add(new Stock("XTED" , "XTED11"));
-		Formater form = new Formater(file.getAbsolutePath(), stocks);
-		StockEntry stock = new StockEntryXLSImp("012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255");
+		FormaterBovespaXLS form = new FormaterBovespaXLS(file.getAbsolutePath(), stocks);
+		StockEntry stock = new StockEntryBovespaXLSImp("012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255");
 		assertEquals( 2, form.getList().size());
 		for (int i = 0; i < form.getList().get(0).getFields().size(); i++)
 			assertEquals(stock.getFields().get(i).toString() , form.getList().get(0).getFields().get(i).toString());
@@ -40,7 +41,7 @@ public class FormaterTest {
 
 	@Test
 	public void testExecuteSpecificStock() throws Exception {
-		Formater form = new Formater("", new ArrayList<Stock>()) {
+		FormaterBovespaXLS form = new FormaterBovespaXLS("", new ArrayList<Stock>()) {
 			int count = 0;
 			@Override
 			public boolean execute() throws Exception { run(" "); return true;}
@@ -60,7 +61,7 @@ public class FormaterTest {
 				return null;
 			};
 		};
-		StockEntryXLSImp stock = new StockEntryXLSImp("012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255");
+		StockEntryBovespaXLSImp stock = new StockEntryBovespaXLSImp("012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255");
 		form.execute();
 		for (int i = 0; i < form.getList().size(); i++)
 			for (int j = 0; j < form.getList().get(i).getFields().size(); j++)

@@ -1,8 +1,8 @@
-package com.tapette.stock.bovespaHistoryFormater.file;
+package com.tapette.stock.bovespaHistoryFormater.inputs.extracters;
 
 import java.util.ArrayList;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 
 public interface Formaters {
 

@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file;
+package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,14 +8,15 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryProvImp;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Formaters;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryProvImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class ProventosFormater  implements Formaters{
+public class FormaterProventos  implements Formaters{
 
-	class SubThread extends Thread{
+	public class SubThread extends Thread{
 
 		String stock = null;
 		URL url = null;
@@ -102,7 +103,7 @@ public class ProventosFormater  implements Formaters{
 	private TableDAO table = null;
 	private int loopTimeout = 10;
 
-	public ProventosFormater(ArrayList<Stock> stocks) {
+	public FormaterProventos(ArrayList<Stock> stocks) {
 		this.stocks = stocks;
 	}
 

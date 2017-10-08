@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 
 public class StockEntryTest {
 
@@ -26,13 +27,13 @@ public class StockEntryTest {
 		String str6 = "012017010202ABEV3       010AMBEV S/A   ON  EJ       R$  000000000163400000000016660000000001626000000000164200000000016310000000001631000000000163609421000000000004265400000000007004006700000000000000009999123100000010000000000000BRABEVACNOR1115";
 		String str7 = "012017090612XTED11      010FII TRXE CORCI           R$  000000000218900000000021890000000002100000000000210400000000021500000000002100000000000214900005000000000000000211000000000000443995000000000000009999123100000010000000000000BRXTEDCTF006143";
 
-		StockEntry stock1 = new StockEntryXLSImp(str1);
-		StockEntry stock2 = new StockEntryXLSImp(str2);
-		StockEntry stock3 = new StockEntryXLSImp(str3);
-		StockEntry stock4 = new StockEntryXLSImp(str4);
-		StockEntry stock5 = new StockEntryXLSImp(str5);
-		StockEntry stock6 = new StockEntryXLSImp(str6);
-		StockEntry stock7 = new StockEntryXLSImp(str7);
+		StockEntry stock1 = new StockEntryBovespaXLSImp(str1);
+		StockEntry stock2 = new StockEntryBovespaXLSImp(str2);
+		StockEntry stock3 = new StockEntryBovespaXLSImp(str3);
+		StockEntry stock4 = new StockEntryBovespaXLSImp(str4);
+		StockEntry stock5 = new StockEntryBovespaXLSImp(str5);
+		StockEntry stock6 = new StockEntryBovespaXLSImp(str6);
+		StockEntry stock7 = new StockEntryBovespaXLSImp(str7);
 
 		ArrayList<StringBuilder> arr1 = parseColumns(new StringBuilder(str1));
 		ArrayList<StringBuilder> arr2 = parseColumns(new StringBuilder(str2));

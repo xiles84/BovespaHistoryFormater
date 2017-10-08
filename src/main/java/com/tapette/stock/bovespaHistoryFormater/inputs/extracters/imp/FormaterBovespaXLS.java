@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file;
+package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,25 +7,26 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.StockEntryXLSImp;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Formaters;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class Formater implements Formaters{
+public class FormaterBovespaXLS implements Formaters{
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 	private TableDAO list = null;
 
 
-	public Formater(String fileDir , ArrayList<Stock> stocks) throws Exception {
+	public FormaterBovespaXLS(String fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir.add(fileDir);
 		this.stocks = stocks;
 	}
 
 	
-	public Formater(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
+	public FormaterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir = fileDir;
 		this.stocks = stocks;
 	}
@@ -63,11 +64,11 @@ public class Formater implements Formaters{
 			while ((text = readLine(reader)) != null && text.length() == 245) {
 				if(!text.startsWith("00COTAHIST") && !text.startsWith("99COTAHIST")) {
 					if(this.stocks.isEmpty())
-						list.add(new StockEntryXLSImp(text));
+						list.add(new StockEntryBovespaXLSImp(text));
 					else
 						for (int j = 0; j < stocks.size(); j++)
 							if(text.contains(this.stocks.get(j).getStock()))
-								list.add(new StockEntryXLSImp(text));
+								list.add(new StockEntryBovespaXLSImp(text));
 				}
 			}
 		} catch (FileNotFoundException e) {

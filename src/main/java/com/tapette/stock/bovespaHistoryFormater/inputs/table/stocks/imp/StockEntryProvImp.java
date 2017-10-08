@@ -1,10 +1,10 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
 public class StockEntryProvImp implements StockEntry {
 	

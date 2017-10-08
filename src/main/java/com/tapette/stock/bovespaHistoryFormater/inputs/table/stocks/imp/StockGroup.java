@@ -1,4 +1,4 @@
-package com.tapette.stock.bovespaHistoryFormater.file.table.stocks.imp;
+package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -6,7 +6,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.file.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
 
 public class StockGroup {
 	

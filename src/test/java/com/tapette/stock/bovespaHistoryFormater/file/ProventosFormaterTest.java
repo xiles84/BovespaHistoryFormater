@@ -12,19 +12,20 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.file.ProventosFormater.SubThread;
-import com.tapette.stock.bovespaHistoryFormater.file.table.imp.TableDAOImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterProventos;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterProventos.SubThread;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({ProventosFormater.class, SubThread.class})
+@PrepareForTest({FormaterProventos.class, SubThread.class})
 public class ProventosFormaterTest {
 
 	@Test
 	public void test() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("MFII" , "MFII11"));
-		ProventosFormater form = new ProventosFormater(stocks);
+		FormaterProventos form = new FormaterProventos(stocks);
 		form.execute();
 		assertNotNull(form);
 		assertNotNull(form.getList());
@@ -34,7 +35,7 @@ public class ProventosFormaterTest {
 	public void test2() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("MFII" , "MFII11"));
-		ProventosFormater proventosFormater = new ProventosFormater(stocks);
+		FormaterProventos proventosFormater = new FormaterProventos(stocks);
 		SubThread aa = PowerMockito.spy(proventosFormater. new SubThread(stocks.get(0).getStock(), new URL("http://www.test.com"), new TableDAOImp()));
 		PowerMockito.doAnswer(new Answer<ArrayList<String>>() {
 			@Override
