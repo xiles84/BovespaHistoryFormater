@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 
-public interface Formaters {
+public interface Extracters {
 
 	boolean execute() throws Exception;
 

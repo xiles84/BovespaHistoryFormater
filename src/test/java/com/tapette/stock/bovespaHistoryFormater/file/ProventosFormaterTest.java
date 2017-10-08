@@ -12,20 +12,21 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterProventos;
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterProventos.SubThread;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.ExtracterProventosBovespa;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.WebMultiThread;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.ParserBovespaProventos;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({FormaterProventos.class, SubThread.class})
+@PrepareForTest({ExtracterProventosBovespa.class, WebMultiThread.class})
 public class ProventosFormaterTest {
 
 	@Test
 	public void test() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("MFII" , "MFII11"));
-		FormaterProventos form = new FormaterProventos(stocks);
+		ExtracterProventosBovespa form = new ExtracterProventosBovespa(stocks);
 		form.execute();
 		assertNotNull(form);
 		assertNotNull(form.getList());
@@ -35,8 +36,7 @@ public class ProventosFormaterTest {
 	public void test2() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(new Stock("MFII" , "MFII11"));
-		FormaterProventos proventosFormater = new FormaterProventos(stocks);
-		SubThread aa = PowerMockito.spy(proventosFormater. new SubThread(stocks.get(0).getStock(), new URL("http://www.test.com"), new TableDAOImp()));
+		WebMultiThread aa = PowerMockito.spy(new WebMultiThread(stocks.get(0), new URL("http://www.test.com"), new TableDAOImp(), new ParserBovespaProventos(), 0));
 		PowerMockito.doAnswer(new Answer<ArrayList<String>>() {
 			@Override
 			public ArrayList<String> answer(InvocationOnMock invocation) throws Throwable {
@@ -48,8 +48,8 @@ public class ProventosFormaterTest {
 		}).when(
 				aa,
 				PowerMockito.method(
-						SubThread.class,
-						"getProventos")).
+						WebMultiThread.class,
+						"getLines")).
 		withNoArguments();
 		aa.run();
 	}

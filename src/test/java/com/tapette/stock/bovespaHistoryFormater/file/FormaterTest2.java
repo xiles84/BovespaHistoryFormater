@@ -1,15 +1,14 @@
 package com.tapette.stock.bovespaHistoryFormater.file;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.FormaterBovespaXLS;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.ExtracterBovespaXLS;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(FormaterBovespaXLS.class)
+@PrepareForTest(ExtracterBovespaXLS.class)
 public class FormaterTest2 {
 	
 	@Test

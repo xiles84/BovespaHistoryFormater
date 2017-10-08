@@ -7,26 +7,26 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Formaters;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class FormaterBovespaXLS implements Formaters{
+public class ExtracterBovespaXLS implements Extracters{
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 	private TableDAO list = null;
 
 
-	public FormaterBovespaXLS(String fileDir , ArrayList<Stock> stocks) throws Exception {
+	public ExtracterBovespaXLS(String fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir.add(fileDir);
 		this.stocks = stocks;
 	}
 
 	
-	public FormaterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
+	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
 		this.fileDir = fileDir;
 		this.stocks = stocks;
 	}
