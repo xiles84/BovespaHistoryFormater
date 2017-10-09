@@ -17,12 +17,12 @@ public class ExtracterProventosFIIsTest {
 
 	@Test
 	public void test() throws Exception {
-		Stock stock = new Stock("MFII", "mfii11");
+		Stock stock = new Stock("MFII", "MFII11");
 		ArrayList<Stock> stockArray = new ArrayList<>();
 		stockArray.add(stock);
 		ExtracterProventosFIIs extract = new ExtracterProventosFIIs(stockArray);
 		extract.execute();
-		extract.getList();
+		assertNotNull(extract.getList());
 	}
 
 }

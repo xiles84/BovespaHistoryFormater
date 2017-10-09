@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
-public class StockEntryProvImp implements StockEntry {
+public class StockEntryProvBovespaImp implements StockEntry {
 	
 	String stockEntryName = null;
 	String date = null;
@@ -14,7 +14,7 @@ public class StockEntryProvImp implements StockEntry {
 	String payDay = null;
 	String specificEntryName = null;
 	
-	public StockEntryProvImp( String entryName, String specificEntryName, String date, String proventos, String payDay ) throws Exception {
+	public StockEntryProvBovespaImp( String entryName, String specificEntryName, String date, String proventos, String payDay ) throws Exception {
 		this.stockEntryName = entryName;
 		this.date = transformBrazilDateIntoUniversalDate(date);
 		this.closePrice = moneyConverter(proventos);

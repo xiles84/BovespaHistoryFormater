@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryProvImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryProvBovespaImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class ParserBovespaProventos implements Parsers{
@@ -23,7 +23,7 @@ public class ParserBovespaProventos implements Parsers{
 		}
 		ArrayList<String> list = new ArrayList<String>();
 		parseTags2(str, str.indexOf(">"), list);
-		return new StockEntryProvImp(stock.getStock(), list.get(1), list.get(3), list.get(4), list.get(3));
+		return new StockEntryProvBovespaImp(stock.getStock(), list.get(1), list.get(3), list.get(4), list.get(3));
 	}
 
 	private void parseTags2(String str, int initialTag, ArrayList<String> list) {
