@@ -6,40 +6,22 @@ import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
-public class StockEntryProvBovespaImp implements StockEntry {
+public class StockEntryProv implements StockEntry {
 	
 	String stockEntryName = null;
 	String date = null;
 	String closePrice = null;
 	String payDay = null;
 	String specificEntryName = null;
+	String volume = null;
 	
-	public StockEntryProvBovespaImp( String entryName, String specificEntryName, String date, String proventos, String payDay ) throws Exception {
+	public StockEntryProv( String entryName, String specificEntryName, String date, String proventos, String payDay, String volume ) throws Exception {
 		this.stockEntryName = entryName;
-		this.date = transformBrazilDateIntoUniversalDate(date);
-		this.closePrice = moneyConverter(proventos);
-		this.payDay = transformBrazilDateIntoUniversalDate(payDay);
+		this.date = date;
+		this.closePrice = proventos;
+		this.payDay = payDay;
 		this.specificEntryName = specificEntryName;
-	}
-	
-	private String transformBrazilDateIntoUniversalDate(String brazilDate) throws Exception {
-		if(!brazilDate.contains("/")) {
-			if(brazilDate.length() == 8)
-				return brazilDate;
-			throw new Exception("Date [" + brazilDate + "] does not contain \"/\"");
-		}
-		String[] list = brazilDate.split("/");
-		if(list.length < 3)
-			throw new Exception("Date [" + brazilDate + "] does not have the expected format");
-		StringBuilder str = new StringBuilder();
-		str.append(list[2]).append(list[1]).append(list[0]);
-		return str.toString();
-	}
-	
-	private String moneyConverter(String str) {
-		if(str.substring(str.lastIndexOf(".")+1).contains(","))
-			return str.replaceAll("\\.", "%").replaceAll(",", ".").replaceAll("%", ",");
-		return str;
+		this.volume = volume;
 	}
 
 	@Override
@@ -65,8 +47,7 @@ public class StockEntryProvBovespaImp implements StockEntry {
 
 	@Override
 	public String getVolume() {
-		// TODO Auto-generated method stub
-		return null;
+		return volume;
 	}
 
 	@Override
@@ -89,8 +70,14 @@ public class StockEntryProvBovespaImp implements StockEntry {
 		append("][specificEntryName=").append(getSpecificEntryName()).
 		append("][date=").append(getDate()).
 		append("][closePrice=").append(getClosePrice()).
+		append("][volume=").append(getVolume()).
 		append("][payDay=").append(getPayDay()).append("]}");
 		return str.toString();
+	}
+
+	@Override
+	public Type getType() {
+		return Type.PROVENTOS;
 	}
 
 }

@@ -96,4 +96,10 @@ public class StockEntryBovespaXLSImp implements StockEntry {
 		return str.toString();
 	}
 
+
+	@Override
+	public Type getType() {
+		return Type.PRICE;
+	}
+
 }

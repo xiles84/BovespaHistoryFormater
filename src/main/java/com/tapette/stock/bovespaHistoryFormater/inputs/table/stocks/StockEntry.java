@@ -4,6 +4,10 @@ import java.util.Calendar;
 import java.util.List;
 
 public interface StockEntry {
+	
+	public enum Type {
+		PRICE, PROVENTOS
+	}
 
 	String getStockEntryName();
 
@@ -16,5 +20,7 @@ public interface StockEntry {
 	String getVolume();
 
 	List<StringBuilder> getFields();
+	
+	Type getType();
 
 }

@@ -6,10 +6,8 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
 public interface StocksEntryGrouped extends StocksEntrySimple {
 
-	
 	public enum Type {
 		NAME, DATE
-
 	}
 
 	StockEntry getFirstStrockEntryByName(String str) throws Exception;
