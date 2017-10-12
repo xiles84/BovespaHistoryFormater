@@ -6,10 +6,10 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 
 public interface Extracters {
 
-	boolean execute() throws Exception;
+	public boolean execute() throws Exception;
 
-	TableDAO getList() throws Exception;
+	public TableDAO getList() throws Exception;
 
-	ArrayList<String> getFileDir();
+	public ArrayList<String> getFileDir();
 
 }

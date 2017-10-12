@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>208</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Extracters
+--
++execute(): boolean
++getList(): TableDAO
++getFileDir(): ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>496</y>
+      <w>392</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>ExtracterBovespaXLS
+--
+-fileDir : ArrayList&lt;String&gt;
+-stocks : ArrayList&lt;Stock&gt;
+-list : TableDAO
+--
+&lt;&lt;constructor&gt;&gt; ExtracterBovespaXLS(String, ArrayList&lt;Stock&gt;)
+&lt;&lt;constructor&gt;&gt; ExtracterBovespaXLS(ArrayList&lt;String&gt;, ArrayList&lt;Stock&gt;)
++execute(): boolean
++getList(): TableDAO
++getFileDir(): ArrayList&lt;String&gt;
+-run(String: boolean
+-run(File): boolean
+-fileReader(File): FileReader
+-readLine(BufferedReader): String
+-bufferedReader(FileReader): BufferedReader
+-getResource(String): File</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>280</y>
+      <w>200</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;230.0;170.0;230.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>496</y>
+      <w>392</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>ExtracterBovespaXLS
+--
+-stocks : ArrayList&lt;Stock&gt;
+-count : int
+-table : TableDAO
+-loopTimeout : int
+--
+&lt;&lt;constructor&gt;&gt; ExtracterProventosBovespa(ArrayList&lt;Stock&gt;)
++execute(): boolean
++getList(): TableDAO
++getFileDir(): ArrayList&lt;String&gt;
++hasFinished(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>280</y>
+      <w>232</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>270.0;10.0;270.0;170.0;10.0;170.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>792</y>
+      <w>224</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Stock
+--
+-codigo : String
+-stock : String
+--
+&lt;&lt;constructor&gt;&gt; Stock(String, String)
++getCodigo(): String
++getStock(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>704</y>
+      <w>40</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>704</y>
+      <w>312</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;60.0;370.0;60.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>0</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+List&lt;StockEntry&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>72</y>
+      <w>224</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+TableDAO
+--
++getStrockNameTable(String str): StockName
++getStrockDateTable(String str): StockDate
++getProximunTimePrice(String stockName, String stockDate: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>632</x>
+      <y>32</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>232</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>TableDAOImp
+--
+-serialVersionUID : long
+-hashStockName : HashMap&lt;String, StockName&gt;
+-hashStockDate : HashMap&lt;String, StockDate&gt;
+--
+add(StockEntry): boolean
++getStrockNameTable(String): StockName
++getStrockDateTable(String): StockDate
++getProximunTimePrice(String, String): String
+-addStrockName(StockEntry): void
+-addStrockDate(StockEntry): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>104</y>
+      <w>168</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>ArrayList&lt;StockEntry&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>120</y>
+      <w>136</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;150.0;80.0;150.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>160</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>376</y>
+      <w>24</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>376</y>
+      <w>376</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>450.0;10.0;450.0;80.0;10.0;80.0;10.0;150.0</additional_attributes>
+  </element>
+</diagram>

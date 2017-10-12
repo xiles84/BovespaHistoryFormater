@@ -2,8 +2,8 @@ package com.tapette.stock.bovespaHistoryFormater.stock;
 
 public class Stock {
 	
-	String codigo;
-	String stock;
+	private String codigo;
+	private String stock;
 	
 	public Stock(String codigo, String stock) {
 		this.codigo = codigo;

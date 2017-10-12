@@ -8,10 +8,10 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.
 
 public interface TableDAO extends List<StockEntry> {
 
-	StockName getStrockNameTable(String str);
+	public StockName getStrockNameTable(String str);
 
-	StockDate getStrockDateTable(String str);
+	public StockDate getStrockDateTable(String str);
 
-	String getProximunTimePrice(String stockName, String stockDate) throws Exception;
+	public String getProximunTimePrice(String stockName, String stockDate) throws Exception;
 
 }
