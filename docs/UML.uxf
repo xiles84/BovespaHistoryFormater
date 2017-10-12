@@ -12,9 +12,9 @@
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Extracters
 --
-+execute(): boolean
-+getList(): TableDAO
-+getFileDir(): ArrayList&lt;String&gt;</panel_attributes>
++execute() : boolean
++getList() : TableDAO
++getFileDir() : ArrayList&lt;String&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -33,12 +33,12 @@ Extracters
 --
 &lt;&lt;constructor&gt;&gt; ExtracterBovespaXLS(String, ArrayList&lt;Stock&gt;)
 &lt;&lt;constructor&gt;&gt; ExtracterBovespaXLS(ArrayList&lt;String&gt;, ArrayList&lt;Stock&gt;)
-+execute(): boolean
-+getList(): TableDAO
-+getFileDir(): ArrayList&lt;String&gt;
--run(String: boolean
--run(File): boolean
--fileReader(File): FileReader
++execute() : boolean
++getList() : TableDAO
++getFileDir() : ArrayList&lt;String&gt;
+-run(String) : boolean
+-run(File) : boolean
+-fileReader(File) : FileReader
 -readLine(BufferedReader): String
 -bufferedReader(FileReader): BufferedReader
 -getResource(String): File</panel_attributes>
@@ -61,7 +61,7 @@ Extracters
       <x>408</x>
       <y>496</y>
       <w>392</w>
-      <h>216</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>ExtracterBovespaXLS
 --
@@ -71,10 +71,10 @@ Extracters
 -loopTimeout : int
 --
 &lt;&lt;constructor&gt;&gt; ExtracterProventosBovespa(ArrayList&lt;Stock&gt;)
-+execute(): boolean
-+getList(): TableDAO
-+getFileDir(): ArrayList&lt;String&gt;
-+hasFinished(): boolean</panel_attributes>
++execute() : boolean
++getList() : TableDAO
++getFileDir() : ArrayList&lt;String&gt;
++hasFinished() : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -102,8 +102,8 @@ Extracters
 -stock : String
 --
 &lt;&lt;constructor&gt;&gt; Stock(String, String)
-+getCodigo(): String
-+getStock(): String</panel_attributes>
++getCodigo() : String
++getStock() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -122,13 +122,13 @@ m1=0..n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>160</x>
-      <y>704</y>
+      <y>648</y>
       <w>312</w>
-      <h>104</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;60.0;370.0;60.0;370.0;10.0</additional_attributes>
+    <additional_attributes>10.0;180.0;10.0;130.0;370.0;130.0;370.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -147,16 +147,15 @@ List&lt;StockEntry&gt;</panel_attributes>
     <coordinates>
       <x>520</x>
       <y>72</y>
-      <w>224</w>
-      <h>96</h>
+      <w>368</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 TableDAO
 --
-+getStrockNameTable(String str): StockName
-+getStrockDateTable(String str): StockDate
-+getProximunTimePrice(String stockName, String stockDate: String
-</panel_attributes>
++getStrockNameTable(String str) : StockName
++getStrockDateTable(String str) : StockDate
++getProximunTimePrice(String stockName, String stockDate) : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -184,12 +183,12 @@ TableDAO
 -hashStockName : HashMap&lt;String, StockName&gt;
 -hashStockDate : HashMap&lt;String, StockDate&gt;
 --
-add(StockEntry): boolean
-+getStrockNameTable(String): StockName
-+getStrockDateTable(String): StockDate
-+getProximunTimePrice(String, String): String
--addStrockName(StockEntry): void
--addStrockDate(StockEntry): void</panel_attributes>
+add(StockEntry) : boolean
++getStrockNameTable(String) : StockName
++getStrockDateTable(String) : StockDate
++getProximunTimePrice(String, String) : String
+-addStrockName(StockEntry) : void
+-addStrockDate(StockEntry) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -218,12 +217,12 @@ add(StockEntry): boolean
     <id>Relation</id>
     <coordinates>
       <x>624</x>
-      <y>160</y>
+      <y>152</y>
       <w>24</w>
-      <h>88</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -248,5 +247,122 @@ m1=1</panel_attributes>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
     <additional_attributes>450.0;10.0;450.0;80.0;10.0;80.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>496</y>
+      <w>392</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>ExtracterProventosFIIs
+--
+-stocks : ArrayList&lt;Stock&gt;
+-count : int
+-table : TableDAO
+-loopTimeout : int
+--
+&lt;&lt;constructor&gt;&gt; ExtracterProventosFIIs(ArrayList&lt;Stock&gt;)
++execute() : boolean
++getList() : TableDAO
++getFileDir() : ArrayList&lt;String&gt;
++hasFinished() : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>376</y>
+      <w>216</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;250.0;80.0;250.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>640</y>
+      <w>720</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;140.0;880.0;140.0;880.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>648</y>
+      <w>56</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+
+
+
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>344</x>
+      <y>864</y>
+      <w>424</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>WebMultiThread
+--
+-stock : Stock
+-url : URL
+-tags : int[]
+-table : TableDAO
+-count : int
+-parser : Parsers
+--
+&lt;&lt;constructor&gt;&gt; WebMultiThread(Stock, URL, TableDAO, Parsers, int)
++run() : void
++getLines() : ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>640</y>
+      <w>456</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;280.0;10.0;220.0;550.0;220.0;550.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>784</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Thread</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>800</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
 </diagram>

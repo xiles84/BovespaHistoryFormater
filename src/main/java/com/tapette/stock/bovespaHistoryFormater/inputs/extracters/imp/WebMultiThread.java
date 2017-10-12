@@ -14,12 +14,12 @@ import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class WebMultiThread extends Thread{
 	
-	Stock stock = null;
-	URL url = null;
-	int[] tags = new int[7]; 
-	TableDAO table = null;
-	volatile int count = 0;
-	Parsers parser = null;
+	private Stock stock = null;
+	private URL url = null;
+	private int[] tags = new int[7]; 
+	private TableDAO table = null;
+	private volatile int count = 0;
+	private Parsers parser = null;
 
 	public WebMultiThread(Stock stock ,URL url, TableDAO table, Parsers parser, int count) {
 		this.stock = stock;
