@@ -11,14 +11,14 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.
 
 public class StockGroup {
 	
-	TableDAO stocks = null;
-	List<String> dates = null;
-	String[][] resultStringArray;
-	double[][] resultIntArray;
-	boolean executed = false;
-	List<String> names = null;
-	static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
-	List<StockName> stockNames = new ArrayList<>();
+	private TableDAO stocks = null;
+	private List<String> dates = null;
+	private String[][] resultStringArray;
+	private double[][] resultIntArray;
+	private boolean executed = false;
+	private List<String> names = null;
+	private static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
+	private List<StockName> stockNames = new ArrayList<>();
 	
 	public StockGroup(List<String> names, TableDAO stocks, List<String> dates) {
 		this.stocks = stocks;

@@ -6,7 +6,7 @@ import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
 
 public class MathIncrementalImp implements StrockMath {
 	
-	MathImp math = null;
+	private MathImp math = null;
 
 	public MathIncrementalImp(double[][] matrix) {
 		double[][] matrixLocal = new double[matrix.length][matrix[0].length];

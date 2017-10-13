@@ -9,7 +9,7 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
 public class StockEntryBovespaXLSImp implements StockEntry {
 
-	List<StringBuilder> array = new ArrayList<StringBuilder>();
+	private List<StringBuilder> array = new ArrayList<StringBuilder>();
 	
 	public StockEntryBovespaXLSImp() {
 		super();

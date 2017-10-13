@@ -8,12 +8,12 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 
 public class StockEntryProv implements StockEntry {
 	
-	String stockEntryName = null;
-	String date = null;
-	String closePrice = null;
-	String payDay = null;
-	String specificEntryName = null;
-	String volume = null;
+	private String stockEntryName = null;
+	private String date = null;
+	private String closePrice = null;
+	private String payDay = null;
+	private String specificEntryName = null;
+	private String volume = null;
 	
 	public StockEntryProv( String entryName, String specificEntryName, String date, String proventos, String payDay, String volume ) throws Exception {
 		this.stockEntryName = entryName;

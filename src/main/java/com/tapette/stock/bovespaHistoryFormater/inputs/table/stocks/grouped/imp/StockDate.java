@@ -7,7 +7,7 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 
-public class StockDate extends StocksAbstractImp implements StocksEntryGrouped {
+public class StockDate extends StocksAbstractImp {
 
 	private static final long serialVersionUID = 1147681261258269178L;
 

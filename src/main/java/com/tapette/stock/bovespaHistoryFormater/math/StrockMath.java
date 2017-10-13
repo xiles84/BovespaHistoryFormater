@@ -2,14 +2,14 @@ package com.tapette.stock.bovespaHistoryFormater.math;
 
 public interface StrockMath {
 
-	double[] getMeans();
+	public double[] getMeans();
 
-	double[][] getSimpleCovariance() throws Exception;
+	public double[][] getSimpleCovariance() throws Exception;
 
-	double[][] getPonderedCovariance(int[] ponder) throws Exception;
+	public double[][] getPonderedCovariance(int[] ponder) throws Exception;
 
-	double[][] getMatrix();
+	public double[][] getMatrix();
 
-	double[] getPonderedMeans(int[] ponder);
+	public double[] getPonderedMeans(int[] ponder);
 
 }

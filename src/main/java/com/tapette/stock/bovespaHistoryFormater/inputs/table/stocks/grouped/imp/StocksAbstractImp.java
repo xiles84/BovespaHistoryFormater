@@ -15,8 +15,8 @@ public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements
 	
 	private static final long serialVersionUID = 2888786708507621471L;
 	protected Type type;
-	SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
-	List<String> dateList = null;
+	private SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
+	private List<String> dateList = null;
 	
 	public StocksAbstractImp() {
 		this.type = Type.NAME;

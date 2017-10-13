@@ -9,18 +9,18 @@ public interface StockEntry {
 		PRICE, PROVENTOS
 	}
 
-	String getStockEntryName();
+	public String getStockEntryName();
 
-	Calendar getCalendar();
+	public Calendar getCalendar();
 
-	String getDate();
+	public String getDate();
 
-	String getClosePrice();
+	public String getClosePrice();
 
-	String getVolume();
+	public String getVolume();
 
-	List<StringBuilder> getFields();
+	public List<StringBuilder> getFields();
 	
-	Type getType();
+	public Type getType();
 
 }

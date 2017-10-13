@@ -7,7 +7,7 @@ import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public interface Parsers {
 
-	void preFilter(String line, List<String> list);
+	public void preFilter(String line, List<String> list);
 
 	public StockEntry parseTags(String str, Stock stock) throws Exception;
 

@@ -6,7 +6,7 @@ import java.util.List;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
 
-public class StockName extends StocksAbstractImp implements StocksEntryGrouped {
+public class StockName extends StocksAbstractImp {
 	
 	private static final long serialVersionUID = -2734473156485806924L;
 

@@ -10,19 +10,19 @@ public interface StocksEntryGrouped extends StocksEntrySimple {
 		NAME, DATE
 	}
 
-	StockEntry getFirstStrockEntryByName(String str) throws Exception;
+	public StockEntry getFirstStrockEntryByName(String str) throws Exception;
 
-	StockEntry getFirstStrockEntryByDate(String str) throws Exception;
+	public StockEntry getFirstStrockEntryByDate(String str) throws Exception;
 
-	List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception;
+	public List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception;
 
-	List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception;
+	public List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception;
 
-	List<String> getDateList();
+	public List<String> getDateList();
 
-	List<StockEntry> getFirstStockEntryByNameJumpDays(List<String> strList, String startDate, String endDate,
+	public List<StockEntry> getFirstStockEntryByNameJumpDays(List<String> strList, String startDate, String endDate,
 			int interval) throws Exception;
 
-	Type getType();
+	public Type getType();
 
 }
