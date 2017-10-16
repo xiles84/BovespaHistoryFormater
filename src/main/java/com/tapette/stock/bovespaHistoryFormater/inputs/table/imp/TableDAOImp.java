@@ -1,53 +1,40 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.imp;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockDate;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
+import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class TableDAOImp extends ArrayList<StockEntry> implements TableDAO {
-	
-	private static final long serialVersionUID = 1574990503341685712L;
-	private HashMap<String, StockName> hashStockName = new HashMap<String, StockName>();
-	private HashMap<String, StockDate> hashStockDate = new HashMap<String, StockDate>();
-	
-	
+public class TableDAOImp implements TableDAO {
+
+	private HashMap<Stock, StockName> hashStockName = new HashMap<Stock, StockName>();
+
+
 	@Override
-	public boolean add(StockEntry e) {
-		addStrockName(e);
-		addStrockDate(e);
-		return super.add(e);
+	public boolean addStock(StockEntry e) {
+		if(hashStockName.get(e.getStock()) == null)
+			hashStockName.put(e.getStock() , new StockName());
+		hashStockName.get(e.getStock()).add(e);
+		return true;
 	}
-	
-	private void addStrockName(StockEntry e) {
-		if(hashStockName.get(e.getStockEntryName()) == null)
-			hashStockName.put(e.getStockEntryName() , new StockName());
-		hashStockName.get(e.getStockEntryName()).add(e);
-	}
-	
-	private void addStrockDate(StockEntry e) {
-		if(hashStockDate.get(e.getDate()) == null)
-			hashStockDate.put(e.getDate() , new StockDate());
-		hashStockDate.get(e.getDate()).add(e);
-	}
-	
+
 	@Override
-	public StockName getStrockNameTable(String str) {
+	public StockName getStock(Stock str) {
 		return hashStockName.get(str);
 	}
-	
+
 	@Override
-	public StockDate getStrockDateTable(String str) {
-		return hashStockDate.get(str);
+	public void getRelativeDatePrice(Stock stock, int date) throws Exception {
+		hashStockName.get(stock).getFirstStrockEntryByDate(String.valueOf(date));
+
 	}
-	
+
 	@Override
-	public String getProximunTimePrice(String stockName, String stockDate) throws Exception {
-		if(hashStockName.get(stockName) == null) return "";
-		return hashStockName.get(stockName).getProximunTimesPrice(stockDate);
+	public StockName sort(Stock stock) {
+		//TODO falta implementar
+		return null;
 	}
 
 }

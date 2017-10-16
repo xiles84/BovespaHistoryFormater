@@ -1,34 +1,32 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp;
 
-import java.net.URL;
 import java.util.ArrayList;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.ParserFIIsProventos;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class ExtracterProventosFIIs  implements Extracters{
+public class ExtracterProventosMultiThread  implements Extracters {
 
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
-	volatile int count = 0;
+	private ArrayList<WebMultiThread> threads = new ArrayList<WebMultiThread>();
 	private TableDAO table = null;
+	private Parsers parser = null;
 	private int loopTimeout = 10;
 
-	public ExtracterProventosFIIs(ArrayList<Stock> stocks) {
+	public ExtracterProventosMultiThread(ArrayList<Stock> stocks, TableDAO table, Parsers parser) {
 		this.stocks = stocks;
+		this.table = table;
+		this.parser = parser;
 	}
 
 	@Override
 	public boolean execute() throws Exception {
-		StringBuilder url = null;
-		table = new TableDAOImp();
 		for (int i = 0; i < stocks.size(); i++) {
-			url = new StringBuilder();
-			url.append("http://fiis.com.br/").append(stocks.get(i).getStock()).append("/?aba=tabela");
-			Thread th = new WebMultiThread(stocks.get(i) , new URL(url.toString()), table, new ParserFIIsProventos(), count);
+			WebMultiThread th = new WebMultiThread(stocks.get(i), table, parser);
 			th.start();
+			threads.add(th);
 		}
 		return true;
 	}
@@ -47,12 +45,15 @@ public class ExtracterProventosFIIs  implements Extracters{
 
 	@Override
 	public ArrayList<String> getFileDir() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public boolean hasFinished() {
-		return (count == stocks.size() ) ? true : false;
+		boolean ret = true;
+		for (int i = 0; i < threads.size(); i++) {
+			ret = ret && threads.get(i).hasFinished();
+		}
+		return ret;
 	}
 
 }

@@ -25,7 +25,7 @@ public class ProventosFormaterTest {
 	@Test
 	public void test() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
-		stocks.add(new Stock("MFII" , "MFII11"));
+		stocks.add(new Stock("MFII" , "MFII11", 2));
 		ExtracterProventosBovespa form = new ExtracterProventosBovespa(stocks);
 		form.execute();
 		assertNotNull(form);
@@ -35,8 +35,8 @@ public class ProventosFormaterTest {
 	@Test
 	public void test2() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();
-		stocks.add(new Stock("MFII" , "MFII11"));
-		WebMultiThread aa = PowerMockito.spy(new WebMultiThread(stocks.get(0), new URL("http://www.test.com"), new TableDAOImp(), new ParserBovespaProventos(), 0));
+		stocks.add(new Stock("MFII" , "MFII11", 2));
+		WebMultiThread aa = PowerMockito.spy(new WebMultiThread(stocks.get(0), new TableDAOImp(), new ParserBovespaProventos()));
 		PowerMockito.doAnswer(new Answer<ArrayList<String>>() {
 			@Override
 			public ArrayList<String> answer(InvocationOnMock invocation) throws Throwable {

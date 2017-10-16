@@ -1,14 +1,17 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.ParserAbstract;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryProv;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class ParserBovespaProventos implements Parsers{
+public class ParserBovespaProventos extends ParserAbstract {
 
 	@Override
 	public void preFilter(String line ,List<String> list) {
@@ -23,12 +26,19 @@ public class ParserBovespaProventos implements Parsers{
 		}
 		ArrayList<String> list = new ArrayList<String>();
 		parseTags2(str, str.indexOf(">"), list);
-		return new StockEntryProv(stock.getStock(),
-				list.get(1),
-				transformBrazilDateIntoUniversalDate(list.get(3)),
+		return new StockEntryImp(
+				stock,
+				Integer.parseInt(transformBrazilDateIntoUniversalDate(list.get(3))),
 				valuePontuationConverter(list.get(4)),
-				transformBrazilDateIntoUniversalDate(list.get(6)),
-				null);
+				null,
+				TypeStockEntry.PROVENTOS);
+	}
+	
+	@Override
+	public URL getStockURL(Stock stock) throws MalformedURLException {
+		StringBuilder url = new StringBuilder();
+		url.append("http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDetalhe.aspx?Sigla=").append(stock.getCodigoBovespa()).append("&tipoFundo=Imobiliario&aba=abaPrincipal&idioma=pt-br");
+		return new URL(url.toString());
 	}
 
 	private void parseTags2(String str, int initialTag, ArrayList<String> list) {
@@ -40,28 +50,6 @@ public class ParserBovespaProventos implements Parsers{
 			parseTags2(str, str.indexOf(">",localClose), list);
 		}else
 			parseTags2(str, str.indexOf(">",localClose), list);
-	}
-	
-
-	
-	private String transformBrazilDateIntoUniversalDate(String brazilDate) throws Exception {
-		if(!brazilDate.contains("/")) {
-			if(brazilDate.length() == 8)
-				return brazilDate;
-			throw new Exception("Date [" + brazilDate + "] does not contain \"/\"");
-		}
-		String[] list = brazilDate.split("/");
-		if(list.length < 3)
-			throw new Exception("Date [" + brazilDate + "] does not have the expected format");
-		StringBuilder str = new StringBuilder();
-		str.append(list[2]).append(list[1]).append(list[0]);
-		return str.toString();
-	}
-	
-	private String valuePontuationConverter(String str) {
-		if(str.substring(str.lastIndexOf(".")+1).contains(","))
-			return str.replaceAll("\\.", "%").replaceAll(",", ".").replaceAll("%", ",");
-		return str;
 	}
 
 }

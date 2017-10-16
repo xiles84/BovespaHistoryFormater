@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
+import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class StockGroup {
 	
@@ -16,11 +17,11 @@ public class StockGroup {
 	private String[][] resultStringArray;
 	private double[][] resultIntArray;
 	private boolean executed = false;
-	private List<String> names = null;
+	private List<Stock> names = null;
 	private static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
 	private List<StockName> stockNames = new ArrayList<>();
 	
-	public StockGroup(List<String> names, TableDAO stocks, List<String> dates) {
+	public StockGroup(List<Stock> names, TableDAO stocks, List<String> dates) {
 		this.stocks = stocks;
 		this.dates = dates;
 		this.resultStringArray = new String[dates.size()+1][names.size()+1];
@@ -32,8 +33,8 @@ public class StockGroup {
 	public boolean execute() throws Exception {
 		resultStringArray[0][0] = "Dates\\Prices";
 		for (int i = 0; i < names.size(); i++) {
-			stockNames.add(stocks.getStrockNameTable(names.get(i)));
-			resultStringArray[0][i+1] = names.get(i);
+			stockNames.add(stocks.getStock(names.get(i)));
+			resultStringArray[0][i+1] = names.get(i).getStock();
 		}
 		for (int i = 0; i < dates.size(); i++) {
 			resultStringArray[i+1][0] = dates.get(i);

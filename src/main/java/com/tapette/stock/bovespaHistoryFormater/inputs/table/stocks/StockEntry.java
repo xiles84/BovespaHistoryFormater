@@ -1,26 +1,22 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks;
 
 import java.util.Calendar;
-import java.util.List;
+
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
+import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public interface StockEntry {
-	
-	public enum Type {
-		PRICE, PROVENTOS
-	}
 
-	public String getStockEntryName();
+	public Stock getStock();
 
 	public Calendar getCalendar();
 
-	public String getDate();
+	public int getDate();
 
 	public String getClosePrice();
 
 	public String getVolume();
-
-	public List<StringBuilder> getFields();
 	
-	public Type getType();
+	public TypeStockEntry getType();
 
 }

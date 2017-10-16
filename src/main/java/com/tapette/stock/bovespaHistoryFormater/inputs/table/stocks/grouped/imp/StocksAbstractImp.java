@@ -1,106 +1,148 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.GregorianCalendar;
-import java.util.List;
+import java.util.HashMap;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 
-public abstract class StocksAbstractImp extends ArrayList<StockEntry> implements StocksEntryGrouped{
-	
-	private static final long serialVersionUID = 2888786708507621471L;
-	protected Type type;
-	private SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
-	private List<String> dateList = null;
-	
-	public StocksAbstractImp() {
-		this.type = Type.NAME;
-	}
-	
-	public StocksAbstractImp(Type type) {
-		this.type = type;
-	}
+public abstract class StocksAbstractImp implements StocksEntryGrouped {
+
+	private int[][] dateArrayIndexPlusOne = null;
+	private ArrayList<StockEntry> stockEntrys = new ArrayList<StockEntry>();
+	private HashMap<TypeStockEntry, ArrayList<StockEntry>> stockEntryHash = null;
 
 	@Override
-	public abstract String getProximunTimesPrice(String date) throws Exception;
-	
-	@Override
-	public abstract StockEntry getFirstStrockEntryByName(String str) throws Exception;
+	public abstract StockEntry getRelativeDateStockEntry(int date) throws Exception;
 
 	@Override
-	public abstract StockEntry getFirstStrockEntryByDate(String str) throws Exception;
-	
+	public abstract StockEntry getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception;
+
 	@Override
-	public abstract List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception;
-	
+	public abstract StockEntry getRelativeDateStockEntry(int[] date) throws Exception;
+
 	@Override
-	public abstract List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception;
-	
+	public abstract StockEntry getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception;
+
 	@Override
-	public List<String> getDateList() {
-		if(dateList != null)
-			return dateList;
-		dateList = new ArrayList<String>();
-		for (int i = 0; i < size(); i++) {
-			if(!dateList.contains(get(i).getDate()))
-				dateList.add(get(i).getDate());
+	public StockEntry get(int index) {
+		return get(index, null);
+	}
+
+	@Override
+	public StockEntry get(int index, TypeStockEntry type) {
+		if(type == null)
+			return stockEntrys.get(index);
+		if(stockEntryHash == null) {
+			createHash();
 		}
-		Collections.sort(dateList);
-		return dateList;
+		return stockEntryHash.get(type).get(index);
+	}
+
+	@Override
+	public void add(StockEntry stockEntry) {
+		stockEntrys.add(stockEntry);
+		stockEntryHash = null;
+		dateArrayIndexPlusOne = null;
+	}
+
+	@Override
+	public int[] getDateArray() {
+		return getDateArray(null);
+	}
+
+	@Override
+	public int[] getDateArray(TypeStockEntry type) {
+		if(dateArrayIndexPlusOne != null)
+			return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
+		ArrayList<Integer> dateListLocal = new ArrayList<Integer>();
+		for (int i = 0; i < stockEntrys.size(); i++) {
+			if(!dateListLocal.contains(get(i).getDate()))
+				dateListLocal.add(get(i).getDate());
+		}
+		Collections.sort(dateListLocal);
+		dateArrayIndexPlusOne = new int[TypeStockEntry.values().length+1][dateListLocal.size()];
+		for (int i = 0; i < dateArrayIndexPlusOne.length; i++) {
+			Arrays.fill(dateArrayIndexPlusOne[i], -1);
+		}
+		for (int i = 0; i < dateListLocal.size(); i++)
+			dateArrayIndexPlusOne[0][i] = dateListLocal.get(i);
+		dateListLocal.clear();
+		for (int k = 0; k < TypeStockEntry.values().length; k++) {
+			for (int i = 0; i < stockEntrys.size(); i++)
+				if(get(i).getType().getIntType() == TypeStockEntry.values()[k].getIntType())
+					if(!dateListLocal.contains(get(i).getDate()))
+						dateListLocal.add(get(i).getDate());
+			Collections.sort(dateListLocal);
+			for (int l = 0; l < dateListLocal.size(); l++)
+				dateArrayIndexPlusOne[TypeStockEntry.values()[k].getIntType()+1][l] = dateListLocal.get(l);
+			dateListLocal.clear();
+		}
+		return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
 	}
 	
-	@Override
-	public List<StockEntry> getFirstStockEntryByNameJumpDays(List<String> strList, String startDate, String endDate, int interval) throws Exception {
-		List<StockEntry> table = new ArrayList<StockEntry>();
-		for (int i = 0; i < size(); i++) {
-			table.add(getFirstStrockEntryByDate(strList.get(i)));
+	private int[] removeNulls(int[] array) {
+		int countNotNulls = 0;
+		for (int i = 0; i < array.length; i++)
+			if(array[i] >= 0)
+				countNotNulls++;
+		int[] newArray = new int[countNotNulls];
+		for (int i = 0; i < newArray.length; i++) {
+			newArray[i] = array[i];
 		}
-		if(table.size()<1)
-			table.add(new StockEntryBovespaXLSImp(""));
-		return table;
+		return newArray;
 	}
-	
-	protected String rotateDate(String date) throws Exception {
-		Integer intDate = Integer.parseInt(date);
-		if(Integer.parseInt(getDateList().get(0)) >  intDate)
-			return "";
-		if(Integer.parseInt(getDateList().get(getDateList().size()-1)) <  intDate)
-			return getDateList().get(getDateList().size()-1);
-		Calendar cal = new GregorianCalendar(intDate/10000, (intDate/100)%100 - 1, intDate%100);
-		for (int i = 0; i < getDateList().size(); i++) {
-			cal.add(Calendar.DAY_OF_MONTH, -1);
-			if(!getCloseTime(getFirstStrockEntryByDate(
-					format1.format(cal.getTime()))).
-					isEmpty())
-				return format1.format(cal.getTime());
-		}
-		return "";
+
+	protected int rotateDate(int date) throws Exception {
+		return rotateDate(date, null);
 	}
-	
+
+	protected int rotateDate(int date, TypeStockEntry type) throws Exception {
+		if(getDateArray(type)[0] >  date)
+			return -1;
+		if(getDateArray()[getDateArray(type).length-1] <  date)
+			return getDateArray()[getDateArray(type).length-1];
+		int index =  Arrays.binarySearch(getDateArray(type), date);
+		return index < 0 ?  getDateArray(type)[-index-2] : getDateArray(type)[index];
+	}
+
 	@Override
 	public String toString() {
-		if(size()<1)
+		//TODO not prepared yet
+		if(stockEntrys.size()<1)
 			return "";
 		StringBuilder str = new StringBuilder();
 		str.append(get(0));
-		for (int i = 1; i < size(); i++)
+		for (int i = 1; i < stockEntrys.size(); i++)
 			str.append("\n").append(get(i));
 		return str.toString();
 	}
-	
-	protected String getCloseTime(StockEntry line) {
-		if(line == null) return "";
-		return line.getClosePrice();
+
+	@Override
+	public ArrayList<StockEntry> sort() {
+		return sort(null);
 	}
 
 	@Override
-	public Type getType() {
-		return type;
+	public ArrayList<StockEntry> sort(TypeStockEntry type) {
+		ArrayList<StockEntry> localList = new ArrayList<StockEntry>();
+		for (int i = 0; i < getDateArray().length; i++)
+			for (int j = 0; j < dateArrayIndexPlusOne.length; j++)
+				if(getDateArray()[i] == get(j,type).getDate())
+					localList.add(get(j,type));
+		return localList;
 	}
-	
+
+	private void createHash() {
+		stockEntryHash = new HashMap<TypeStockEntry,ArrayList<StockEntry>>();
+		for (int i = 0; i < stockEntrys.size(); i++) {
+			if(!stockEntryHash.containsKey(stockEntrys.get(i).getType()))
+				stockEntryHash.put(stockEntrys.get(i).getType(), new ArrayList<StockEntry>());
+			stockEntryHash.get(stockEntrys.get(i).getType()).add(stockEntrys.get(i));
+		}
+	}
+
 }

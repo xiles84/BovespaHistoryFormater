@@ -1,28 +1,17 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 
 public interface StocksEntryGrouped extends StocksEntrySimple {
 
-	public enum Type {
-		NAME, DATE
-	}
-
-	public StockEntry getFirstStrockEntryByName(String str) throws Exception;
-
-	public StockEntry getFirstStrockEntryByDate(String str) throws Exception;
-
-	public List<StockEntry> getFirstStrockEntryByName(List<String> strList) throws Exception;
-
-	public List<StockEntry> getFirstStrockEntryByDate(List<String> strList) throws Exception;
-
-	public List<String> getDateList();
-
-	public List<StockEntry> getFirstStockEntryByNameJumpDays(List<String> strList, String startDate, String endDate,
-			int interval) throws Exception;
-
-	public Type getType();
+	public StockEntry getRelativeDateStockEntry(int date) throws Exception;
+	public StockEntry getRelativeDateStockEntry(int[] dates) throws Exception;
+	public StockEntry getRelativeDateStockEntry(int date, TypeStockEntry type) throws Exception;
+	public StockEntry getRelativeDateStockEntry(int[] dates, TypeStockEntry type) throws Exception; 
+	public int[] getDateArray();
+	public int[] getDateArray(TypeStockEntry type);
 
 }

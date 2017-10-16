@@ -8,34 +8,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryBovespaXLSImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public class ExtracterBovespaXLS implements Extracters{
+public class ExtracterBovespaXLS implements Extracters {
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
-	private TableDAO list = null;
+	private TableDAO table = null;
+	private Parsers parser = null;
+	private boolean hasExecuted = false;
 
 
-	public ExtracterBovespaXLS(String fileDir , ArrayList<Stock> stocks) throws Exception {
-		this.fileDir.add(fileDir);
-		this.stocks = stocks;
-	}
-
-	
-	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks) throws Exception {
+	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks, TableDAO table, Parsers parser) throws Exception {
+		if(stocks == null || stocks.isEmpty())
+			throw new Exception("Stock array must not be neither null nor empty");
 		this.fileDir = fileDir;
 		this.stocks = stocks;
+		this.parser = parser;
+		this.table = table;
 	}
 
 	@Override
 	public boolean execute() throws Exception {
+		hasExecuted = false;
 		File folder = null;
 		File[] listOfFiles = null;
-
 		for (int i = 0; i < getFileDir().size() ; i++) {
 			folder = getResource(getFileDir().get(i));
 			listOfFiles = folder.listFiles();
@@ -43,6 +42,7 @@ public class ExtracterBovespaXLS implements Extracters{
 				if (listOfFiles[j].isFile())
 					run(listOfFiles[j]);
 		}
+		hasExecuted = true;
 		return true;
 	}
 
@@ -55,21 +55,17 @@ public class ExtracterBovespaXLS implements Extracters{
 	protected boolean run(File file) throws Exception {
 		if(file == null)
 			throw new Exception();
-		if(this.list == null)
-			this.list = new TableDAOImp();
 		BufferedReader reader = null;
 		try {
 			reader = bufferedReader(fileReader(file));
 			String text = null;
 			while ((text = readLine(reader)) != null && text.length() == 245) {
-				if(!text.startsWith("00COTAHIST") && !text.startsWith("99COTAHIST")) {
-					if(this.stocks.isEmpty())
-						list.add(new StockEntryBovespaXLSImp(text));
-					else
-						for (int j = 0; j < stocks.size(); j++)
-							if(text.contains(this.stocks.get(j).getStock()))
-								list.add(new StockEntryBovespaXLSImp(text));
-				}
+				outerloop:
+				for (int j = 0; j < stocks.size(); j++)
+					if(text.contains(this.stocks.get(j).getStock())) {
+						table.addStock(parser.parseTags(text, this.stocks.get(j)));
+						break outerloop;
+					}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -88,9 +84,9 @@ public class ExtracterBovespaXLS implements Extracters{
 
 	@Override
 	public TableDAO getList() throws Exception {
-		if(list == null)
+		if(!hasExecuted)
 			execute();
-		return list;
+		return table;
 	}
 
 	protected FileReader fileReader(File file) throws FileNotFoundException {
