@@ -383,10 +383,10 @@ StocksEntrySimple
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 StocksEntryGrouped
 --
-+getRelativeDateStockEntry(int) : StockEntry
-+getRelativeDateStockEntry(int[]) : StockEntry
-+getRelativeDateStockEntry(int, TypeStockEntry) : StockEntry
-+getRelativeDateStockEntry(int[], TypeStockEntry) : StockEntry
++getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;
++getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;
 +getDateArray() : int[]
 +getDateArray(TypeStockEntry) : int[]</panel_attributes>
     <additional_attributes/>
@@ -405,10 +405,10 @@ StocksEntryGrouped
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1548</x>
-      <y>756</y>
-      <w>360</w>
-      <h>126</h>
+      <x>1512</x>
+      <y>738</y>
+      <w>423</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>StockName
 --
@@ -416,9 +416,10 @@ _-serialVersionUID : long_
 -stock : Stock
 --
 &lt;&lt;constructor&gt;&gt; StockName(Strock)
-+getRelativeStrockEntryByDate(String) : StockEntry
-+getFirstStrockEntryByDate(List&lt;String&gt;) : List&lt;StockEntry&gt;
-+getProximunTimesPrice(String) : String</panel_attributes>
+/getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;/
+/getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;/
+/getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;/
+/getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -427,45 +428,42 @@ _-serialVersionUID : long_
       <x>1485</x>
       <y>351</y>
       <w>540</w>
-      <h>369</h>
+      <h>324</h>
     </coordinates>
     <panel_attributes>/StocksAbstractImp/
 --
--format1 : SimpleDateFormat
--dateArray : int[]
--entryMap : HashMap&lt;Type, ArrayList&lt;StockEntry&gt;&gt;
--mergedEntries : ArrayList&lt;StockEntry&gt;
+#dateArrayIndexPlusOne : int[][]
+#stockEntrys : ArrayList&lt;StockEntry&gt;
+#stockEntryHash : HashMap&lt;TypeStockEntry, ArrayList&lt;StockEntry&gt;&gt;
 --
-&lt;&lt;constructor&gt;&gt; StocksAbstractImp()
-/+getStrockEntryByRelativeDate(int) : StockEntry/
-/+getFirstStrockEntryByDate(int) : StockEntry/
-/+getFirstStrockEntryByDate(List&lt;int&gt;) : List&lt;StockEntry&gt;/
-/+getStrockEntryByRelativeDate(int, TypeStockEntry) : StockEntry/
-/+getFirstStrockEntryByDate(int, TypeStockEntry) : StockEntry/
-/+getFirstStrockEntryByDate(List&lt;int&gt;, TypeStockEntry) : List&lt;StockEntry&gt;/
-+getDateList() : List&lt;int&gt;
-+getPriceDateList(TypeStockEntry) : List&lt;int&gt;
-+getStockEntryRelativeJumpDays(int, int, int) : List&lt;StockEntry&gt;
-+toString() : String
+/+getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;/
+/+getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;/
+/+getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;/
+/+getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;/
++get(int) : StockEntry
++get(int, TypeStockEntry) : StockEntry
 +add(StockEntry) : void
-+get(int) :  StockEntry
-+get(int, TypeStockEntry) :  StockEntry
-+sort() : List&lt;StockEntry&gt;
-+sort(TypeStockEntry) : List&lt;StockEntry&gt;
--getClosestDate(StockEntry) : int
--rotateDate(int) : int</panel_attributes>
++getDateArray() : int[]
++getDateArray(TypeStockEntry) : int[]
++toString() : String
++sort() : ArrayList&lt;StockEntry&gt;
++sort(TypeStockEntry) : ArrayList&lt;StockEntry&gt;
+#rotateDate(int) : int
+#rotateDate(int, TypeStockEntry) : int
+#removeNulls(int[]) : int[]
+#createHash() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1692</x>
-      <y>711</y>
+      <y>666</y>
       <w>27</w>
-      <h>63</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -483,12 +481,12 @@ _-serialVersionUID : long_
     <coordinates>
       <x>1089</x>
       <y>837</y>
-      <w>477</w>
+      <w>441</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>510.0;10.0;380.0;10.0;380.0;140.0;10.0;140.0</additional_attributes>
+    <additional_attributes>470.0;10.0;380.0;10.0;380.0;140.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1126,6 +1124,50 @@ m1=1</panel_attributes>
     <coordinates>
       <x>1080</x>
       <y>693</y>
+      <w>18</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>2016</x>
+      <y>612</y>
+      <w>18</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1908</x>
+      <y>864</y>
+      <w>18</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>2007</x>
+      <y>243</y>
+      <w>18</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1899</x>
+      <y>90</y>
       <w>18</w>
       <h>63</h>
     </coordinates>

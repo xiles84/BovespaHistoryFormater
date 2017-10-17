@@ -3,6 +3,7 @@ package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,13 +22,13 @@ public class StocksAbstractImpTest {
 	
 	StocksAbstractImp stocksAbstractImp = new StocksAbstractImp() {
 		@Override
-		public StockEntry getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception {return null;}
+		public List<List<StockEntry>> getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception {return null;}
 		@Override
-		public StockEntry getRelativeDateStockEntry(int[] date) throws Exception {return null;}
+		public List<List<StockEntry>> getRelativeDateStockEntry(int[] date) throws Exception {return null;}
 		@Override
-		public StockEntry getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception {return null;}
+		public List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception {return null;}
 		@Override
-		public StockEntry getRelativeDateStockEntry(int date) throws Exception {return null;}
+		public List<StockEntry> getRelativeDateStockEntry(int date) throws Exception {return null;}
 	};
 
 	@BeforeClass

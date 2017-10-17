@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
@@ -11,21 +12,21 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeSto
 
 public abstract class StocksAbstractImp implements StocksEntryGrouped {
 
-	private int[][] dateArrayIndexPlusOne = null;
-	private ArrayList<StockEntry> stockEntrys = new ArrayList<StockEntry>();
-	private HashMap<TypeStockEntry, ArrayList<StockEntry>> stockEntryHash = null;
+	protected int[][] dateArrayIndexPlusOne = null;
+	protected ArrayList<StockEntry> stockEntrys = new ArrayList<StockEntry>();
+	protected HashMap<TypeStockEntry, ArrayList<StockEntry>> stockEntryHash = null;
 
 	@Override
-	public abstract StockEntry getRelativeDateStockEntry(int date) throws Exception;
+	public abstract List<StockEntry> getRelativeDateStockEntry(int date) throws Exception;
 
 	@Override
-	public abstract StockEntry getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception;
+	public abstract List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception;
 
 	@Override
-	public abstract StockEntry getRelativeDateStockEntry(int[] date) throws Exception;
+	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date) throws Exception;
 
 	@Override
-	public abstract StockEntry getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception;
+	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception;
 
 	@Override
 	public StockEntry get(int index) {
@@ -84,7 +85,7 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 		return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
 	}
 	
-	private int[] removeNulls(int[] array) {
+	protected int[] removeNulls(int[] array) {
 		int countNotNulls = 0;
 		for (int i = 0; i < array.length; i++)
 			if(array[i] >= 0)
@@ -136,7 +137,7 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 		return localList;
 	}
 
-	private void createHash() {
+	protected void createHash() {
 		stockEntryHash = new HashMap<TypeStockEntry,ArrayList<StockEntry>>();
 		for (int i = 0; i < stockEntrys.size(); i++) {
 			if(!stockEntryHash.containsKey(stockEntrys.get(i).getType()))
