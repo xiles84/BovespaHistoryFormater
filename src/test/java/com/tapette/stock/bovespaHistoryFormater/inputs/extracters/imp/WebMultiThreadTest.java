@@ -1,37 +1,25 @@
-package com.tapette.stock.bovespaHistoryFormater.file;
+package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp;
 
 import static org.junit.Assert.*;
 
-import java.net.URL;
 import java.util.ArrayList;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.ExtracterProventosBovespa;
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.WebMultiThread;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.ParserBovespaProventos;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({ExtracterProventosBovespa.class, WebMultiThread.class})
-public class ProventosFormaterTest {
+public class WebMultiThreadTest {
 
-	@Test
-	public void test() throws Exception {
-		ArrayList<Stock> stocks = new ArrayList<>();
-		stocks.add(new Stock("MFII" , "MFII11", 2));
-		ExtracterProventosBovespa form = new ExtracterProventosBovespa(stocks);
-		form.execute();
-		assertNotNull(form);
-		assertNotNull(form.getList());
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 	}
-	
+
 	@Test
 	public void test2() throws Exception {
 		ArrayList<Stock> stocks = new ArrayList<>();

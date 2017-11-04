@@ -12,18 +12,20 @@ public class ExtracterProventosMultiThread  implements Extracters {
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
 	private ArrayList<WebMultiThread> threads = new ArrayList<WebMultiThread>();
 	private TableDAO table = null;
+	private TableDAO tabletmp = null;
 	private Parsers parser = null;
-	private int loopTimeout = 10;
+	private int loopTimeout = 30;
 
 	public ExtracterProventosMultiThread(ArrayList<Stock> stocks, TableDAO table, Parsers parser) {
 		this.stocks = stocks;
-		this.table = table;
+		this.tabletmp = table;
 		this.parser = parser;
 	}
 
 	@Override
-	public boolean execute() throws Exception {
+	public boolean execute() {
 		for (int i = 0; i < stocks.size(); i++) {
+			table = tabletmp;
 			WebMultiThread th = new WebMultiThread(stocks.get(i), table, parser);
 			th.start();
 			threads.add(th);
@@ -32,7 +34,7 @@ public class ExtracterProventosMultiThread  implements Extracters {
 	}
 
 	@Override
-	public TableDAO getList() throws Exception {
+	public TableDAO getList() throws InterruptedException {
 		if(table == null)
 			execute();
 		int loopCount = 0;

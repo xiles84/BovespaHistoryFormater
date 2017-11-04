@@ -1,0 +1,967 @@
+00:14:53.551 379  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010296ABCB4F      020ABC BRASIL  PN  EJS N2   R$  000000000134500000000013480000000001315000000000132900000000013260000000001326000000000134800020000000000000000582000000000000773943000000000000009999123100000010000000000000BRABCBACNPR4127] contains [ABCP11] = false
+00:14:53.679 507  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255] contains [MFII11] = false
+00:14:53.679 507  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255] contains [WPLZ11B] = false
+00:14:53.680 508  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255] contains [ABCP11] = true
+00:14:53.680 508  [main] DEBUG c.t.s.b.i.e.p.i.ParserBovespaXLSPrices - The following tags were parsed [[01, 20170102, 12, ABCP11, 010, FII ABC IMOB, CI  ER    ,    , R$, 00000000011.83, 00000000011.83, 00000000011.01, 00000000011.62, 00000000011.36, 00000000011.38, 000000000.12, 00019, 000000000000001210, 000000000001407143.43, 0000000000000.00, 0, 99991231, 0000001, 0000000000000.00, BRABCPCTF000, 255]]
+00:14:53.686 514  [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - addStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:14:53.690 518  [main] DEBUG c.t.s.b.i.e.p.i.ParserBovespaXLSPrices - The following tags were parsed [[01, 20170102, 12, ABCP11, 010, FII ABC IMOB, CI  ER    ,    , R$, 00000000011.83, 00000000011.83, 00000000011.01, 00000000011.62, 00000000011.36, 00000000011.38, 000000000.12, 00019, 000000000000001210, 000000000001407143.43, 0000000000000.00, 0, 99991231, 0000001, 0000000000000.00, BRABCPCTF000, 255]]
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.p.i.ParserBovespaXLSPrices - The following tags were parsed [[01, 20170102, 12, ABCP11, 010, FII ABC IMOB, CI  ER    ,    , R$, 00000000011.83, 00000000011.83, 00000000011.01, 00000000011.62, 00000000011.36, 00000000011.38, 000000000.12, 00019, 000000000000001210, 000000000001407143.43, 0000000000000.00, 0, 99991231, 0000001, 0000000000000.00, BRABCPCTF000, 255]]
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run found this tags [{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010202ABEV3       010AMBEV S/A   ON  EJ       R$  000000000163400000000016660000000001626000000000164200000000016310000000001631000000000163609421000000000004265400000000007004006700000000000000009999123100000010000000000000BRABEVACNOR1115] contains [MFII11] = false
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010202ABEV3       010AMBEV S/A   ON  EJ       R$  000000000163400000000016660000000001626000000000164200000000016310000000001631000000000163609421000000000004265400000000007004006700000000000000009999123100000010000000000000BRABEVACNOR1115] contains [WPLZ11B] = false
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010202ABEV3       010AMBEV S/A   ON  EJ       R$  000000000163400000000016660000000001626000000000164200000000016310000000001631000000000163609421000000000004265400000000007004006700000000000000009999123100000010000000000000BRABEVACNOR1115] contains [ABCP11] = false
+00:14:53.691 519  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017090612XTED11      010FII TRXE CORCI           R$  000000000218900000000021890000000002100000000000210400000000021500000000002100000000000214900005000000000000000211000000000000443995000000000000009999123100000010000000000000BRXTEDCTF006143] contains [MFII11] = false
+00:14:53.692 520  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017090612XTED11      010FII TRXE CORCI           R$  000000000218900000000021890000000002100000000000210400000000021500000000002100000000000214900005000000000000000211000000000000443995000000000000009999123100000010000000000000BRXTEDCTF006143] contains [WPLZ11B] = false
+00:14:53.692 520  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017090612XTED11      010FII TRXE CORCI           R$  000000000218900000000021890000000002100000000000210400000000021500000000002100000000000214900005000000000000000211000000000000443995000000000000009999123100000010000000000000BRXTEDCTF006143] contains [ABCP11] = false
+00:14:53.692 520  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010810ABCB2       010ABC BRASIL  DIR PRE N2   R$  000000000028500000000002850000000000285000000000028500000000002850000000000200000000000000000001000000000000000200000000000000057000000000000000009999123100000010000000000000BRABCBD10PR0126] contains [MFII11] = false
+00:14:53.692 520  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010810ABCB2       010ABC BRASIL  DIR PRE N2   R$  000000000028500000000002850000000000285000000000028500000000002850000000000200000000000000000001000000000000000200000000000000057000000000000000009999123100000010000000000000BRABCBD10PR0126] contains [WPLZ11B] = false
+00:14:53.693 521  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [012017010810ABCB2       010ABC BRASIL  DIR PRE N2   R$  000000000028500000000002850000000000285000000000028500000000002850000000000200000000000000000001000000000000000200000000000000057000000000000000009999123100000010000000000000BRABCBD10PR0126] contains [ABCP11] = false
+00:14:53.693 521  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [99COTAHIST.2017BOVESPA 2017090600000330110                                                                                                                                                                                                           ] contains [MFII11] = false
+00:14:53.693 521  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [99COTAHIST.2017BOVESPA 2017090600000330110                                                                                                                                                                                                           ] contains [WPLZ11B] = false
+00:14:53.694 522  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run will check if [99COTAHIST.2017BOVESPA 2017090600000330110                                                                                                                                                                                                           ] contains [ABCP11] = false
+00:14:53.694 522  [main] DEBUG c.t.s.b.i.e.imp.ExtracterBovespaXLS - run was called for [C:\Users\Xiles84\Downloads\Java\GIT\BovespaHistoryFormater\.\src\test\resources\stocks\logback-test.xml]
+00:15:15.711 22539 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [true]
+00:15:15.712 22540 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has been called [[{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}, {[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}, {[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}]]
+00:15:15.712 22540 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.713 22541 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.714 22542 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.715 22543 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.716 22544 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.717 22545 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.718 22546 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.719 22547 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.720 22548 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.721 22549 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.722 22550 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.723 22551 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.724 22552 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.725 22553 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.726 22554 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.727 22555 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.728 22556 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.729 22557 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.730 22558 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.731 22559 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.732 22560 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.733 22561 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.734 22562 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.735 22563 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.735 22563 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.736 22564 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.737 22565 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.738 22566 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.739 22567 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.740 22568 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.741 22569 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.742 22570 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.743 22571 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called with null stock
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=WPLZ11B][codigoBovespa=WPLZ][taxes=0.2][type=FII]}:null]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.744 22572 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.745 22573 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.746 22574 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.747 22575 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.747 22575 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.747 22575 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170108:PRICE:11.36]
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.748 22576 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170115:PRICE:11.36]
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170122:PRICE:11.36]
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.749 22577 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170129:PRICE:11.36]
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.750 22578 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170205:PRICE:11.36]
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170212:PRICE:11.36]
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.751 22579 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170219:PRICE:11.36]
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170226:PRICE:11.36]
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.752 22580 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170305:PRICE:11.36]
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.753 22581 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170312:PRICE:11.36]
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170319:PRICE:11.36]
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.754 22582 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170326:PRICE:11.36]
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.755 22583 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170402:PRICE:11.36]
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170409:PRICE:11.36]
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.756 22584 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.757 22585 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170416:PRICE:11.36]
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170423:PRICE:11.36]
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.758 22586 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170430:PRICE:11.36]
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.759 22587 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170507:PRICE:11.36]
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170514:PRICE:11.36]
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.760 22588 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170521:PRICE:11.36]
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.761 22589 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170528:PRICE:11.36]
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.762 22590 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170604:PRICE:11.36]
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.763 22591 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170611:PRICE:11.36]
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.764 22592 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170618:PRICE:11.36]
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.765 22593 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170625:PRICE:11.36]
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.766 22594 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170702:PRICE:11.36]
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.767 22595 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170709:PRICE:11.36]
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.768 22596 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170716:PRICE:11.36]
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170723:PRICE:11.36]
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.769 22597 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170730:PRICE:11.36]
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.770 22598 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170806:PRICE:11.36]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170813:PRICE:11.36]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.771 22599 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170820:PRICE:11.36]
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170827:PRICE:11.36]
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.772 22600 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170903:PRICE:11.36]
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.773 22601 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170910:PRICE:11.36]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170917:PRICE:11.36]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.774 22602 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20170924:PRICE:11.36]
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20171001:PRICE:11.36]
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.775 22603 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getProximunTimesPrice has been called [20171008:PRICE:11.36]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in true
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.s.g.i.StockEntriesGrupped - getRelativeDateStockEntry was called, the verification resulted in false
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}:{[stock={[stock=ABCP11][codigoBovespa=ABCP][taxes=0.2][type=FII]}][date=20170102][closePrice=11.36][proventos=-1.0][volume=000000000001407143.43]}]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [0:20161016:[-1.0, -1.0, -1.0]]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [1:20161023:[-1.0, -1.0, -1.0]]
+00:15:15.776 22604 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [2:20161030:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [3:20161106:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [4:20161113:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [5:20161120:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [6:20161127:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [7:20161204:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [8:20161211:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [9:20161218:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [10:20161225:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [11:20170101:[-1.0, -1.0, -1.0]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [12:20170108:[-1.0, -1.0, 11.36]]
+00:15:15.777 22605 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [13:20170115:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [14:20170122:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [15:20170129:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [16:20170205:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [17:20170212:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [18:20170219:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [19:20170226:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [20:20170305:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [21:20170312:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [22:20170319:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [23:20170326:[-1.0, -1.0, 11.36]]
+00:15:15.778 22606 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [24:20170402:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [25:20170409:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [26:20170416:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [27:20170423:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [28:20170430:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [29:20170507:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [30:20170514:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [31:20170521:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [32:20170528:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [33:20170604:[-1.0, -1.0, 11.36]]
+00:15:15.779 22607 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [34:20170611:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [35:20170618:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [36:20170625:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [37:20170702:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [38:20170709:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [39:20170716:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [40:20170723:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [41:20170730:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [42:20170806:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [43:20170813:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [44:20170820:[-1.0, -1.0, 11.36]]
+00:15:15.780 22608 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [45:20170827:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [46:20170903:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [47:20170910:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [48:20170917:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [49:20170924:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [50:20171001:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [51:20171008:[-1.0, -1.0, 11.36]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - processResultIntArray has ended [52:0:[-1.0, -1.0, -1.0]]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.781 22609 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.782 22610 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.783 22611 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.784 22612 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.785 22613 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.786 22614 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.787 22615 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.788 22616 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.792 22620 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.792 22620 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.793 22621 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.794 22622 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.795 22623 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.796 22624 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.table.imp.TableDAOImp - getStock has been called [com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp@5d5eef3d:{[stock=MFII11][codigoBovespa=MFII][taxes=0.2][type=FII]}:null]
+00:15:15.797 22625 [main] DEBUG c.t.s.b.i.t.stocks.imp.StockGroup - getResultIntArray has been called [false]

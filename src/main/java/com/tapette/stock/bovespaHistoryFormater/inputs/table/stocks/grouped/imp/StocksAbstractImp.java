@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
@@ -17,16 +18,16 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	protected HashMap<TypeStockEntry, ArrayList<StockEntry>> stockEntryHash = null;
 
 	@Override
-	public abstract List<StockEntry> getRelativeDateStockEntry(int date) throws Exception;
+	public abstract List<StockEntry> getRelativeDateStockEntry(int date) throws ExceptionOutOfRangeDate;
 
 	@Override
-	public abstract List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws Exception;
+	public abstract List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws ExceptionOutOfRangeDate;
 
 	@Override
-	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date) throws Exception;
+	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date) throws ExceptionOutOfRangeDate;
 
 	@Override
-	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws Exception;
+	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws ExceptionOutOfRangeDate;
 
 	@Override
 	public StockEntry get(int index) {
@@ -45,9 +46,11 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 
 	@Override
 	public void add(StockEntry stockEntry) {
-		stockEntrys.add(stockEntry);
-		stockEntryHash = null;
-		dateArrayIndexPlusOne = null;
+		synchronized (this) {
+			stockEntrys.add(stockEntry);
+			stockEntryHash = null;
+			dateArrayIndexPlusOne = null;
+		}
 	}
 
 	@Override
@@ -57,34 +60,40 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 
 	@Override
 	public int[] getDateArray(TypeStockEntry type) {
-		if(dateArrayIndexPlusOne != null)
-			return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
-		ArrayList<Integer> dateListLocal = new ArrayList<Integer>();
-		for (int i = 0; i < stockEntrys.size(); i++) {
-			if(!dateListLocal.contains(get(i).getDate()))
-				dateListLocal.add(get(i).getDate());
-		}
-		Collections.sort(dateListLocal);
-		dateArrayIndexPlusOne = new int[TypeStockEntry.values().length+1][dateListLocal.size()];
-		for (int i = 0; i < dateArrayIndexPlusOne.length; i++) {
-			Arrays.fill(dateArrayIndexPlusOne[i], -1);
-		}
-		for (int i = 0; i < dateListLocal.size(); i++)
-			dateArrayIndexPlusOne[0][i] = dateListLocal.get(i);
-		dateListLocal.clear();
-		for (int k = 0; k < TypeStockEntry.values().length; k++) {
-			for (int i = 0; i < stockEntrys.size(); i++)
-				if(get(i).getType().getIntType() == TypeStockEntry.values()[k].getIntType())
+		synchronized (this) {
+			if(dateArrayIndexPlusOne != null)
+				return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
+				ArrayList<Integer> dateListLocal = new ArrayList<Integer>();
+				for (int i = 0; i < stockEntrys.size(); i++) {
 					if(!dateListLocal.contains(get(i).getDate()))
 						dateListLocal.add(get(i).getDate());
-			Collections.sort(dateListLocal);
-			for (int l = 0; l < dateListLocal.size(); l++)
-				dateArrayIndexPlusOne[TypeStockEntry.values()[k].getIntType()+1][l] = dateListLocal.get(l);
-			dateListLocal.clear();
+				}
+				Collections.sort(dateListLocal);
+				dateArrayIndexPlusOne = new int[TypeStockEntry.values().length+1][dateListLocal.size()];
+				for (int i = 0; i < dateArrayIndexPlusOne.length; i++) {
+					Arrays.fill(dateArrayIndexPlusOne[i], -1);
+				}
+				for (int i = 0; i < dateListLocal.size(); i++)
+					dateArrayIndexPlusOne[0][i] = dateListLocal.get(i);
+				dateListLocal.clear();
+				for (int k = 0; k < TypeStockEntry.values().length; k++) {
+					for (int i = 0; i < stockEntrys.size(); i++)
+						if(get(i).getType().getIntType() == TypeStockEntry.values()[k].getIntType())
+							if(!dateListLocal.contains(get(i).getDate()))
+								dateListLocal.add(get(i).getDate());
+					Collections.sort(dateListLocal);
+					for (int l = 0; l < dateListLocal.size(); l++) {
+						dateArrayIndexPlusOne[
+						                      TypeStockEntry.
+						                      values()[k].
+						                      getIntType()+1][l] = dateListLocal.get(l);
+					}
+					dateListLocal.clear();
+				}
+				return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
 		}
-		return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
 	}
-	
+
 	protected int[] removeNulls(int[] array) {
 		int countNotNulls = 0;
 		for (int i = 0; i < array.length; i++)
@@ -97,13 +106,13 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 		return newArray;
 	}
 
-	protected int rotateDate(int date) throws Exception {
+	protected int rotateDate(int date) throws ExceptionOutOfRangeDate {
 		return rotateDate(date, null);
 	}
 
-	protected int rotateDate(int date, TypeStockEntry type) throws Exception {
+	protected int rotateDate(int date, TypeStockEntry type) throws ExceptionOutOfRangeDate {
 		if(getDateArray(type)[0] >  date)
-			return -1;
+			throw new ExceptionOutOfRangeDate(date);
 		if(getDateArray()[getDateArray(type).length-1] <  date)
 			return getDateArray()[getDateArray(type).length-1];
 		int index =  Arrays.binarySearch(getDateArray(type), date);
@@ -129,6 +138,7 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 
 	@Override
 	public ArrayList<StockEntry> sort(TypeStockEntry type) {
+		//TODO We can enhance efficiency by removing items already sorted
 		ArrayList<StockEntry> localList = new ArrayList<StockEntry>();
 		for (int i = 0; i < getDateArray().length; i++)
 			for (int j = 0; j < dateArrayIndexPlusOne.length; j++)

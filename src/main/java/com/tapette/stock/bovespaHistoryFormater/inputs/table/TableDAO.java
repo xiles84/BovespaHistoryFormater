@@ -1,17 +1,20 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table;
 
+import java.util.List;
+
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockEntriesGrupped;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public interface TableDAO {
 
-	public StockName getStock(Stock str);
+	public StockEntriesGrupped getStockEntriesGrupped(Stock str);
 	
-	public void getRelativeDatePrice(Stock stock, int date) throws Exception;
+	public List<StockEntry> getRelativeDateEntries(Stock stock, int date) throws ExceptionOutOfRangeDate;
 	
-	public boolean addStock(StockEntry stockEntry);
-	
-	public StockName sort(Stock stock);
+	public boolean addStockEntry(StockEntry stockEntry);
+
+	int size();
 
 }

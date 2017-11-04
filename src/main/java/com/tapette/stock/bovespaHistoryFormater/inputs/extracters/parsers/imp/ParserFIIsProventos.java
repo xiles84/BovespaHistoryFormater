@@ -5,6 +5,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidFormat;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.ParserAbstract;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryImp;
@@ -12,6 +16,8 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeSto
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class ParserFIIsProventos extends ParserAbstract {
+
+	private static Logger logger = LoggerFactory.getLogger( ParserFIIsProventos.class );
 
 	@Override
 	public void preFilter(String line, List<String> list) {
@@ -25,16 +31,19 @@ public class ParserFIIsProventos extends ParserAbstract {
 	}
 
 	@Override
-	public StockEntry parseTags(String str, Stock stock) throws Exception {
+	public StockEntry parseTags(String str, Stock stock) throws ExceptionInvalidFormat {
 		if(str.contains("/>")) {
-			throw new Exception("Invalid sequence of character \"/>\" found [" + str + "]");
+			throw new ExceptionInvalidFormat("Invalid sequence of character \"/>\" found [" + str + "]");
 		}
 		ArrayList<String> list = new ArrayList<String>();
 		parseTags2(str, str.indexOf(">"), list);
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("The following tags were parsed [%s]", list));
 		return new StockEntryImp(
 				stock,
 				Integer.parseInt(transformBrazilDateIntoUniversalDate("01/" + list.get(1))),
-				valuePontuationConverter(list.get(17)),
+				-1,
+				stringToDouble(valuePontuationConverter(list.get(17))),
 				valuePontuationConverter(list.get(13)),
 				TypeStockEntry.PROVENTOS);
 	}

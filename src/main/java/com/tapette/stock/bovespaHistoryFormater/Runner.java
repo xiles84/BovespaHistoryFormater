@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 //import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.tapette.stock.bovespaHistoryFormater.math.imp.MathImp;
@@ -12,7 +11,7 @@ import com.tapette.stock.bovespaHistoryFormater.math.imp.MathIncrementalImp;
 
 public class Runner {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		//		realCode(args);
 		realCode(args);
 		//		StockGrouper aa = new StockGrouper();
@@ -144,8 +143,6 @@ public class Runner {
 		ApplicationContext context = new ClassPathXmlApplicationContext("BovespaHistoryFormater.xml");
 
 //		Logger log = Logger.getLogger(Runner.class);
-
-		PropertyConfigurator.configureAndWatch("log4j.properties",15000);
 
 		MathImp cc = (MathImp)context.getBean("Math");
 		MathIncrementalImp dd = (MathIncrementalImp)context.getBean("MathIncremental");

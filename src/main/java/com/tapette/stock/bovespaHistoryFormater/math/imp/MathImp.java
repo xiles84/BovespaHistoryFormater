@@ -2,6 +2,7 @@ package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
 import java.util.Arrays;
 
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRange;
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
 
 public class MathImp implements StrockMath{
@@ -66,7 +67,7 @@ public class MathImp implements StrockMath{
 	}
 
 	@Override
-	public double[][] getSimpleCovariance() throws Exception {
+	public double[][] getSimpleCovariance() throws ExceptionOutOfRange {
 		int[] ponder = new int[matrix.length];
 		Arrays.fill(ponder, 1);
 		getPonderedCovariance(ponder);
@@ -74,13 +75,13 @@ public class MathImp implements StrockMath{
 	}
 
 	@Override
-	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
+	public double[][] getPonderedCovariance(int[] ponder) throws ExceptionOutOfRange {
 		if(this.cov != null &&
 				this.ponderCov != null &&
 				Arrays.equals(ponder,this.ponderCov))
 			return this.cov;
 		this.ponderCov = ponder;
-		if(ponder.length < matrix.length) throw new Exception("The ponder size [" + ponder.length + "] is less thab the matrix [" + matrix.length + "]");
+		if(ponder.length < matrix.length) throw new ExceptionOutOfRange("The ponder size [" + ponder.length + "] is less than the matrix [" + matrix.length + "]");
 		int[][] counter = new int[getMeans().length][getMeans().length];
 		int[][] counterMean = new int[getMeans().length][getMeans().length];
 		double[][] localMeans = new double[getMeans().length][getMeans().length];

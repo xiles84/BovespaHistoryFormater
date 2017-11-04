@@ -5,7 +5,7 @@ import java.util.Calendar;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
-public interface StockEntry {
+public interface StockEntry extends Comparable<StockEntry> {
 
 	public Stock getStock();
 
@@ -13,10 +13,12 @@ public interface StockEntry {
 
 	public int getDate();
 
-	public String getClosePrice();
+	public double getClosePrice();
 
 	public String getVolume();
 	
 	public TypeStockEntry getType();
+
+	double getProventos();
 
 }

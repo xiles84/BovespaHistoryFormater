@@ -31,7 +31,7 @@ public class WebMultiThread extends Thread {
 		ArrayList<String> list = getLines();
 		for (int i = 0; i < list.size(); i++) {
 			try {
-				table.addStock(parser.parseTags(list.get(i), stock));
+				table.addStockEntry(parser.parseTags(list.get(i), stock));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

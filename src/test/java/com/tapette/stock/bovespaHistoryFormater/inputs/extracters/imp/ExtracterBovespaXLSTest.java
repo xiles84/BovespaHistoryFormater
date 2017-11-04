@@ -1,40 +1,47 @@
-package com.tapette.stock.bovespaHistoryFormater.file;
+package com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp;
 
 import static org.junit.Assert.*;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.ExtracterBovespaXLS;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyFile;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyStockArray;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidFormat;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.ParserBovespaXLSPrices;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 @RunWith(MockitoJUnitRunner.class)
-public class FormaterTest {
+public class ExtracterBovespaXLSTest {
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass(){
 	}
 
 	@Test
-	public void testExecute() throws Exception {
+	public void testExecute() throws ExceptionEmptyStockArray, IOException, ExceptionEmptyFile, ExceptionInvalidFormat{
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("stocks/").getFile());
 		ArrayList<Stock> stocks = new ArrayList<>();
 		ArrayList<String> paths = new ArrayList<>();
-		stocks.add(new Stock("ABCP11", "ABCP" , 1));
-		stocks.add(new Stock("XTED11", "XTED" , 1));
+		Stock stock1 = new Stock("ABCP11", "ABCP" , 1);
+		Stock stock2 = new Stock("ABCB2", "ABCB" , 1);
+		stocks.add(stock1);
+		stocks.add(stock2);
 		paths.add(file.getAbsolutePath());
 		ExtracterBovespaXLS form = new ExtracterBovespaXLS(paths, stocks, new TableDAOImp(), new ParserBovespaXLSPrices(stocks));
-		for (int i = 0; i < stocks.size(); i++) {
-			System.out.println(form.getList().get(stocks.get(i)));
-		}
-		//StockEntry stock = new StockEntryImp("012017010212ABCP11      010FII ABC IMOBCI  ER       R$  000000000118300000000011830000000001101000000000116200000000011360000000001138000000000120500019000000000000001210000000000001407143000000000000009999123100000010000000000000BRABCPCTF000255");
-		assertEquals( 2, form.getList().size());
+		assertEquals( 1, form.getList().getStockEntriesGrupped(stock1).getDateArray().length);
+		assertEquals( 2, form.getList().getStockEntriesGrupped(stock2).getDateArray().length);
+		assertEquals( 20170102 , form.getList().getStockEntriesGrupped(stock1).getDateArray()[0]);
+		assertEquals( 20170102 , form.getList().getStockEntriesGrupped(stock1).getDateArray()[0]);
+		assertEquals( 20170108 , form.getList().getStockEntriesGrupped(stock2).getDateArray()[1]);
 	}
 
 	/*@Test
@@ -65,6 +72,5 @@ public class FormaterTest {
 			for (int j = 0; j < form.getList().get(i).getFields().size(); j++)
 				assertEquals(stock.getFields().get(j).toString() , form.getList().get(i).getFields().get(j).toString());
 	}*/
-
 
 }

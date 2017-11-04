@@ -12,7 +12,7 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.imp.ExtracterB
 public class FormaterTest2 {
 	
 	@Test
-	public void fakeTest() throws Exception {
+	public void fakeTest() {
 		
 	}
 

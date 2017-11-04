@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>9</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>549</x>
-      <y>801</y>
-      <w>189</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-Extracters
---
-+execute() : boolean
-+getList() : TableDAO
-+getFileDir() : ArrayList&lt;String&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>153</x>
-      <y>1125</y>
-      <w>540</w>
-      <h>243</h>
+      <x>427</x>
+      <y>910</y>
+      <w>420</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>ExtracterBovespaXLS
 --
@@ -47,21 +31,21 @@ Extracters
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>882</y>
-      <w>279</w>
-      <h>252</h>
+      <x>735</x>
+      <y>721</y>
+      <w>280</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0;290.0;170.0;290.0;260.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;380.0;170.0;380.0;260.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>837</x>
-      <y>1116</y>
-      <w>504</w>
-      <h>189</h>
+      <x>959</x>
+      <y>903</y>
+      <w>392</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ExtracterProventosMultiThread
 --
@@ -81,21 +65,21 @@ Extracters
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>882</y>
-      <w>261</w>
-      <h>261</h>
+      <x>616</x>
+      <y>721</y>
+      <w>140</w>
+      <h>203</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>270.0;10.0;270.0;170.0;10.0;170.0;10.0;270.0</additional_attributes>
+    <additional_attributes>180.0;10.0;180.0;170.0;10.0;170.0;10.0;270.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>261</x>
-      <y>1458</y>
-      <w>252</w>
-      <h>180</h>
+      <x>511</x>
+      <y>1169</y>
+      <w>196</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>Stock
 --
@@ -115,10 +99,10 @@ Extracters
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>1359</y>
-      <w>45</w>
-      <h>117</h>
+      <x>609</x>
+      <y>1092</y>
+      <w>35</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
@@ -127,10 +111,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>1296</y>
-      <w>540</w>
-      <h>180</h>
+      <x>609</x>
+      <y>1043</y>
+      <w>420</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
@@ -139,28 +123,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>612</y>
-      <w>297</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-TableDAO
---
-+getStrockNameTable(String) : StockName
-+getRelativeDatePrice(Stock, int) : String
-+addStock(Stock, StockEntry) : void
-+getStock(Stock) :  StockName
-+sort(Stock) : StockName</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>792</x>
-      <y>882</y>
-      <w>306</w>
-      <h>99</h>
+      <x>924</x>
+      <y>735</y>
+      <w>238</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>TableDAOImp
 --
@@ -174,45 +140,45 @@ TableDAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>909</x>
-      <y>729</y>
-      <w>27</w>
-      <h>171</h>
+      <x>1015</x>
+      <y>644</y>
+      <w>21</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>693</y>
-      <w>450</w>
-      <h>441</h>
+      <x>882</x>
+      <y>616</y>
+      <w>350</w>
+      <h>301</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;10.0;10.0;410.0;480.0;410.0;480.0;470.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0;10.0;350.0;480.0;350.0;480.0;410.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>693</y>
-      <w>234</w>
-      <h>450</h>
+      <x>756</x>
+      <y>616</y>
+      <w>182</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>240.0;10.0;190.0;10.0;190.0;410.0;10.0;410.0;10.0;480.0</additional_attributes>
+    <additional_attributes>240.0;10.0;190.0;10.0;190.0;350.0;10.0;350.0;10.0;420.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
-      <y>1296</y>
-      <w>63</w>
-      <h>261</h>
+      <x>1078</x>
+      <y>1043</y>
+      <w>49</w>
+      <h>203</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 m1=&lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -221,10 +187,10 @@ m1=&lt;&lt;uses&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>594</x>
-      <y>1539</y>
-      <w>477</w>
-      <h>162</h>
+      <x>770</x>
+      <y>1232</y>
+      <w>371</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>WebMultiThread
 --
@@ -242,10 +208,10 @@ m1=&lt;&lt;uses&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1116</x>
-      <y>1440</y>
-      <w>90</w>
-      <h>27</h>
+      <x>1176</x>
+      <y>1155</y>
+      <w>70</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>Thread</panel_attributes>
     <additional_attributes/>
@@ -253,10 +219,10 @@ m1=&lt;&lt;uses&gt;&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
-      <y>1458</y>
-      <w>108</w>
-      <h>135</h>
+      <x>1134</x>
+      <y>1169</y>
+      <w>84</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>100.0;10.0;100.0;130.0;10.0;130.0</additional_attributes>
@@ -264,10 +230,10 @@ m1=&lt;&lt;uses&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1422</x>
-      <y>1107</y>
-      <w>279</w>
-      <h>108</h>
+      <x>1414</x>
+      <y>896</y>
+      <w>217</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Parsers
@@ -281,9 +247,9 @@ Parsers
     <id>UMLClass</id>
     <coordinates>
       <x>1386</x>
-      <y>1485</y>
-      <w>333</w>
-      <h>90</h>
+      <y>1190</y>
+      <w>259</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>ParserBovespaProventos
 --
@@ -296,10 +262,10 @@ Parsers
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1755</x>
-      <y>1485</y>
-      <w>333</w>
-      <h>90</h>
+      <x>1673</x>
+      <y>1190</y>
+      <w>259</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>ParserFIIsProventos
 --
@@ -312,10 +278,10 @@ Parsers
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1530</x>
-      <y>1206</y>
-      <w>27</w>
-      <h>72</h>
+      <x>1498</x>
+      <y>973</y>
+      <w>21</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -323,241 +289,78 @@ Parsers
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
-      <y>1161</y>
-      <w>378</w>
-      <h>486</h>
+      <x>1134</x>
+      <y>938</y>
+      <w>294</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
     <additional_attributes>400.0;10.0;330.0;10.0;330.0;520.0;10.0;520.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>126</x>
-      <y>468</y>
-      <w>279</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-StockEntry
---
-_+Type : enum_
---
-+getStock() : String
-+getCalendar() : Calendar
-+getDate() : int
-+getClosePrice() : String
-+getVolume() : String
-+toString() : String
-+getType() : TypeStockEntry</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1629</x>
-      <y>0</y>
-      <w>279</w>
-      <h>117</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-StocksEntrySimple
---
-+add(StockEntry) :  void
-+get(int) : StockEntry
-+get(int, TypeStockEntry) : StockEntry
-+sort() : ArrayList&lt;StockEntry&gt;
-+sort(TypeStockEntry) : ArrayList&lt;StockEntry&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1494</x>
-      <y>144</y>
-      <w>522</w>
-      <h>135</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-StocksEntryGrouped
---
-+getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;
-+getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;
-+getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;
-+getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;
-+getDateArray() : int[]
-+getDateArray(TypeStockEntry) : int[]</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>1746</x>
-      <y>108</y>
-      <w>27</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1512</x>
-      <y>738</y>
-      <w>423</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>StockName
---
-_-serialVersionUID : long_
--stock : Stock
---
-&lt;&lt;constructor&gt;&gt; StockName(Strock)
-/getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;/
-/getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;/
-/getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;/
-/getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1485</x>
-      <y>351</y>
-      <w>540</w>
-      <h>324</h>
-    </coordinates>
-    <panel_attributes>/StocksAbstractImp/
---
-#dateArrayIndexPlusOne : int[][]
-#stockEntrys : ArrayList&lt;StockEntry&gt;
-#stockEntryHash : HashMap&lt;TypeStockEntry, ArrayList&lt;StockEntry&gt;&gt;
---
-/+getRelativeDateStockEntry(int) : List&lt;StockEntry&gt;/
-/+getRelativeDateStockEntry(int, TypeStockEntry) : List&lt;StockEntry&gt;/
-/+getRelativeDateStockEntry(int[]) : List&lt;List&lt;StockEntry&gt;&gt;/
-/+getRelativeDateStockEntry(int[], TypeStockEntry) : List&lt;List&lt;StockEntry&gt;&gt;/
-+get(int) : StockEntry
-+get(int, TypeStockEntry) : StockEntry
-+add(StockEntry) : void
-+getDateArray() : int[]
-+getDateArray(TypeStockEntry) : int[]
-+toString() : String
-+sort() : ArrayList&lt;StockEntry&gt;
-+sort(TypeStockEntry) : ArrayList&lt;StockEntry&gt;
-#rotateDate(int) : int
-#rotateDate(int, TypeStockEntry) : int
-#removeNulls(int[]) : int[]
-#createHash() : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1692</x>
-      <y>666</y>
-      <w>27</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1755</x>
-      <y>270</y>
-      <w>27</w>
-      <h>99</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1089</x>
-      <y>837</y>
-      <w>441</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1..n</panel_attributes>
-    <additional_attributes>470.0;10.0;380.0;10.0;380.0;140.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>684</y>
-      <w>495</w>
-      <h>225</h>
-    </coordinates>
-    <panel_attributes>StockEntryImp
---
--date : int
--closePrice : String
--stock : Stock
--volume : String
---
-&lt;&lt;constructor&gt;&gt; StockEntryBovespaXLSImp(Stock, int, String, String, TypeStockEntry)
-&lt;&lt;constructor&gt;&gt; StockEntryBovespaXLSImp(Stock, int, String, String, int)
-+getStock() : String
-+getCalendar() : Calendar
-+getDate() : int
-+getClosePrice() : String
-+getVolume() : String
-+toString() : String
-+getType() : TypeStockEntry</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>243</x>
-      <y>639</y>
-      <w>27</w>
-      <h>63</h>
+      <x>1666</x>
+      <y>105</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>1863</x>
-      <y>945</y>
-      <w>405</w>
-      <h>243</h>
+      <x>1624</x>
+      <y>560</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
-    <panel_attributes>StockGroup
---
--stocks : TableDAO
--dates : DateGroup
--StockEntryList : ArrayList&lt;StockEntry&gt;
--executed : boolean
--names : List&lt;String&gt;
--format1 : SimpleDateFormat
--stockList : List&lt;Stock&gt;
---
-&lt;&lt;constructor&gt;&gt; StockGroup(List&lt;Stock&gt;, TableDAO, DateGroup)
-+getPriceStringArray() : String[][]
-+getPriceDoubleArray() : double[][]
--execute() : boolean
--getProximunTimesPrice(StockName, String) : String
--stringToDouble(String) : double</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1673</x>
+      <y>252</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1155</x>
+      <y>665</y>
+      <w>336</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>460.0;10.0;380.0;10.0;380.0;170.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>301</x>
+      <y>525</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2547</x>
-      <y>972</y>
-      <w>270</w>
-      <h>126</h>
+      <x>2289</x>
+      <y>791</y>
+      <w>210</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 StrockMath
@@ -572,10 +375,10 @@ StrockMath
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2529</x>
-      <y>1485</y>
-      <w>162</w>
-      <h>72</h>
+      <x>2275</x>
+      <y>1190</y>
+      <w>126</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 Tuplets
@@ -586,10 +389,10 @@ Tuplets
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2691</x>
-      <y>1170</y>
-      <w>270</w>
-      <h>270</h>
+      <x>2401</x>
+      <y>945</y>
+      <w>210</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>StrockMath
 --
@@ -614,10 +417,10 @@ Tuplets
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2664</x>
-      <y>1089</y>
-      <w>171</w>
-      <h>99</h>
+      <x>2380</x>
+      <y>882</y>
+      <w>133</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;170.0;50.0;170.0;90.0</additional_attributes>
@@ -625,10 +428,10 @@ Tuplets
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2331</x>
-      <y>1170</y>
-      <w>351</w>
-      <h>153</h>
+      <x>2121</x>
+      <y>945</y>
+      <w>273</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>MathIncrementalImp
 --
@@ -645,10 +448,10 @@ Tuplets
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2547</x>
-      <y>1089</y>
-      <w>144</w>
-      <h>99</h>
+      <x>2289</x>
+      <y>882</y>
+      <w>112</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>140.0;10.0;140.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
@@ -656,10 +459,10 @@ Tuplets
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2466</x>
-      <y>1629</y>
-      <w>261</w>
-      <h>90</h>
+      <x>2226</x>
+      <y>1302</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>TupleImp
 --
@@ -671,10 +474,10 @@ _+getTuplet() : int[]_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2601</x>
-      <y>1548</y>
-      <w>27</w>
-      <h>99</h>
+      <x>2331</x>
+      <y>1239</y>
+      <w>21</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
@@ -682,10 +485,10 @@ _+getTuplet() : int[]_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1332</x>
-      <y>1161</y>
-      <w>108</w>
-      <h>36</h>
+      <x>1344</x>
+      <y>938</y>
+      <w>84</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
@@ -694,46 +497,46 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>1179</y>
-      <w>1782</w>
-      <h>603</h>
+      <x>616</x>
+      <y>938</y>
+      <w>1386</w>
+      <h>483</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>10.0;510.0;10.0;650.0;1960.0;650.0;1960.0;10.0</additional_attributes>
+    <additional_attributes>10.0;530.0;10.0;670.0;1960.0;670.0;1960.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1089</x>
-      <y>972</y>
-      <w>792</w>
-      <h>36</h>
+      <x>1155</x>
+      <y>791</y>
+      <w>588</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;10.0;860.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;820.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>972</y>
-      <w>342</w>
-      <h>531</h>
+      <x>700</x>
+      <y>805</y>
+      <w>266</w>
+      <h>399</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>10.0;560.0;360.0;560.0;360.0;10.0</additional_attributes>
+    <additional_attributes>10.0;540.0;360.0;540.0;360.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>405</x>
-      <y>144</y>
-      <w>576</w>
-      <h>225</h>
+      <x>623</x>
+      <y>147</y>
+      <w>448</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>bg=orange
 create order
@@ -749,34 +552,12 @@ Create your *MathIncrementalImp* from the step 4 of Part A</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1953</x>
-      <y>738</y>
-      <w>306</w>
-      <h>171</h>
-    </coordinates>
-    <panel_attributes>DateGroup
---
-dates : int[]
-format1 : SimpleDateFormat
---
-&lt;&lt;constructor&gt;&gt; DateGroup(int, int, int, int)
-&lt;&lt;constructor&gt;&gt; DateGroup(String, String, int, int)
-&lt;&lt;constructor&gt;&gt; DateGroup(int, int, int)
-&lt;&lt;constructor&gt;&gt; DateGroup(String, String, int)
-rotateDateLocal(int, int, int, int) : void
-rotateDate(int, int, int, int) : int[]
-getDates() : int[]</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>2061</x>
-      <y>900</y>
-      <w>27</w>
-      <h>63</h>
+      <x>2051</x>
+      <y>735</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
@@ -785,10 +566,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>27</x>
-      <y>1404</y>
-      <w>135</w>
-      <h>90</h>
+      <x>329</x>
+      <y>1127</y>
+      <w>105</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;enum&gt;&gt;
 Type
@@ -801,34 +582,34 @@ ETF</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>423</y>
-      <w>1224</w>
+      <x>329</x>
+      <y>364</y>
+      <w>1148</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0;1340.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0;1620.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>504</y>
-      <w>1503</w>
-      <h>459</h>
+      <x>420</x>
+      <y>427</y>
+      <w>1365</w>
+      <h>357</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;1180.0;10.0;1180.0;450.0;1650.0;450.0;1650.0;490.0</additional_attributes>
+    <additional_attributes>10.0;10.0;1460.0;10.0;1460.0;450.0;1930.0;450.0;1930.0;490.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>324</y>
-      <w>135</w>
-      <h>90</h>
+      <x>112</x>
+      <y>315</y>
+      <w>105</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;enum&gt;&gt;
 TypeStockEntry
@@ -841,21 +622,21 @@ GENERIC</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>45</x>
-      <y>63</y>
-      <w>1602</w>
-      <h>279</h>
+      <x>147</x>
+      <y>77</y>
+      <w>1330</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>lt=&lt;..</panel_attributes>
-    <additional_attributes>10.0;290.0;10.0;10.0;1760.0;10.0</additional_attributes>
+    <additional_attributes>10.0;340.0;10.0;10.0;1880.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>1485</y>
-      <w>189</w>
-      <h>72</h>
+      <x>378</x>
+      <y>1190</y>
+      <w>147</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
@@ -864,10 +645,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>486</x>
-      <y>1620</y>
-      <w>18</w>
-      <h>63</h>
+      <x>686</x>
+      <y>1295</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -875,10 +656,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>153</x>
-      <y>1449</y>
-      <w>18</w>
-      <h>63</h>
+      <x>427</x>
+      <y>1162</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -886,10 +667,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2250</x>
-      <y>819</y>
-      <w>18</w>
-      <h>63</h>
+      <x>2275</x>
+      <y>672</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -898,9 +679,9 @@ m1=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1386</x>
-      <y>1260</y>
-      <w>333</w>
-      <h>126</h>
+      <y>1015</y>
+      <w>259</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>/ParserAbstract/
 --
@@ -908,16 +689,17 @@ m1=1</panel_attributes>
 /+parseTags(String, Stock) : StockEntry/
 /+getURL(Strock) : URL/
 #transformBrazilDateIntoUniversalDate(String) : int
-#valuePontuationConverter(String) : String</panel_attributes>
+#valuePontuationConverter(String) : String
+#stringToDouble(String) : double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1521</x>
-      <y>1377</y>
-      <w>27</w>
-      <h>126</h>
+      <x>1491</x>
+      <y>1106</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -925,10 +707,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1521</x>
-      <y>1377</y>
-      <w>450</w>
-      <h>126</h>
+      <x>1491</x>
+      <y>1106</y>
+      <w>350</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0;480.0;80.0;480.0;120.0</additional_attributes>
@@ -936,10 +718,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1683</x>
-      <y>1557</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1617</x>
+      <y>1246</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -947,10 +729,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2061</x>
-      <y>1557</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1911</x>
+      <y>1246</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -958,10 +740,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1710</x>
-      <y>1332</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1638</x>
+      <y>1071</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -969,10 +751,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1692</x>
-      <y>1170</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1624</x>
+      <y>945</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -980,10 +762,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1062</x>
-      <y>1665</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1134</x>
+      <y>1330</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -991,22 +773,22 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>36</x>
-      <y>405</y>
-      <w>108</w>
-      <h>153</h>
+      <x>140</x>
+      <y>378</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0;100.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>423</x>
-      <y>891</y>
-      <w>18</w>
-      <h>63</h>
+      <x>490</x>
+      <y>721</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1014,10 +796,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>396</x>
-      <y>585</y>
-      <w>18</w>
-      <h>63</h>
+      <x>420</x>
+      <y>469</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1025,10 +807,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>126</x>
-      <y>378</y>
-      <w>18</w>
-      <h>63</h>
+      <x>406</x>
+      <y>350</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1036,10 +818,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1233</x>
-      <y>1287</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1267</x>
+      <y>1036</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1047,10 +829,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1782</x>
-      <y>1305</y>
-      <w>333</w>
-      <h>126</h>
+      <x>1694</x>
+      <y>1050</y>
+      <w>259</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>ParserBovespaXLSPrices
 --
@@ -1066,10 +848,10 @@ stocks : List&lt;Stock&gt;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1521</x>
-      <y>1377</y>
-      <w>450</w>
-      <h>90</h>
+      <x>1491</x>
+      <y>1106</y>
+      <w>350</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0;480.0;80.0;480.0;60.0</additional_attributes>
@@ -1077,10 +859,10 @@ stocks : List&lt;Stock&gt;
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2106</x>
-      <y>1386</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1946</x>
+      <y>1113</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1088,10 +870,10 @@ stocks : List&lt;Stock&gt;
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>684</x>
-      <y>1251</y>
-      <w>18</w>
-      <h>63</h>
+      <x>840</x>
+      <y>1008</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1099,10 +881,10 @@ stocks : List&lt;Stock&gt;
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>702</x>
-      <y>873</y>
-      <w>18</w>
-      <h>63</h>
+      <x>854</x>
+      <y>714</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1110,10 +892,10 @@ stocks : List&lt;Stock&gt;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>1161</y>
-      <w>756</w>
-      <h>216</h>
+      <x>840</x>
+      <y>938</y>
+      <w>588</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
@@ -1122,10 +904,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1080</x>
-      <y>693</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1225</x>
+      <y>602</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1133,10 +915,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2016</x>
-      <y>612</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1883</x>
+      <y>469</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1144,10 +926,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1908</x>
-      <y>864</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1869</x>
+      <y>630</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1155,10 +937,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2007</x>
-      <y>243</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1883</x>
+      <y>203</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -1166,12 +948,264 @@ m1=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>1899</x>
-      <y>90</y>
-      <w>18</w>
-      <h>63</h>
+      <x>1456</x>
+      <y>0</y>
+      <w>14</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1141</x>
+      <y>798</y>
+      <w>14</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>567</y>
+      <w>497</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp::StockEntryImp
+--
+-date = -1: int
+-closePrice = -1: double
+-sortType = 0: int
+-stock = null: Stock
+-volume = null: String
+-type = null: TypeStockEntry
+--
++StockEntryImp(Stock stock, int date, double proventos, String volume, TypeStockEntry type): ctor
++StockEntryImp(Stock stock, int date, double proventos, String volume, int type): ctor
++StockEntryImp(Stock stock, int date, double proventos, String volume, int type, int sortType): ctor
++StockEntryImp(Stock stock, int date, double proventos, String volume, TypeStockEntry type, int sortType): ctor
++getStock(): Stock
++getCalendar(): Calendar
++getDate(): int
++getClosePrice(): double
++getVolume(): String
++toString(): String
++getType(): TypeStockEntry
++getSortType(): int
++setSortType(int sortType): void
++compareTo(StockEntry arg0): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>91</x>
+      <y>413</y>
+      <w>336</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks::StockEntry
+--
+--
++getStock(): Stock
++getCalendar(): Calendar
++getDate(): int
++getClosePrice(): double
++getVolume(): String
++getType(): TypeStockEntry
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>644</y>
+      <w>322</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.tapette.stock.bovespaHistoryFormater.inputs.extracters::Extracters
+--
+--
++execute(): boolean
++getList(): TableDAO
++getFileDir(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>567</y>
+      <w>308</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.tapette.stock.bovespaHistoryFormater.inputs.table::TableDAO
+--
+--
++getStock(Stock str): StockName
++getRelativeDatePrice(Stock stock, int date): void
++addStock(StockEntry stockEntry): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1463</x>
+      <y>0</y>
+      <w>413</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped::StocksEntrySimple
+--
+--
++add(StockEntry stockEntry): void
++get(int index): StockEntry
++get(int index, TypeStockEntry type): StockEntry
++sort(): ArrayList&lt;StockEntry&gt;
++sort(TypeStockEntry type): ArrayList&lt;StockEntry&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>140</y>
+      <w>420</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped::StocksEntryGrouped
+--
+--
++getRelativeDateStockEntry(int date): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[] dates): List&lt;List&lt;StockEntry&gt;&gt;
++getRelativeDateStockEntry(int date, TypeStockEntry type): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[] dates, TypeStockEntry type): List&lt;List&lt;StockEntry&gt;&gt;
++getDateArray(): int[]
++getDateArray(TypeStockEntry type): int[]
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1463</x>
+      <y>308</y>
+      <w>427</w>
+      <h>259</h>
+    </coordinates>
+    <panel_attributes>/com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp::StocksAbstractImp/
+--
+#dateArrayIndexPlusOne = null: int[][]
+#stockEntrys = new ArrayList&lt;StockEntry&gt;(): ArrayList&lt;StockEntry&gt;
+#stockEntryHash = null: HashMap&lt;TypeStockEntry, ArrayList&lt;StockEntry&gt;&gt;
+--
++getRelativeDateStockEntry(int date): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int date, TypeStockEntry stockEntry): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[] date): List&lt;List&lt;StockEntry&gt;&gt;
++getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry): List&lt;List&lt;StockEntry&gt;&gt;
++get(int index): StockEntry
++get(int index, TypeStockEntry type): StockEntry
++add(StockEntry stockEntry): void
++getDateArray(): int[]
++getDateArray(TypeStockEntry type): int[]
+#removeNulls(int[] array): int[]
+#rotateDate(int date): int
+#rotateDate(int date, TypeStockEntry type): int
++toString(): String
++sort(): ArrayList&lt;StockEntry&gt;
++sort(TypeStockEntry type): ArrayList&lt;StockEntry&gt;
+#createHash(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1477</x>
+      <y>609</y>
+      <w>399</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp::StockName
+--
+--
++getRelativeDateStockEntry(int date): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int date, TypeStockEntry stockEntry): List&lt;StockEntry&gt;
++getRelativeDateStockEntry(int[] date): List&lt;List&lt;StockEntry&gt;&gt;
++getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry): List&lt;List&lt;StockEntry&gt;&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1925</x>
+      <y>595</y>
+      <w>357</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp::DateGroup
+--
+-dates = null: int[]
+-format1 = new SimpleDateFormat("yyyyMMdd"): SimpleDateFormat
+--
++DateGroup(int initialDate, int finalDate, int interval, int maxDates): ctor
++DateGroup(String initialDate, String finalDate, int interval, int maxDates): ctor
++DateGroup(int initialDate, int finalDate, int interval): ctor
++DateGroup(String initialDate, String finalDate, int interval): ctor
+-rotateDateLocal(int startDate, int endDate, int interval, int maxDates): void
++rotateDate(int startDate, int endDate, int interval, int maxDates): int[]
++getDates(): int[]
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1729</x>
+      <y>770</y>
+      <w>371</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp::StockGroup
+--
+-stocks = null: TableDAO
+-dates = null: DateGroup
+-resultIntArray: double[][]
+-names = null: List&lt;Stock&gt;
+-stockNames = new ArrayList(): List&lt;StockName&gt;
+--
++StockGroup(List&lt;Stock&gt; names, TableDAO stocks, DateGroup dates): ctor
++processResultIntArray(): boolean
++processNamesArray(): boolean
++getResultIntArray(): double[][]
++getNamesArray(): List&lt;StockName&gt;
+-getProximunTimesPrice(StockName stockName, int date): double
+--
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

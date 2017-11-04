@@ -12,6 +12,7 @@ public class Stock {
 	public Stock(String stock , String codigoBovespa, Type type) {
 		this.codigoBovespa = codigoBovespa;
 		this.stock = stock;
+		this.type = type;
 	}
 	
 	public Stock(String stock , String codigoBovespa, int type) {

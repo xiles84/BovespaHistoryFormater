@@ -7,12 +7,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyFile;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyStockArray;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidFormat;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class ExtracterBovespaXLS implements Extracters {
+
+	private static Logger logger = LoggerFactory.getLogger( ExtracterBovespaXLS.class );
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
@@ -21,9 +30,9 @@ public class ExtracterBovespaXLS implements Extracters {
 	private boolean hasExecuted = false;
 
 
-	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks, TableDAO table, Parsers parser) throws Exception {
+	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks, TableDAO table, Parsers parser) throws ExceptionEmptyStockArray {
 		if(stocks == null || stocks.isEmpty())
-			throw new Exception("Stock array must not be neither null nor empty");
+			throw new ExceptionEmptyStockArray();
 		this.fileDir = fileDir;
 		this.stocks = stocks;
 		this.parser = parser;
@@ -31,7 +40,7 @@ public class ExtracterBovespaXLS implements Extracters {
 	}
 
 	@Override
-	public boolean execute() throws Exception {
+	public boolean execute() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat {
 		hasExecuted = false;
 		File folder = null;
 		File[] listOfFiles = null;
@@ -46,25 +55,32 @@ public class ExtracterBovespaXLS implements Extracters {
 		return true;
 	}
 
-	protected boolean run(String fileStr) throws Exception {
+	protected boolean run(String fileStr) throws ExceptionEmptyFile, ExceptionInvalidFormat {
 		if(fileStr == null || fileStr.isEmpty())
-			throw new Exception();
+			throw new ExceptionEmptyFile();
 		return run(new File(fileStr));
 	}
 
-	protected boolean run(File file) throws Exception {
+	protected boolean run(File file) throws ExceptionEmptyFile, ExceptionInvalidFormat{
 		if(file == null)
-			throw new Exception();
+			throw new ExceptionEmptyFile();
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("run was called for [%s]", file.getAbsolutePath()));
 		BufferedReader reader = null;
 		try {
 			reader = bufferedReader(fileReader(file));
 			String text = null;
 			while ((text = readLine(reader)) != null && text.length() == 245) {
 				outerloop:
-				for (int j = 0; j < stocks.size(); j++)
-					if(text.contains(this.stocks.get(j).getStock())) {
-						table.addStock(parser.parseTags(text, this.stocks.get(j)));
-						break outerloop;
+					for (int j = 0; j < stocks.size(); j++) {
+						if(logger.isDebugEnabled())
+							logger.debug(String.format("run will check if [%s] contains [%s] = %s", text, this.stocks.get(j).getStock(), text.contains(this.stocks.get(j).getStock())));
+						if(text.contains(this.stocks.get(j).getStock())) {
+							table.addStockEntry(parser.parseTags(text, this.stocks.get(j)));
+							if(logger.isDebugEnabled())
+								logger.debug(String.format("run found this tags [%s]", parser.parseTags(text, this.stocks.get(j)) != null ? parser.parseTags(text, this.stocks.get(j)) : "null"));
+							break outerloop;
+						}
 					}
 			}
 		} catch (FileNotFoundException e) {
@@ -83,7 +99,7 @@ public class ExtracterBovespaXLS implements Extracters {
 	}
 
 	@Override
-	public TableDAO getList() throws Exception {
+	public TableDAO getList() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat {
 		if(!hasExecuted)
 			execute();
 		return table;

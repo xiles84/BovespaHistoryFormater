@@ -1,95 +1,114 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
-import java.text.SimpleDateFormat;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyFile;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidFormat;
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
+import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockName;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockEntriesGrupped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class StockGroup {
-	
-	private TableDAO stocks = null;
-	private List<String> dates = null;
-	private String[][] resultStringArray;
-	private double[][] resultIntArray;
-	private boolean executed = false;
-	private List<Stock> names = null;
-	private static SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
-	private List<StockName> stockNames = new ArrayList<>();
-	
-	public StockGroup(List<Stock> names, TableDAO stocks, List<String> dates) {
-		this.stocks = stocks;
+
+	private static Logger logger = LoggerFactory.getLogger( StockGroup.class );
+
+	private TableDAO table = null;
+	private DateGroup dates = null;
+	private double[][] resultIntArray = null;
+	private List<Stock> stockList = null;
+
+	public StockGroup(List<Stock> stockList, TableDAO table, DateGroup dates) {
+		this.table = table;
 		this.dates = dates;
-		this.resultStringArray = new String[dates.size()+1][names.size()+1];
-		this.resultIntArray = new double[dates.size()][names.size()];
-		this.executed = false;
-		this.names = names;
+		this.stockList = stockList;
 	}
-	
-	public boolean execute() throws Exception {
-		resultStringArray[0][0] = "Dates\\Prices";
-		for (int i = 0; i < names.size(); i++) {
-			stockNames.add(stocks.getStock(names.get(i)));
-			resultStringArray[0][i+1] = names.get(i).getStock();
-		}
-		for (int i = 0; i < dates.size(); i++) {
-			resultStringArray[i+1][0] = dates.get(i);
-			for (int j = 0; j < stockNames.size(); j++) {
-				resultStringArray[i+1][j+1] = getProximunTimesPrice(stockNames.get(j), dates.get(i));
-				resultIntArray[i][j] = stringToDouble(getProximunTimesPrice(stockNames.get(j), dates.get(i)));
+
+	public StockGroup(List<Stock> stockList, Extracters extracters, DateGroup dates) throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat, InterruptedException {
+		this(stockList, extracters.getList(), dates);
+	}
+
+	public boolean processResultIntArray() {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("processResultIntArray has been called [%s]" , stockList));
+		this.resultIntArray = new double[dates.getDates().length][stockList.size()];
+		double tempVal = -1;
+		for (int j = 0; j < stockList.size(); j++) {
+			try {
+				tempVal = getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[0]);
+				resultIntArray[0][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[0]);
+			} catch (ExceptionOutOfRangeDate e) {
+				tempVal = -1;
+				resultIntArray[0][j] = -1;
+			}
+			for (int i = 1; i < dates.getDates().length; i++) {
+				try {
+					resultIntArray[i][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[i]) +
+							getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[i]) -
+							tempVal;
+				} catch (ExceptionOutOfRangeDate e) {
+					resultIntArray[i][j] = -1;
+				}
 			}
 		}
-		this.executed = true;
+		if(logger.isDebugEnabled())
+			for (int j = 0; j < resultIntArray.length; j++)
+				logger.debug(String.format("processResultIntArray has ended [%s:%s:%s]", j, dates.getDates()[j], Arrays.toString(resultIntArray[j])));
 		return true;
 	}
-	
-	private String getProximunTimesPrice(StockName stockName, String date) throws Exception {
-		if(stockName != null) return stockName.getProximunTimesPrice(date);
-		return "";
-	}
 
-	public boolean isExecuted() {
-		return executed;
-	}
-	
-	private double stringToDouble(String str) {
-		if(str == null || str.isEmpty()) return -1d;
-		return Double.parseDouble(str);
-	}
-	
-	public static List<String> rotateDate(String startDate, String endDate, int interval, int maxDates) throws Exception {
-		Integer date = Integer.parseInt(startDate);
-		Integer finalDate = Integer.parseInt(endDate);
-		List<String> dates = new ArrayList<String>();
-		Calendar cal = new GregorianCalendar(date/10000, (date/100)%100 - 1, date%100);
-		dates.add(startDate);
-		Calendar finalCal = new GregorianCalendar(finalDate/10000, (finalDate/100)%100 - 1, finalDate%100);
-		for (int i = 0; i < maxDates; i++) {
-			cal.add(Calendar.DAY_OF_MONTH, interval);
-			if(cal.after(finalCal))
-				return dates;
-			dates.add(format1.format(cal.getTime()));
-		}
-		return dates;
-	}
-
-	public String[][] getResultStringArray() throws Exception {
-		if(!executed)
-			execute();
-		return resultStringArray;
-	}
-
-	public double[][] getResultIntArray() throws Exception {
-		if(!executed)
-			execute();
+	public double[][] getResultIntArray() throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getResultIntArray has been called [%s]", resultIntArray == null ? "true" : "false"));
+		if(resultIntArray == null)
+			processResultIntArray();
 		return resultIntArray;
 	}
-	
-	
-	
+
+	private double getProximunTimesPrice(StockEntriesGrupped stockName, int date) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug((stockName != null &&
+			stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE) != null &&
+			!(stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE).size() < 1)) ?
+					String.format("getProximunTimesPrice has been called [%s:%s:%s]",
+							date,
+							TypeStockEntry.PRICE,
+							stockName.
+							getRelativeDateStockEntry(date, TypeStockEntry.PRICE).
+							get(0).
+							getClosePrice()) :
+					"getProximunTimesPrice has been called with null stock");
+		if(stockName != null &&
+				stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE) != null &&
+				!(stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE).size() < 1)) return stockName.
+						getRelativeDateStockEntry(
+								date, TypeStockEntry.PRICE).
+						get(0).getClosePrice();
+		return -1;
+	}
+
+	private double getProximunTimesPremium(StockEntriesGrupped stockName, int date) throws ExceptionOutOfRangeDate {
+		if(stockName == null)
+			return -1;
+		List<StockEntry> ret = stockName.
+				getRelativeDateStockEntry(
+						date, TypeStockEntry.PROVENTOS);
+		if(ret == null || ret.isEmpty() || ret.size() < 1)
+			return -1;
+		return stockName.
+				getRelativeDateStockEntry(
+						date, TypeStockEntry.PROVENTOS).
+				get(0).getClosePrice();
+	}
+
 
 }

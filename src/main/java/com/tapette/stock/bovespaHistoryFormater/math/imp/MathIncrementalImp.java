@@ -2,6 +2,7 @@ package com.tapette.stock.bovespaHistoryFormater.math.imp;
 
 import java.util.Arrays;
 
+import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRange;
 import com.tapette.stock.bovespaHistoryFormater.math.StrockMath;
 
 public class MathIncrementalImp implements StrockMath {
@@ -35,12 +36,12 @@ public class MathIncrementalImp implements StrockMath {
 	}
 
 	@Override
-	public double[][] getSimpleCovariance() throws Exception {
+	public double[][] getSimpleCovariance() throws ExceptionOutOfRange{
 		return this.math.getSimpleCovariance();
 	}
 
 	@Override
-	public double[][] getPonderedCovariance(int[] ponder) throws Exception {
+	public double[][] getPonderedCovariance(int[] ponder) throws ExceptionOutOfRange{
 		return this.math.getPonderedCovariance(ponder);
 	}
 

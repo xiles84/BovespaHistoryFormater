@@ -5,6 +5,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.ParserAbstract;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockEntryImp;
@@ -13,6 +16,7 @@ import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class ParserBovespaXLSPrices extends ParserAbstract {
 
+	private static Logger logger = LoggerFactory.getLogger( ParserBovespaXLSPrices.class );
 	List<Stock> stocks = null;
 
 	public ParserBovespaXLSPrices(List<Stock> stocks) {
@@ -27,13 +31,16 @@ public class ParserBovespaXLSPrices extends ParserAbstract {
 	}
 
 	@Override
-	public StockEntry parseTags(String str, Stock stock) throws Exception {
+	public StockEntry parseTags(String str, Stock stock) {
 
 		ArrayList<StringBuilder> array = previousParseTags(str);
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("The following tags were parsed [%s]", array));
 		return new StockEntryImp(
 				stock,
 				Integer.parseInt(array.get(1).toString()),
-				array.get(13).toString(),
+				stringToDouble(array.get(13).toString()),
+				-1,
 				array.get(18).toString(),
 				TypeStockEntry.PRICE);
 	}
