@@ -35,14 +35,16 @@ public class ExtracterProventosMultiThread  implements Extracters {
 
 	@Override
 	public TableDAO getList() throws InterruptedException {
-		if(table == null)
-			execute();
-		int loopCount = 0;
-		while(!hasFinished() && loopCount < loopTimeout*2) {
-			Thread.sleep(500);
-			loopCount++;
+		synchronized (this) {
+			if(table == null)
+				execute();
+			int loopCount = 0;
+			while(!hasFinished() && loopCount < loopTimeout*2) {
+				Thread.sleep(500);
+				loopCount++;
+			}
+			return table;
 		}
-		return table;
 	}
 
 	@Override

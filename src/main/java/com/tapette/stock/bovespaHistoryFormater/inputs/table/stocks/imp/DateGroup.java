@@ -1,6 +1,7 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -43,7 +44,7 @@ public class DateGroup {
 		datesTemp[count] =  startDate;
 		count++;
 		Calendar finalCal = new GregorianCalendar(endDate/10000, (endDate/100)%100 - 1, endDate%100);
-		for (int i = 0; i < maxDates; i++) {
+		for (int i = 1; i < maxDates; i++) {
 			cal.add(Calendar.DAY_OF_MONTH, interval);
 			if(cal.after(finalCal))
 				continue;
@@ -51,7 +52,7 @@ public class DateGroup {
 			count++;
 		}
 		int[] returnResult = new int[count];
-		for (int i = 0; i < count; i++) {
+		for (int i = 1; i < count; i++) {
 			returnResult[i] = datesTemp[i];
 		}
 		return returnResult;

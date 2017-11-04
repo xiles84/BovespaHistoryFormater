@@ -56,6 +56,8 @@ public class StockGroup {
 							getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[i]) -
 							tempVal;
 				} catch (ExceptionOutOfRangeDate e) {
+					if(logger.isErrorEnabled())
+							logger.error(e.getMessage(), e);
 					resultIntArray[i][j] = -1;
 				}
 			}

@@ -7,11 +7,17 @@ import java.io.InputStreamReader;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class WebMultiThread extends Thread {
+
+	private static Logger logger = LoggerFactory.getLogger( WebMultiThread.class );
 
 	private Stock stock = null;
 	private volatile TableDAO table = null;
@@ -29,6 +35,8 @@ public class WebMultiThread extends Thread {
 		finished = false;
 		super.run();
 		ArrayList<String> list = getLines();
+		if(list == null)
+			return;
 		for (int i = 0; i < list.size(); i++) {
 			try {
 				table.addStockEntry(parser.parseTags(list.get(i), stock));
@@ -54,11 +62,15 @@ public class WebMultiThread extends Thread {
 			while ((line = br.readLine()) != null)
 				parser.preFilter(line, list);
 		} catch (IOException e) {
-			e.printStackTrace();
+			if(logger.isErrorEnabled())
+				logger.error(e.getMessage(),e);
+			return null;
 		}finally {
 			try {
-				br.close();
-				is.close();
+				if(br != null)
+					br.close();
+				if(is != null)
+					is.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
