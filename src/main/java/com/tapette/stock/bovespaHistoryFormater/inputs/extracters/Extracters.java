@@ -9,10 +9,10 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 
 public interface Extracters {
 
-	public boolean execute() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat;
-
-	public TableDAO getList() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat, InterruptedException;
+	public boolean execute(TableDAO table) throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat;
 
 	public ArrayList<String> getFileDir();
+
+	boolean hasFinished();
 
 }

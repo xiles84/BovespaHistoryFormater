@@ -21,6 +21,8 @@ public class ParserFIIsProventos extends ParserAbstract {
 
 	@Override
 	public void preFilter(String line, List<String> list) {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("preFilter will check the following string [%s]", line));
 		if(line.contains("Data") && line.contains("Abertura")&& line.contains("Fechamento") && line.contains("Negociadas")) {
 			String[] column = line.split("</TR>");
 			if(column.length < 1)

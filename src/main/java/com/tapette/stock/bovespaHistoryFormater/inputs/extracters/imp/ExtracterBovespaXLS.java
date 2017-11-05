@@ -16,7 +16,6 @@ import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidForma
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class ExtracterBovespaXLS implements Extracters {
@@ -25,23 +24,21 @@ public class ExtracterBovespaXLS implements Extracters {
 
 	private ArrayList<String> fileDir = new ArrayList<String>();
 	private ArrayList<Stock> stocks = new ArrayList<Stock>();
-	private TableDAO table = null;
+	//private TableDAO table = null;
 	private Parsers parser = null;
-	private boolean hasExecuted = false;
+	private volatile boolean finished = false;
 
 
-	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks, TableDAO table, Parsers parser) throws ExceptionEmptyStockArray {
+	public ExtracterBovespaXLS(ArrayList<String> fileDir , ArrayList<Stock> stocks, Parsers parser) throws ExceptionEmptyStockArray {
 		if(stocks == null || stocks.isEmpty())
 			throw new ExceptionEmptyStockArray();
 		this.fileDir = fileDir;
 		this.stocks = stocks;
 		this.parser = parser;
-		this.table = table;
 	}
 
 	@Override
-	public boolean execute() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat {
-		hasExecuted = false;
+	public boolean execute(TableDAO table) throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat {
 		File folder = null;
 		File[] listOfFiles = null;
 		for (int i = 0; i < getFileDir().size() ; i++) {
@@ -49,21 +46,21 @@ public class ExtracterBovespaXLS implements Extracters {
 			listOfFiles = folder.listFiles();
 			for (int j = 0; j < listOfFiles.length; j++)
 				if (listOfFiles[j].isFile())
-					run(listOfFiles[j]);
+					run(listOfFiles[j], table);
 		}
-		hasExecuted = true;
 		return true;
 	}
 
-	protected boolean run(String fileStr) throws ExceptionEmptyFile, ExceptionInvalidFormat {
+	protected boolean run(String fileStr, TableDAO table) throws ExceptionEmptyFile, ExceptionInvalidFormat {
 		if(fileStr == null || fileStr.isEmpty())
 			throw new ExceptionEmptyFile();
-		return run(new File(fileStr));
+		return run(new File(fileStr), table);
 	}
 
-	protected boolean run(File file) throws ExceptionEmptyFile, ExceptionInvalidFormat{
+	protected boolean run(File file, TableDAO table) throws ExceptionEmptyFile, ExceptionInvalidFormat{
 		if(file == null)
 			throw new ExceptionEmptyFile();
+		finished = false;
 		if(logger.isDebugEnabled())
 			logger.debug(String.format("run was called for [%s]", file.getAbsolutePath()));
 		BufferedReader reader = null;
@@ -95,14 +92,8 @@ public class ExtracterBovespaXLS implements Extracters {
 			} catch (IOException e) {
 			}
 		}
+		finished = true;
 		return true;
-	}
-
-	@Override
-	public TableDAO getList() throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat {
-		if(!hasExecuted)
-			execute();
-		return table;
 	}
 
 	protected FileReader fileReader(File file) throws FileNotFoundException {
@@ -130,6 +121,11 @@ public class ExtracterBovespaXLS implements Extracters {
 	@Override
 	public ArrayList<String> getFileDir(){
 		return this.fileDir;
+	}
+
+	@Override
+	public boolean hasFinished() {
+		return finished;
 	}
 
 }

@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.ParserBovespaXLSPrices;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 
@@ -21,13 +20,15 @@ public class StockEntriesGrupped extends StocksAbstractImp {
 	}
 
 	@Override
-	public List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntry) throws ExceptionOutOfRangeDate {
-		int localDate = rotateDate(date);
+	public List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntryTupe) throws ExceptionOutOfRangeDate {
+		int localDate = rotateDate(date, stockEntryTupe);
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getRelativeDateStockEntry had to transform the date [%s:%s]", date, localDate));
 		ArrayList<StockEntry> localArray = new ArrayList<StockEntry>();
 		for (int i = 0; i < stockEntrys.size(); i++) {
 			if(logger.isDebugEnabled())
-				logger.debug(String.format("getRelativeDateStockEntry was called, the verification resulted in %s", stockEntrys.get(i).getDate() == localDate && (stockEntry == null || stockEntrys.get(i).getType().getIntType() == stockEntry.getIntType())));
-			if(stockEntrys.get(i).getDate() == localDate && (stockEntry == null || stockEntrys.get(i).getType().getIntType() == stockEntry.getIntType()))
+				logger.debug(String.format("getRelativeDateStockEntry was called, the verification resulted in %s", stockEntrys.get(i).getDate() == localDate && (stockEntryTupe == null || stockEntrys.get(i).getType().getIntType() == stockEntryTupe.getIntType())));
+			if(stockEntrys.get(i).getDate() == localDate && (stockEntryTupe == null || stockEntrys.get(i).getType().getIntType() == stockEntryTupe.getIntType()))
 				localArray.add(stockEntrys.get(i));
 		}
 		return localArray;

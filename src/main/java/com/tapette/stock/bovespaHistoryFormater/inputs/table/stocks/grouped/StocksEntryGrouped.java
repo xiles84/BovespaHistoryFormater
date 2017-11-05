@@ -14,5 +14,6 @@ public interface StocksEntryGrouped extends StocksEntrySimple {
 	public  List<List<StockEntry>> getRelativeDateStockEntry(int[] dates, TypeStockEntry type) throws ExceptionOutOfRangeDate; 
 	public int[] getDateArray();
 	public int[] getDateArray(TypeStockEntry type);
+	public String getIdent();
 
 }

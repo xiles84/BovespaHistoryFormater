@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.Parsers;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class WebMultiThread extends Thread {
@@ -21,7 +21,7 @@ public class WebMultiThread extends Thread {
 
 	private Stock stock = null;
 	private volatile TableDAO table = null;
-	private boolean finished = false;
+	private volatile boolean finished = false;
 	private Parsers parser = null;
 
 	public WebMultiThread(Stock stock, TableDAO table, Parsers parser) {
@@ -34,12 +34,19 @@ public class WebMultiThread extends Thread {
 	public void run() {
 		finished = false;
 		super.run();
+		if(logger.isDebugEnabled())
+			logger.debug("run will exeture now");
 		ArrayList<String> list = getLines();
 		if(list == null)
 			return;
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("run got the following lines [%s]", list));
 		for (int i = 0; i < list.size(); i++) {
 			try {
-				table.addStockEntry(parser.parseTags(list.get(i), stock));
+				StockEntry stockEntry = parser.parseTags(list.get(i), stock);
+				if(logger.isDebugEnabled())
+					logger.debug(String.format("run will add the following stockEntry [%s]", stockEntry));
+				table.addStockEntry(stockEntry);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -47,6 +54,8 @@ public class WebMultiThread extends Thread {
 	}
 
 	private ArrayList<String> getLines(){
+		if(logger.isDebugEnabled())
+			logger.debug("getLines will initiated");
 		URLConnection conn;
 		InputStream is = null;
 		BufferedReader br = null;
@@ -56,7 +65,7 @@ public class WebMultiThread extends Thread {
 			conn = parser.
 					getStockURL(stock).
 					openConnection();
-			conn.setConnectTimeout(60000);
+			conn.setConnectTimeout(120000);
 			is = conn.getInputStream();
 			br = new BufferedReader(new InputStreamReader(is));
 			while ((line = br.readLine()) != null)
@@ -64,6 +73,7 @@ public class WebMultiThread extends Thread {
 		} catch (IOException e) {
 			if(logger.isErrorEnabled())
 				logger.error(e.getMessage(),e);
+			finished = true;
 			return null;
 		}finally {
 			try {
@@ -72,14 +82,19 @@ public class WebMultiThread extends Thread {
 				if(is != null)
 					is.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				if(logger.isErrorEnabled())
+					logger.debug(e.getMessage(), e);
 			}
 		}
+		if(logger.isDebugEnabled())
+			logger.debug("getLines finishing");
 		finished = true;
 		return list;
 	}
 
 	public boolean hasFinished() {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("hasFinished will return [%s]", finished));
 		return finished;
 	}
 

@@ -33,6 +33,11 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	public StockEntry get(int index) {
 		return get(index, null);
 	}
+	
+	@Override
+	public String getIdent() {
+		return get(0, null).getStock().getStock();
+	}
 
 	@Override
 	public StockEntry get(int index, TypeStockEntry type) {
@@ -113,8 +118,10 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	protected int rotateDate(int date, TypeStockEntry type) throws ExceptionOutOfRangeDate {
 		if(getDateArray(type)[0] >  date)
 			throw new ExceptionOutOfRangeDate(date);
+		//The next part didnt consider other type of entries
 		if(getDateArray()[getDateArray(type).length-1] <  date)
 			return getDateArray()[getDateArray(type).length-1];
+		//The next part didnt consider the type.. how did a forget this?????
 		int index =  Arrays.binarySearch(getDateArray(type), date);
 		return index < 0 ?  getDateArray(type)[-index-2] : getDateArray(type)[index];
 	}

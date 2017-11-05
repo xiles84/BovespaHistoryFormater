@@ -33,11 +33,7 @@ public class StockGroup {
 		this.stockList = stockList;
 	}
 
-	public StockGroup(List<Stock> stockList, Extracters extracters, DateGroup dates) throws IOException, ExceptionEmptyFile, ExceptionInvalidFormat, InterruptedException {
-		this(stockList, extracters.getList(), dates);
-	}
-
-	public boolean processResultIntArray() {
+	private boolean processResultIntArray() {
 		if(logger.isDebugEnabled())
 			logger.debug(String.format("processResultIntArray has been called [%s]" , stockList));
 		this.resultIntArray = new double[dates.getDates().length][stockList.size()];
@@ -57,7 +53,7 @@ public class StockGroup {
 							tempVal;
 				} catch (ExceptionOutOfRangeDate e) {
 					if(logger.isErrorEnabled())
-							logger.error(e.getMessage(), e);
+						logger.error(e.getMessage(), e);
 					resultIntArray[i][j] = -1;
 				}
 			}
@@ -76,26 +72,29 @@ public class StockGroup {
 		return resultIntArray;
 	}
 
-	private double getProximunTimesPrice(StockEntriesGrupped stockName, int date) throws ExceptionOutOfRangeDate {
+	private double getProximunTimesPrice(StockEntriesGrupped stockEntriesGrupped, int date) throws ExceptionOutOfRangeDate {
+		if(stockEntriesGrupped == null) {
+			if(logger.isDebugEnabled())
+				logger.debug("getProximunTimesPrice has been called with null stock");
+			return -1;
+		}
+		List<StockEntry> stockEntryList = stockEntriesGrupped.getRelativeDateStockEntry(date, TypeStockEntry.PRICE);
 		if(logger.isDebugEnabled())
-			logger.debug((stockName != null &&
-			stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE) != null &&
-			!(stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE).size() < 1)) ?
-					String.format("getProximunTimesPrice has been called [%s:%s:%s]",
+			logger.debug((stockEntriesGrupped != null &&
+			stockEntryList != null &&
+			!(stockEntryList.size() < 1)) ?
+					String.format("getProximunTimesPrice has been called [%s:%s:%s:%s]",
+							stockEntriesGrupped.getIdent(),
 							date,
 							TypeStockEntry.PRICE,
-							stockName.
-							getRelativeDateStockEntry(date, TypeStockEntry.PRICE).
-							get(0).
-							getClosePrice()) :
-					"getProximunTimesPrice has been called with null stock");
-		if(stockName != null &&
-				stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE) != null &&
-				!(stockName.getRelativeDateStockEntry(date, TypeStockEntry.PRICE).size() < 1)) return stockName.
-						getRelativeDateStockEntry(
-								date, TypeStockEntry.PRICE).
-						get(0).getClosePrice();
-		return -1;
+							getPrice(stockEntryList)) :
+								String.format("getProximunTimesPrice has been called with null stock [%s:%s:%s]",
+										stockEntriesGrupped.getIdent(),
+										date,
+										TypeStockEntry.PRICE));
+		return (stockEntriesGrupped != null) ?
+						getPrice(stockEntryList) :
+							-1d;
 	}
 
 	private double getProximunTimesPremium(StockEntriesGrupped stockName, int date) throws ExceptionOutOfRangeDate {
@@ -110,6 +109,13 @@ public class StockGroup {
 				getRelativeDateStockEntry(
 						date, TypeStockEntry.PROVENTOS).
 				get(0).getClosePrice();
+	}
+
+	private double getPrice(List<StockEntry> stockEntry) {
+		for (int i = 0; i < stockEntry.size(); i++)
+			if( !(stockEntry.get(i).getClosePrice() < 0) )
+				return stockEntry.get(i).getClosePrice();
+		return -1d;
 	}
 
 

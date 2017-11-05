@@ -28,12 +28,12 @@
 		</encoder>
 	</appender>
 
-	<root level="all" additivity="false">
+	<root level="off" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</root>
 
 	<logger name="com.tapette.stock" level="all" additivity="false">
-		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
 	</logger>
 
 
