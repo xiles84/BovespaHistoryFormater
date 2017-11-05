@@ -23,6 +23,10 @@ public class DateGroupTest {
 	public void testDateLength() throws ExceptionInvalidFormat, ExceptionOutOfRangeDate {
 		DateGroup dates = new DateGroup(20170601, 20170626, 7);
 		assertEquals(4, dates.getDates().length);
+		assertEquals(20170601, dates.getDates()[0]);
+		assertEquals(20170608, dates.getDates()[1]);
+		assertEquals(20170615, dates.getDates()[2]);
+		assertEquals(20170622, dates.getDates()[3]);
 	}
 	
 	@Test(expected=ExceptionInvalidFormat.class)

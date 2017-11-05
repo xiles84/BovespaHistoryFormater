@@ -52,7 +52,7 @@ public class DateGroup {
 			count++;
 		}
 		int[] returnResult = new int[count];
-		for (int i = 1; i < count; i++) {
+		for (int i = 0; i < count; i++) {
 			returnResult[i] = datesTemp[i];
 		}
 		return returnResult;

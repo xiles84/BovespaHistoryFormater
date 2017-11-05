@@ -6,12 +6,18 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 
 public abstract class StocksAbstractImp implements StocksEntryGrouped {
+
+	private static Logger logger = LoggerFactory.getLogger( StocksAbstractImp.class );
 
 	protected int[][] dateArrayIndexPlusOne = null;
 	protected ArrayList<StockEntry> stockEntrys = new ArrayList<StockEntry>();
@@ -33,7 +39,7 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	public StockEntry get(int index) {
 		return get(index, null);
 	}
-	
+
 	@Override
 	public String getIdent() {
 		return get(0, null).getStock().getStock();
@@ -116,13 +122,25 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	}
 
 	protected int rotateDate(int date, TypeStockEntry type) throws ExceptionOutOfRangeDate {
-		if(getDateArray(type)[0] >  date)
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("rotateDate will use the following date array [%s]", Arrays.toString(getDateArray(type))));
+		if(getDateArray(type)[0] >  date) {
+			if(logger.isDebugEnabled())
+				logger.debug(String.format("rotateDate has a date above the array [%s > %s]", getDateArray(type)[0],  date));
 			throw new ExceptionOutOfRangeDate(date);
+		}
 		//The next part didnt consider other type of entries
-		if(getDateArray()[getDateArray(type).length-1] <  date)
-			return getDateArray()[getDateArray(type).length-1];
-		//The next part didnt consider the type.. how did a forget this?????
+		if(getDateArray(type)[getDateArray(type).length-1] <  date) {
+			if(logger.isDebugEnabled())
+				logger.debug(String.format("rotateDate has a date above the array [%s < %s]", getDateArray(type)[getDateArray(type).length-1],  date));
+			return getDateArray(type)[getDateArray(type).length-1];
+		}
 		int index =  Arrays.binarySearch(getDateArray(type), date);
+		index = (index < 0) ? -index-2 : index;
+		if(logger.isDebugEnabled()) {
+			logger.debug(String.format("rotateDate binarysearch returned index [%s]", index));
+			logger.debug(String.format("rotateDate binarysearch returned [%s:%s]", date, getDateArray(type)[index]));
+		}
 		return index < 0 ?  getDateArray(type)[-index-2] : getDateArray(type)[index];
 	}
 

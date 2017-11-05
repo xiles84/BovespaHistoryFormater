@@ -35,12 +35,12 @@ public class StockGroup {
 
 	private boolean processResultIntArray() {
 		if(logger.isDebugEnabled())
-			logger.debug(String.format("processResultIntArray has been called [%s]" , stockList));
+			logger.debug(String.format("processResultIntArray has been called [%s:%s]" , stockList, Arrays.toString(dates.getDates())));
 		this.resultIntArray = new double[dates.getDates().length][stockList.size()];
 		double tempVal = -1;
 		for (int j = 0; j < stockList.size(); j++) {
 			try {
-				tempVal = getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[0]);
+				tempVal = getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[0], TypeStockEntry.PROVENTOS);
 				resultIntArray[0][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[0]);
 			} catch (ExceptionOutOfRangeDate e) {
 				tempVal = -1;
@@ -49,7 +49,7 @@ public class StockGroup {
 			for (int i = 1; i < dates.getDates().length; i++) {
 				try {
 					resultIntArray[i][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[i]) +
-							getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[i]) -
+							getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[i], TypeStockEntry.PROVENTOS) -
 							tempVal;
 				} catch (ExceptionOutOfRangeDate e) {
 					if(logger.isErrorEnabled())
@@ -97,17 +97,17 @@ public class StockGroup {
 							-1d;
 	}
 
-	private double getProximunTimesPremium(StockEntriesGrupped stockName, int date) throws ExceptionOutOfRangeDate {
+	private double getProximunTimesPremium(StockEntriesGrupped stockName, int date, TypeStockEntry typeStockEntry) throws ExceptionOutOfRangeDate {
 		if(stockName == null)
 			return -1;
 		List<StockEntry> ret = stockName.
 				getRelativeDateStockEntry(
-						date, TypeStockEntry.PROVENTOS);
+						date, typeStockEntry);
 		if(ret == null || ret.isEmpty() || ret.size() < 1)
 			return -1;
 		return stockName.
 				getRelativeDateStockEntry(
-						date, TypeStockEntry.PROVENTOS).
+						date, typeStockEntry).
 				get(0).getClosePrice();
 	}
 
