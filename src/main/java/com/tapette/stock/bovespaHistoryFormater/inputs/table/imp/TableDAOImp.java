@@ -15,6 +15,7 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockEntriesGrupped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public class TableDAOImp implements TableDAO {
@@ -48,9 +49,14 @@ public class TableDAOImp implements TableDAO {
 
 	@Override
 	public List<StockEntry> getRelativeDateEntries(Stock stock, int date) throws ExceptionOutOfRangeDate {
+		return getRelativeDateEntries(stock, date, null);
+	}
+	
+	@Override
+	public List<StockEntry> getRelativeDateEntries(Stock stock, int date, TypeStockEntry typeStockEntry) throws ExceptionOutOfRangeDate {
 		if(hashStockName.isEmpty())
 			precessExtracters();
-		return (hashStockName != null && hashStockName.get(stock) != null ) ? hashStockName.get(stock).getRelativeDateStockEntry(date) : null;
+		return (hashStockName != null && hashStockName.get(stock) != null ) ? hashStockName.get(stock).getRelativeDateStockEntry(date, typeStockEntry) : null;
 	}
 
 	@Override

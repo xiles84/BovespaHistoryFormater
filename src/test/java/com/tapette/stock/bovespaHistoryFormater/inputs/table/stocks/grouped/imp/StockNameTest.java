@@ -22,6 +22,7 @@ import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.parsers.imp.Pa
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.imp.TableDAOImp;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.DateGroup;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 import com.tapette.stock.bovespaHistoryFormater.stock.types.Type;
 
@@ -77,9 +78,9 @@ public class StockNameTest {
 		assertEquals(-1d, group.getResultIntArray()[group.getResultIntArray().length-1][1], 0);
 		assertEquals(11.36d, group.getResultIntArray()[group.getResultIntArray().length-1][2], 0);
 		System.out.println(table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20160201).size());
-		//assertEquals(1.1d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20150201).get(0).getProventos(), 0);
-		assertEquals(1.12d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20160201).get(1).getProventos(), 0);
-		//assertEquals(1.17d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20160501).get(0).getProventos(), 0);
+		assertEquals(1.1d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20150201).get(0).getProventos(), 0);
+		assertEquals(1.12d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20160201).get(0).getProventos(), 0);
+		assertEquals(1.17d,table.getStockEntriesGrupped(stock1).getRelativeDateStockEntry(20160501).get(0).getProventos(), 0);
 	}
 	
 	
@@ -89,7 +90,7 @@ public class StockNameTest {
 		Stock stock2 = new Stock("AALR3", "AALR3", Type.CommonStock);
 		Stock stock3 = new Stock("ABCP11", "ABCP", Type.CommonStock);
 		TableDAOImp table = new TableDAOImp();
-		DateGroup dates = new DateGroup(20170101, 20170104, 1);
+		DateGroup dates = new DateGroup(20170101, 20170504, 30);
 		ArrayList<Stock> stocks = new ArrayList<>();
 		stocks.add(stock1);
 		stocks.add(stock2);
@@ -101,13 +102,9 @@ public class StockNameTest {
 		table.addExtracter(extracterBovespaXLS);
 		StockGroup group = new StockGroup(stocks, table, dates);
 		assertNotNull(group.getResultIntArray());
-		assertEquals(4, group.getResultIntArray().length);
+		assertEquals(5, group.getResultIntArray().length);
 		assertNotNull(group.getResultIntArray()[0]);
 		assertEquals(3, group.getResultIntArray()[0].length);
-		assertArrayEquals(new Double[] {-1d,-1d,-1d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[0]));
-		assertArrayEquals(new Double[] {13.31d,14.6d,11.36d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[1]));
-		assertArrayEquals(new Double[] {13.31d,14.6d,11.36d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[2]));
-		assertArrayEquals(new Double[] {13.31d,14.6d,11.36d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[3]));
 	}
 	
 	@Test()
@@ -124,13 +121,15 @@ public class StockNameTest {
 		StockGroup group = new StockGroup(stocks, table, dates);
 		ParserBovespaXLSPrices parserBovespaXLSPrices = new ParserBovespaXLSPrices(stocks);
 		ExtracterBovespaXLS extracterBovespaXLS = new ExtracterBovespaXLS(files, stocks, parserBovespaXLSPrices);
+		table.addExtracter(extracterBovespaXLS);
+		table.addExtracter(extracterProventosMultiThread);
 		assertNotNull(group.getResultIntArray());
 		assertEquals(3, group.getResultIntArray().length);
 		assertNotNull(group.getResultIntArray()[0]);
 		assertEquals(1, group.getResultIntArray()[0].length);
-		assertEquals(-10d, table.getRelativeDateEntries(stock1, 20150101).get(0).getClosePrice(), 0);
-		assertEquals(-1d, table.getRelativeDateEntries(stock1, 20160101).get(0).getClosePrice(), 0);
-		assertEquals(-1d, table.getRelativeDateEntries(stock1, 20170101).get(0).getClosePrice(), 0);
+		assertEquals(-10d, table.getRelativeDateEntries(stock1, 20150101, TypeStockEntry.PRICE).get(0).getClosePrice(), 0);
+		assertEquals(-1d, table.getRelativeDateEntries(stock1, 20160101, TypeStockEntry.PRICE).get(0).getClosePrice(), 0);
+		assertEquals(-1d, table.getRelativeDateEntries(stock1, 20170101, TypeStockEntry.PRICE).get(0).getClosePrice(), 0);
 		assertArrayEquals(new Double[] {-1d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[0]));
 		assertArrayEquals(new Double[] {-1d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[1]));
 		assertArrayEquals(new Double[] {-1d}, doubleprimarrayToDoubleobjarray(group.getResultIntArray()[2]));

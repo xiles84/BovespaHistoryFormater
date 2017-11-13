@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.StocksEntryGrouped;
-import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp.StockGroup;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 
 public abstract class StocksAbstractImp implements StocksEntryGrouped {
@@ -34,6 +33,9 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 
 	@Override
 	public abstract List<List<StockEntry>> getRelativeDateStockEntry(int[] date, TypeStockEntry stockEntry) throws ExceptionOutOfRangeDate;
+
+	@Override
+	public abstract List<StockEntry> getRelativeUntilDateStockEntries(int date, TypeStockEntry stockEntryType) throws ExceptionOutOfRangeDate;;
 
 	@Override
 	public StockEntry get(int index) {
@@ -72,36 +74,41 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	@Override
 	public int[] getDateArray(TypeStockEntry type) {
 		synchronized (this) {
-			if(dateArrayIndexPlusOne != null)
+			if(logger.isDebugEnabled())
+				logger.debug(String.format("getDateArray will getting the date array for TypeStockEntry [%s]", type == null ? "null" : type));
+			if(dateArrayIndexPlusOne != null) {
+				if(logger.isDebugEnabled())
+					logger.debug(String.format("getDateArray will returnig [%s]", Arrays.toString((type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]))));
 				return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
-				ArrayList<Integer> dateListLocal = new ArrayList<Integer>();
-				for (int i = 0; i < stockEntrys.size(); i++) {
-					if(!dateListLocal.contains(get(i).getDate()))
-						dateListLocal.add(get(i).getDate());
-				}
+			}
+			ArrayList<Integer> dateListLocal = new ArrayList<Integer>();
+			for (int i = 0; i < stockEntrys.size(); i++) {
+				if(!dateListLocal.contains(get(i).getDate()))
+					dateListLocal.add(get(i).getDate());
+			}
+			Collections.sort(dateListLocal);
+			dateArrayIndexPlusOne = new int[TypeStockEntry.values().length+1][dateListLocal.size()];
+			for (int i = 0; i < dateArrayIndexPlusOne.length; i++) {
+				Arrays.fill(dateArrayIndexPlusOne[i], -1);
+			}
+			for (int i = 0; i < dateListLocal.size(); i++)
+				dateArrayIndexPlusOne[0][i] = dateListLocal.get(i);
+			dateListLocal.clear();
+			for (int k = 0; k < TypeStockEntry.values().length; k++) {
+				for (int i = 0; i < stockEntrys.size(); i++)
+					if(get(i).getType().getIntType() == TypeStockEntry.values()[k].getIntType())
+						if(!dateListLocal.contains(get(i).getDate()))
+							dateListLocal.add(get(i).getDate());
 				Collections.sort(dateListLocal);
-				dateArrayIndexPlusOne = new int[TypeStockEntry.values().length+1][dateListLocal.size()];
-				for (int i = 0; i < dateArrayIndexPlusOne.length; i++) {
-					Arrays.fill(dateArrayIndexPlusOne[i], -1);
+				for (int l = 0; l < dateListLocal.size(); l++) {
+					dateArrayIndexPlusOne[
+					                      TypeStockEntry.
+					                      values()[k].
+					                      getIntType()+1][l] = dateListLocal.get(l);
 				}
-				for (int i = 0; i < dateListLocal.size(); i++)
-					dateArrayIndexPlusOne[0][i] = dateListLocal.get(i);
 				dateListLocal.clear();
-				for (int k = 0; k < TypeStockEntry.values().length; k++) {
-					for (int i = 0; i < stockEntrys.size(); i++)
-						if(get(i).getType().getIntType() == TypeStockEntry.values()[k].getIntType())
-							if(!dateListLocal.contains(get(i).getDate()))
-								dateListLocal.add(get(i).getDate());
-					Collections.sort(dateListLocal);
-					for (int l = 0; l < dateListLocal.size(); l++) {
-						dateArrayIndexPlusOne[
-						                      TypeStockEntry.
-						                      values()[k].
-						                      getIntType()+1][l] = dateListLocal.get(l);
-					}
-					dateListLocal.clear();
-				}
-				return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
+			}
+			return (type == null) ? dateArrayIndexPlusOne[0] : removeNulls(dateArrayIndexPlusOne[type.getIntType()+1]);
 		}
 	}
 
@@ -124,15 +131,15 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 	protected int rotateDate(int date, TypeStockEntry type) throws ExceptionOutOfRangeDate {
 		if(logger.isDebugEnabled())
 			logger.debug(String.format("rotateDate will use the following date array [%s]", Arrays.toString(getDateArray(type))));
-		if(getDateArray(type)[0] >  date) {
+		if(getDateArray(type) == null || getDateArray(type).length == 0 || getDateArray(type)[0] >  date) {
 			if(logger.isDebugEnabled())
-				logger.debug(String.format("rotateDate has a date above the array [%s > %s]", getDateArray(type)[0],  date));
+				logger.debug(String.format("rotateDate has a date above the array [%s>%s:%s]", getDateArray(type) == null || getDateArray(type).length == 0 ? null : getDateArray(type)[0],  date, type == null ? "null" : type));
 			throw new ExceptionOutOfRangeDate(date);
 		}
 		//The next part didnt consider other type of entries
 		if(getDateArray(type)[getDateArray(type).length-1] <  date) {
 			if(logger.isDebugEnabled())
-				logger.debug(String.format("rotateDate has a date above the array [%s < %s]", getDateArray(type)[getDateArray(type).length-1],  date));
+				logger.debug(String.format("rotateDate has a date above the array [%s<%s:%s]", getDateArray(type)[getDateArray(type).length-1],  date, type == null ? "null" : type));
 			return getDateArray(type)[getDateArray(type).length-1];
 		}
 		int index =  Arrays.binarySearch(getDateArray(type), date);
@@ -143,6 +150,20 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 		}
 		return index < 0 ?  getDateArray(type)[-index-2] : getDateArray(type)[index];
 	}
+	
+	protected List<Integer> rotateUntilDate(int date, TypeStockEntry type) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("rotateUntilDate will use the following date array [%s]", Arrays.toString(getDateArray(type))));
+		ArrayList<Integer> dates = new ArrayList<Integer>();
+		try {
+			dates.add(rotateDate(date, type));
+			while(true) {
+				dates.add(rotateDate(dates.get(dates.size()-1)-1, type));
+			}
+		}catch(ExceptionOutOfRangeDate e){
+			return dates;
+		}
+	}
 
 	@Override
 	public String toString() {
@@ -150,9 +171,11 @@ public abstract class StocksAbstractImp implements StocksEntryGrouped {
 		if(stockEntrys.size()<1)
 			return "";
 		StringBuilder str = new StringBuilder();
+		str.append("{");
 		str.append(get(0));
 		for (int i = 1; i < stockEntrys.size(); i++)
-			str.append("\n").append(get(i));
+			str.append("}").append(get(i));
+		str.append("}");
 		return str.toString();
 	}
 

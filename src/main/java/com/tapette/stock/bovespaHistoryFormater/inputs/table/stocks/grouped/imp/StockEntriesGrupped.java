@@ -21,9 +21,29 @@ public class StockEntriesGrupped extends StocksAbstractImp {
 
 	@Override
 	public List<StockEntry> getRelativeDateStockEntry(int date, TypeStockEntry stockEntryType) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getRelativeDateStockEntry had to transform the date [%s]", date));
 		int localDate = rotateDate(date, stockEntryType);
 		if(logger.isDebugEnabled())
-			logger.debug(String.format("getRelativeDateStockEntry had to transform the date [%s:%s]", date, localDate));
+			logger.debug(String.format("getRelativeDateStockEntry found an elegible date [%s:%s]", date, localDate));
+		ArrayList<StockEntry> localArray = new ArrayList<StockEntry>();
+		for (int i = 0; i < stockEntrys.size(); i++) {
+			if(stockEntrys.get(i).getDate() == localDate && (stockEntryType == null || stockEntrys.get(i).getType().getIntType() == stockEntryType.getIntType())) {
+				localArray.add(stockEntrys.get(i));
+			}
+		}
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getRelativeDateStockEntry found the following entries [%s]", localArray));
+		return localArray;
+	}
+	
+	@Override
+	public List<StockEntry> getRelativeUntilDateStockEntries(int date, TypeStockEntry stockEntryType) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getRelativeDateStockEntry had to transform the date [%s]", date));
+		int localDate = rotateDate(date, stockEntryType);
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getRelativeDateStockEntry found an elegible date [%s:%s]", date, localDate));
 		ArrayList<StockEntry> localArray = new ArrayList<StockEntry>();
 		for (int i = 0; i < stockEntrys.size(); i++) {
 			if(stockEntrys.get(i).getDate() == localDate && (stockEntryType == null || stockEntrys.get(i).getType().getIntType() == stockEntryType.getIntType())) {

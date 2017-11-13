@@ -6,6 +6,7 @@ import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDa
 import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockEntriesGrupped;
+import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.type.TypeStockEntry;
 import com.tapette.stock.bovespaHistoryFormater.stock.Stock;
 
 public interface TableDAO {
@@ -21,5 +22,8 @@ public interface TableDAO {
 	public boolean addStockEntry(StockEntry stockEntry);
 
 	int size();
+
+	List<StockEntry> getRelativeDateEntries(Stock stock, int date, TypeStockEntry typeStockEntry)
+			throws ExceptionOutOfRangeDate;
 
 }

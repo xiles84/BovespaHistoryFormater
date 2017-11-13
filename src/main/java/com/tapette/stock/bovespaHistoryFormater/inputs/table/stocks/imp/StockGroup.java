@@ -1,17 +1,11 @@
 package com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.imp;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionEmptyFile;
-import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionInvalidFormat;
 import com.tapette.stock.bovespaHistoryFormater.exceptions.ExceptionOutOfRangeDate;
-import com.tapette.stock.bovespaHistoryFormater.inputs.extracters.Extracters;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.TableDAO;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.StockEntry;
 import com.tapette.stock.bovespaHistoryFormater.inputs.table.stocks.grouped.imp.StockEntriesGrupped;
@@ -41,11 +35,16 @@ public class StockGroup {
 		for (int j = 0; j < stockList.size(); j++) {
 			try {
 				tempVal = getProximunTimesPremium(table.getStockEntriesGrupped(stockList.get(j)), dates.getDates()[0], TypeStockEntry.PROVENTOS);
+			} catch (ExceptionOutOfRangeDate e) {
+				tempVal = 0;
+			}
+			try {
 				resultIntArray[0][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[0]);
 			} catch (ExceptionOutOfRangeDate e) {
-				tempVal = -1;
 				resultIntArray[0][j] = -1;
 			}
+			if(logger.isDebugEnabled())
+				logger.debug(String.format("processResultIntArray got initial proventos and price [%s:%s]" , tempVal, resultIntArray[0][j]));
 			for (int i = 1; i < dates.getDates().length; i++) {
 				try {
 					resultIntArray[i][j] = getProximunTimesPrice(table.getStockEntriesGrupped(stockList.get(j)),  dates.getDates()[i]) +
@@ -93,11 +92,14 @@ public class StockGroup {
 										date,
 										TypeStockEntry.PRICE));
 		return (stockEntriesGrupped != null) ?
-						getPrice(stockEntryList) :
-							-1d;
+				getPrice(stockEntryList) :
+					-1d;
 	}
 
 	private double getProximunTimesPremium(StockEntriesGrupped stockName, int date, TypeStockEntry typeStockEntry) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getProximunTimesPremium has been called [%s:%s:%s]" , stockName, date, typeStockEntry));
+		//TODO I am thinking about raising exceptions instead of returnng -1
 		if(stockName == null)
 			return -1;
 		List<StockEntry> ret = stockName.
@@ -116,6 +118,24 @@ public class StockGroup {
 			if( !(stockEntry.get(i).getClosePrice() < 0) )
 				return stockEntry.get(i).getClosePrice();
 		return -1d;
+	}
+	
+	
+	private double getProximunTimesAccumulatedPremiums(StockEntriesGrupped stockName, int date, TypeStockEntry typeStockEntry) throws ExceptionOutOfRangeDate {
+		if(logger.isDebugEnabled())
+			logger.debug(String.format("getProximunTimesPremium has been called [%s:%s:%s]" , stockName, date, typeStockEntry));
+		//TODO I am thinking about raising exceptions instead of returning -1
+		if(stockName == null)
+			return -1;
+		List<StockEntry> ret = stockName.
+				getRelativeDateStockEntry(
+						date, typeStockEntry);
+		if(ret == null || ret.isEmpty() || ret.size() < 1)
+			return -1;
+		return stockName.
+				getRelativeDateStockEntry(
+						date, typeStockEntry).
+				get(0).getClosePrice();
 	}
 
 
